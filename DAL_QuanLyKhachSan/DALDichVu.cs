@@ -1,0 +1,89 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DTO_QuanLyKhachSan;
+using Microsoft.Data.SqlClient;
+
+namespace DAL_QuanLyKhachSan
+{
+    public class DALDichVu
+    {
+        public List<DichVu> SelectBySql(string sql, List<object> args)
+        {
+            List<DichVu> list = new List<DichVu>();
+            try
+            {
+                SqlDataReader reader = DBUtil.Query(sql, args);
+                while (reader.Read())
+                {
+                    DichVu entity = new DichVu();
+                    entity.DichVuID = reader.GetString("DichVuID");
+                    entity.HoaDonThueID = reader.GetString("HoaDonThueID");
+                    entity.NgayTao = reader.GetDateTime("NgayTao");
+                    entity.TrangThai = reader.GetBoolean("TrangThai");
+                    entity.GhiChu = reader.GetString("GhiChu");
+                    list.Add(entity);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return list;
+        }
+
+        public List<DichVu> SelectAll()
+        {
+            string sql = "SELECT * FROM DichVu";
+            return SelectBySql(sql, new List<object>());
+        }
+
+        public List<DichVu> GetByHoaDonThueID(string hoaDonThueID)
+        {
+            string sql = "SELECT * FROM DichVu WHERE HoaDonThueID LIKE '%' + @0 + '%'";
+            return SelectBySql(sql, new List<object> { hoaDonThueID });
+        }
+
+        public void Add(DichVu dv)
+        {
+            string sql = @"INSERT INTO DichVu (DichVuID, HoaDonThueID, NgayTao, TrangThai, GhiChu)
+                           VALUES (@0, @1, @2, @3, @4)";
+            List<object> args = new List<object> { dv.DichVuID, dv.HoaDonThueID, dv.NgayTao, dv.TrangThai, dv.GhiChu };
+            DBUtil.Update(sql, args);
+        }
+
+        public void Update(DichVu dv)
+        {
+            string sql = @"UPDATE DichVu 
+                           SET HoaDonThueID = @1, NgayTao = @2, TrangThai = @3, GhiChu = @4 
+                           WHERE DichVuID = @0";
+            List<object> args = new List<object> { dv.DichVuID, dv.HoaDonThueID, dv.NgayTao, dv.TrangThai, dv.GhiChu };
+            DBUtil.Update(sql, args);
+        }
+
+        public void Delete(string dichVuID)
+        {
+            string sql = "DELETE FROM DichVu WHERE DichVuID = @0";
+            DBUtil.Update(sql, new List<object> { dichVuID });
+        }
+
+        public string GenerateNewDichVuID()
+        {
+            string prefix = "DVHD";
+            string sql = "SELECT MAX(DichVuID) FROM DichVu";
+            object result = DBUtil.ScalarQuery(sql, new List<object>());
+
+            if (result != null && result.ToString().StartsWith(prefix))
+            {
+                string maxCode = result.ToString().Substring(2);
+                int newNumber = int.Parse(maxCode) + 1;
+                return $"{prefix}{newNumber:D3}";
+            }
+
+            return $"{prefix}001";
+        }
+    }
+}
