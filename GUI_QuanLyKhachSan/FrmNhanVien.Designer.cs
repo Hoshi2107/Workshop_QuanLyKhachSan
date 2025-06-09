@@ -418,6 +418,7 @@
             guna2Button1.Size = new Size(118, 33);
             guna2Button1.TabIndex = 29;
             guna2Button1.Text = "Thêm ";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // guna2GroupBox1
             // 
