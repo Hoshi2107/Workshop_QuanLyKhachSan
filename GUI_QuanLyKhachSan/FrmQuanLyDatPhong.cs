@@ -19,6 +19,10 @@ namespace GUI_QuanLyKhachSan
 
         private void FrmQuanLyDatPhong_Load(object sender, EventArgs e)
         {
+            LoadDanhSachDatPhong();
+        }
+        private void LoadDanhSachDatPhong()
+        {
 
         }
 
