@@ -48,5 +48,10 @@ namespace GUI_QuanLyKhachSan
             guna2DgvNhanVien.Columns["TinhTrang"].Visible = false;
             guna2DgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
