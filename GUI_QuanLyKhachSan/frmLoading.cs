@@ -23,7 +23,7 @@ namespace GUI_QuanLyKhachSan
             {
                 timer1.Stop();
 
-                Form1 p = new Form1();
+                frmDangNhap p = new frmDangNhap();
                 p.Show();
                 this.Hide();
 
