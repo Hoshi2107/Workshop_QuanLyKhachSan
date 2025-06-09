@@ -409,7 +409,7 @@
             guna2Button1.FillColor = Color.FromArgb(0, 192, 192);
             guna2Button1.Font = new Font("Segoe UI", 9F);
             guna2Button1.ForeColor = Color.Black;
-            guna2Button1.Image = Properties.Resources.add;
+
             guna2Button1.ImageAlign = HorizontalAlignment.Left;
             guna2Button1.Location = new Point(907, 445);
             guna2Button1.Margin = new Padding(3, 2, 3, 2);
