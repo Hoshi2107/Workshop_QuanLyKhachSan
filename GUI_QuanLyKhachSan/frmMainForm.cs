@@ -81,28 +81,28 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2PictureBox2_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Xác nhận thoát chương trình?",
-                                                 "Thoát",
-                                                 MessageBoxButtons.YesNo,
-                                                 MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            //DialogResult result = MessageBox.Show("Xác nhận thoát chương trình?",
+            //                                     "Thoát",
+            //                                     MessageBoxButtons.YesNo,
+            //                                     MessageBoxIcon.Question);
+            //if (result == DialogResult.Yes)
+            //{
+            //    Application.Exit();
+            //}
         }
 
         private void guna2PictureBox3_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Xác nhận đăng xuất tài khoản?",
-                                                 "Đăng xuất",
-                                                 MessageBoxButtons.YesNo,
-                                                 MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                this.Close();
-                frmDangNhap form1 = new frmDangNhap();
-                form1.Show();
-            }
+        //    DialogResult result = MessageBox.Show("Xác nhận đăng xuất tài khoản?",
+        //                                         "Đăng xuất",
+        //                                         MessageBoxButtons.YesNo,
+        //                                         MessageBoxIcon.Question);
+        //    if (result == DialogResult.Yes)
+        //    {
+        //        this.Close();
+        //        frmDangNhap form1 = new frmDangNhap();
+        //        form1.Show();
+        //    }
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -127,7 +127,27 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2Button6_Click(object sender, EventArgs e)
         {
-            openChildForm(new LoaiTrangThaiDatphong());
+            DialogResult result = MessageBox.Show("Xác nhận thoát chương trình?",
+                                      "Thoát",
+                                      MessageBoxButtons.YesNo,
+                                      MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+        private void guna2Button11_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Xác nhận đăng xuất tài khoản?",
+                                     "Đăng xuất",
+                                     MessageBoxButtons.YesNo,
+                                     MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
+                frmDangNhap form1 = new frmDangNhap();
+                form1.Show();
+            }
         }
     }
 }
