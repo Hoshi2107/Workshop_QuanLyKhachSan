@@ -425,6 +425,7 @@
             guna2Button4.FillColor = Color.FromArgb(0, 192, 192);
             guna2Button4.Font = new Font("Segoe UI", 9F);
             guna2Button4.ForeColor = Color.Black;
+            guna2Button4.Image = (Image)resources.GetObject("guna2Button4.Image");
             guna2Button4.Location = new Point(1020, 15);
             guna2Button4.Name = "guna2Button4";
             guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges20;

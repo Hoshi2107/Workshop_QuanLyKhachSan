@@ -134,6 +134,7 @@
             btnTimKiem.FillColor = Color.FromArgb(0, 192, 192);
             btnTimKiem.Font = new Font("Segoe UI", 9F);
             btnTimKiem.ForeColor = Color.White;
+            btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
             btnTimKiem.Location = new Point(1003, 14);
             btnTimKiem.Name = "btnTimKiem";
             btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges6;
