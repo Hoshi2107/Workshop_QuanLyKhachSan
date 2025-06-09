@@ -56,6 +56,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQuanLyKhachHang));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -536,6 +537,7 @@
             guna2Button5.FillColor = Color.FromArgb(0, 192, 192);
             guna2Button5.Font = new Font("Segoe UI", 9F);
             guna2Button5.ForeColor = Color.Black;
+            guna2Button5.Image = (Image)resources.GetObject("guna2Button5.Image");
             guna2Button5.Location = new Point(674, 817);
             guna2Button5.Name = "guna2Button5";
             guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges26;
@@ -555,6 +557,7 @@
             guna2Button3.FillColor = Color.FromArgb(0, 192, 192);
             guna2Button3.Font = new Font("Segoe UI", 9F);
             guna2Button3.ForeColor = Color.Black;
+            guna2Button3.Image = (Image)resources.GetObject("guna2Button3.Image");
             guna2Button3.Location = new Point(493, 817);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges28;
@@ -574,6 +577,7 @@
             guna2Button2.FillColor = Color.FromArgb(0, 192, 192);
             guna2Button2.Font = new Font("Segoe UI", 9F);
             guna2Button2.ForeColor = Color.Black;
+            guna2Button2.Image = (Image)resources.GetObject("guna2Button2.Image");
             guna2Button2.Location = new Point(329, 817);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges30;
@@ -593,6 +597,7 @@
             guna2Button1.FillColor = Color.FromArgb(0, 192, 192);
             guna2Button1.Font = new Font("Segoe UI", 9F);
             guna2Button1.ForeColor = Color.Black;
+            guna2Button1.Image = (Image)resources.GetObject("guna2Button1.Image");
             guna2Button1.Location = new Point(155, 817);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges32;
