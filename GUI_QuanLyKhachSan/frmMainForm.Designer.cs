@@ -395,6 +395,7 @@
             // 
             // guna2Button1
             // 
+            guna2Button1.BorderColor = SystemColors.MenuHighlight;
             guna2Button1.CustomBorderThickness = new Padding(0, 0, 0, 8);
             guna2Button1.CustomizableEdges = customizableEdges24;
             guna2Button1.FillColor = Color.Transparent;
