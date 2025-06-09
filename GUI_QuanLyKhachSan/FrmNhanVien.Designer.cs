@@ -113,7 +113,7 @@
             guna2TextBox9.PlaceholderText = "";
             guna2TextBox9.SelectedText = "";
             guna2TextBox9.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2TextBox9.Size = new Size(827, 33);
+            guna2TextBox9.Size = new Size(890, 33);
             guna2TextBox9.TabIndex = 48;
             // 
             // guna2TextBox8
@@ -349,7 +349,7 @@
             guna2Button4.ForeColor = Color.Black;
             guna2Button4.Image = (Image)resources.GetObject("guna2Button4.Image");
             guna2Button4.ImageAlign = HorizontalAlignment.Left;
-            guna2Button4.Location = new Point(844, 12);
+            guna2Button4.Location = new Point(925, 11);
             guna2Button4.Margin = new Padding(3, 2, 3, 2);
             guna2Button4.Name = "guna2Button4";
             guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges14;
@@ -413,7 +413,6 @@
             guna2Button1.FillColor = Color.Cyan;
             guna2Button1.Font = new Font("Segoe UI", 9F);
             guna2Button1.ForeColor = Color.Black;
-
             guna2Button1.ImageAlign = HorizontalAlignment.Left;
             guna2Button1.Location = new Point(111, 643);
             guna2Button1.Margin = new Padding(3, 2, 3, 2);
