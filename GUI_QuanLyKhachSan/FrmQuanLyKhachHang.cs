@@ -21,5 +21,10 @@ namespace GUI_QuanLyKhachSan
         {
 
         }
+
+        private void gnDgv_KhachHang_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

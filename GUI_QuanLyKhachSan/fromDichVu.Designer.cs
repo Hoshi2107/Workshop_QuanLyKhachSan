@@ -447,6 +447,7 @@
             guna2DgvNhanVien.ThemeStyle.RowsStyle.Height = 29;
             guna2DgvNhanVien.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DgvNhanVien.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            guna2DgvNhanVien.CellContentClick += guna2DgvNhanVien_CellContentClick;
             // 
             // fromDichVu
             // 
