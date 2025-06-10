@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL_QuanLyKhachSan;
+using Guna.UI2.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,11 +25,24 @@ namespace GUI_QuanLyKhachSan
         }
         private void LoadDanhSachDatPhong()
         {
+            BusDatPhong bUSDatPhong = new BusDatPhong();
+            guna2DgvDatPhong.DataSource = bUSDatPhong.GetDatPhongList();
 
         }
 
         private void guna2DgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void guna2DgvDatPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2DgvDatPhong_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = guna2DgvDatPhong.Rows[e.RowIndex];
 
         }
     }
