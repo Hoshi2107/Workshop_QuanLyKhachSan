@@ -20,10 +20,11 @@ namespace DAL_QuanLyKhachSan
                 while (reader.Read())
                 {
                     DatPhong entity = new DatPhong();
-                    entity.MaHoaDonThue = reader.GetString("MaHoaDonThue");
-                    entity.MaKhachHang = reader.GetString("MaKhachHang");
-                    entity.MaPhong = reader.GetString("MaPhong");
+                    entity.MaHoaDonThue = reader.GetString("HoaDonThueID");
+                    entity.MaKhachHang = reader.GetString("KhachHangID");
+                    entity.MaPhong = reader.GetString("PhongID");
                     entity.NgayDen = reader.GetDateTime("NgayDen");
+                    entity.NgayDi = reader.GetDateTime("NgayDi");
                     entity.MaNV = reader.GetString("MaNV");
                     entity.GhiChu = reader.GetString("GhiChu");
                     list.Add(entity);

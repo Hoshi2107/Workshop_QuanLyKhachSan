@@ -146,7 +146,7 @@ namespace GUI_QuanLyKhachSan
             };
 
             BUSDichVu service = new BUSDichVu();
-            string result = service.UpdateDichVu(dichvu); 
+            string result = service.UpdateDichVu(dichvu);
             if (result == "Vui lòng nhập đủ thông tin hợp lệ!")
             {
                 MessageBox.Show(result);
@@ -187,6 +187,11 @@ namespace GUI_QuanLyKhachSan
             //btnSua.Enabled = true;
             //btnXoa.Enabled = true;
             //textDichVuID.Enabled = false;
+
+        }
+
+        private void guna2DgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
