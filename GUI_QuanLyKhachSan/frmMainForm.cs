@@ -93,16 +93,16 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2PictureBox3_Click(object sender, EventArgs e)
         {
-        //    DialogResult result = MessageBox.Show("Xác nhận đăng xuất tài khoản?",
-        //                                         "Đăng xuất",
-        //                                         MessageBoxButtons.YesNo,
-        //                                         MessageBoxIcon.Question);
-        //    if (result == DialogResult.Yes)
-        //    {
-        //        this.Close();
-        //        frmDangNhap form1 = new frmDangNhap();
-        //        form1.Show();
-        //    }
+            //    DialogResult result = MessageBox.Show("Xác nhận đăng xuất tài khoản?",
+            //                                         "Đăng xuất",
+            //                                         MessageBoxButtons.YesNo,
+            //                                         MessageBoxIcon.Question);
+            //    if (result == DialogResult.Yes)
+            //    {
+            //        this.Close();
+            //        frmDangNhap form1 = new frmDangNhap();
+            //        form1.Show();
+            //    }
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -125,18 +125,13 @@ namespace GUI_QuanLyKhachSan
             openChildForm(new TrangThaiDatphong());
         }
 
+
         private void guna2Button6_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Xác nhận thoát chương trình?",
-                                      "Thoát",
-                                      MessageBoxButtons.YesNo,
-                                      MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            openChildForm(new LoaiTrangThaiDatphong());
         }
-        private void guna2Button11_Click(object sender, EventArgs e)
+
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Xác nhận đăng xuất tài khoản?",
                                      "Đăng xuất",
@@ -147,6 +142,18 @@ namespace GUI_QuanLyKhachSan
                 this.Close();
                 frmDangNhap form1 = new frmDangNhap();
                 form1.Show();
+            }
+        }
+
+        private void btnExit_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Xác nhận thoát chương trình?",
+                                     "Thoát",
+                                     MessageBoxButtons.YesNo,
+                                     MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
             }
         }
     }

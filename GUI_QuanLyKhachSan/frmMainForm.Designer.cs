@@ -81,7 +81,7 @@
             label1 = new Label();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             btnExit = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button11 = new Guna.UI2.WinForms.Guna2Button();
+            btnLogOut = new Guna.UI2.WinForms.Guna2Button();
             guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
@@ -115,7 +115,7 @@
             guna2Panel1.Controls.Add(label1);
             guna2Panel1.Controls.Add(guna2CirclePictureBox1);
             guna2Panel1.Controls.Add(btnExit);
-            guna2Panel1.Controls.Add(guna2Button11);
+            guna2Panel1.Controls.Add(btnLogOut);
             guna2Panel1.Controls.Add(guna2Button6);
             guna2Panel1.Controls.Add(guna2Button5);
             guna2Panel1.Controls.Add(guna2Button4);
@@ -306,32 +306,32 @@
             btnExit.TabIndex = 6;
             btnExit.Text = "Thoát";
             btnExit.TextOffset = new Point(8, 0);
-            btnExit.Click += guna2Button6_Click;
+            btnExit.Click += btnExit_Click_1;
             // 
-            // guna2Button11
+            // btnLogOut
             // 
-            guna2Button11.CustomBorderThickness = new Padding(0, 0, 0, 8);
-            guna2Button11.CustomizableEdges = customizableEdges14;
-            guna2Button11.FillColor = Color.Transparent;
-            guna2Button11.Font = new Font("Bahnschrift", 9F, FontStyle.Bold);
-            guna2Button11.ForeColor = Color.Black;
-            guna2Button11.HoverState.BorderColor = Color.Navy;
-            guna2Button11.HoverState.FillColor = Color.FromArgb(12, 83, 251);
-            guna2Button11.HoverState.ForeColor = Color.White;
-            guna2Button11.HoverState.Image = (Image)resources.GetObject("resource.Image5");
-            guna2Button11.Image = (Image)resources.GetObject("guna2Button11.Image");
-            guna2Button11.ImageAlign = HorizontalAlignment.Left;
-            guna2Button11.ImageOffset = new Point(8, 0);
-            guna2Button11.ImageSize = new Size(30, 30);
-            guna2Button11.Location = new Point(0, 646);
-            guna2Button11.Margin = new Padding(4);
-            guna2Button11.Name = "guna2Button11";
-            guna2Button11.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            guna2Button11.Size = new Size(239, 46);
-            guna2Button11.TabIndex = 6;
-            guna2Button11.Text = "Đăng Xuất";
-            guna2Button11.TextOffset = new Point(8, 0);
-            guna2Button11.Click += guna2Button6_Click;
+            btnLogOut.CustomBorderThickness = new Padding(0, 0, 0, 8);
+            btnLogOut.CustomizableEdges = customizableEdges14;
+            btnLogOut.FillColor = Color.Transparent;
+            btnLogOut.Font = new Font("Bahnschrift", 9F, FontStyle.Bold);
+            btnLogOut.ForeColor = Color.Black;
+            btnLogOut.HoverState.BorderColor = Color.Navy;
+            btnLogOut.HoverState.FillColor = Color.FromArgb(12, 83, 251);
+            btnLogOut.HoverState.ForeColor = Color.White;
+            btnLogOut.HoverState.Image = (Image)resources.GetObject("resource.Image5");
+            btnLogOut.Image = (Image)resources.GetObject("btnLogOut.Image");
+            btnLogOut.ImageAlign = HorizontalAlignment.Left;
+            btnLogOut.ImageOffset = new Point(8, 0);
+            btnLogOut.ImageSize = new Size(30, 30);
+            btnLogOut.Location = new Point(0, 646);
+            btnLogOut.Margin = new Padding(4);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            btnLogOut.Size = new Size(239, 46);
+            btnLogOut.TabIndex = 6;
+            btnLogOut.Text = "Đăng Xuất";
+            btnLogOut.TextOffset = new Point(8, 0);
+            btnLogOut.Click += btnLogOut_Click;
             // 
             // guna2Button6
             // 
@@ -650,6 +650,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button8;
         private Guna.UI2.WinForms.Guna2Button guna2Button7;
         private Guna.UI2.WinForms.Guna2Button btnExit;
-        private Guna.UI2.WinForms.Guna2Button guna2Button11;
+        private Guna.UI2.WinForms.Guna2Button btnLogOut;
     }
 }
