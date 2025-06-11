@@ -26,5 +26,10 @@ namespace GUI_QuanLyKhachSan
         {
 
         }
+
+        private void FrmQuanLyKhachHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
