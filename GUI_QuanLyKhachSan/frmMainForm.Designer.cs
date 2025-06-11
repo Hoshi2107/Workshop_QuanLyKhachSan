@@ -589,6 +589,9 @@
             // 
             // guna2Panel_container
             // 
+            guna2Panel_container.BackColor = Color.FromArgb(42, 161, 255);
+            guna2Panel_container.BackgroundImage = (Image)resources.GetObject("guna2Panel_container.BackgroundImage");
+            guna2Panel_container.BackgroundImageLayout = ImageLayout.Zoom;
             guna2Panel_container.CustomizableEdges = customizableEdges40;
             guna2Panel_container.Dock = DockStyle.Fill;
             guna2Panel_container.Location = new Point(239, 62);
