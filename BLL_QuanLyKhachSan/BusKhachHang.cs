@@ -11,7 +11,7 @@ namespace BLL_QuanLyKhachSan
     public class BusKhachHang
     {
         DALDatPhong dalDatPhong = new DALDatPhong();
-        public List<DatPhong> GetDatPhongList()
+        public List<DatPhong> GetKhachHangList()
         {
             return dalDatPhong.SelectAll();
         }
