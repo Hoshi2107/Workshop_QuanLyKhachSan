@@ -384,6 +384,7 @@
             // 
             // textTimKiem
             // 
+            textTimKiem.BorderRadius = 5;
             textTimKiem.CustomizableEdges = customizableEdges17;
             textTimKiem.DefaultText = "";
             textTimKiem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
