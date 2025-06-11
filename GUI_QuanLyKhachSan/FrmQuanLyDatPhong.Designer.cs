@@ -93,9 +93,9 @@
             guna2HtmlLabel6.Location = new Point(634, 30);
             guna2HtmlLabel6.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            guna2HtmlLabel6.Size = new Size(49, 17);
+            guna2HtmlLabel6.Size = new Size(38, 17);
             guna2HtmlLabel6.TabIndex = 40;
-            guna2HtmlLabel6.Text = "PhongID";
+            guna2HtmlLabel6.Text = "Phòng";
             // 
             // guna2HtmlLabel3
             // 
@@ -103,9 +103,9 @@
             guna2HtmlLabel3.Location = new Point(634, 106);
             guna2HtmlLabel3.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(36, 17);
+            guna2HtmlLabel3.Size = new Size(75, 17);
             guna2HtmlLabel3.TabIndex = 52;
-            guna2HtmlLabel3.Text = "MaNV";
+            guna2HtmlLabel3.Text = "Mã nhân viên";
             // 
             // gnDtp_NgayDen
             // 
@@ -130,9 +130,9 @@
             guna2HtmlLabel4.Location = new Point(29, 106);
             guna2HtmlLabel4.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(52, 17);
+            guna2HtmlLabel4.Size = new Size(54, 17);
             guna2HtmlLabel4.TabIndex = 38;
-            guna2HtmlLabel4.Text = "NgayDen";
+            guna2HtmlLabel4.Text = "Ngày đến";
             // 
             // gnTxt_HoaDonTheoID
             // 
@@ -162,9 +162,9 @@
             guna2HtmlLabel1.Location = new Point(29, 30);
             guna2HtmlLabel1.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(84, 17);
+            guna2HtmlLabel1.Size = new Size(90, 17);
             guna2HtmlLabel1.TabIndex = 35;
-            guna2HtmlLabel1.Text = "HoaDonTheoID";
+            guna2HtmlLabel1.Text = "Hóa đơn theo ID";
             // 
             // guna2HtmlLabel2
             // 
@@ -172,9 +172,9 @@
             guna2HtmlLabel2.Location = new Point(327, 30);
             guna2HtmlLabel2.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(76, 17);
+            guna2HtmlLabel2.Size = new Size(66, 17);
             guna2HtmlLabel2.TabIndex = 36;
-            guna2HtmlLabel2.Text = "KhachHangID";
+            guna2HtmlLabel2.Text = "Khách hàng";
             // 
             // guna2GradientPanel1
             // 
@@ -194,7 +194,7 @@
             guna2GradientPanel1.Controls.Add(guna2HtmlLabel2);
             guna2GradientPanel1.Controls.Add(guna2HtmlLabel6);
             guna2GradientPanel1.CustomizableEdges = customizableEdges15;
-            guna2GradientPanel1.Location = new Point(8, 359);
+            guna2GradientPanel1.Location = new Point(8, 370);
             guna2GradientPanel1.Margin = new Padding(3, 2, 3, 2);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
@@ -264,9 +264,9 @@
             guna2HtmlLabel7.Location = new Point(29, 184);
             guna2HtmlLabel7.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            guna2HtmlLabel7.Size = new Size(43, 17);
+            guna2HtmlLabel7.Size = new Size(44, 17);
             guna2HtmlLabel7.TabIndex = 56;
-            guna2HtmlLabel7.Text = "GhiChu";
+            guna2HtmlLabel7.Text = "Ghi chú";
             // 
             // gnTxt_GhiChu
             // 
@@ -313,9 +313,9 @@
             guna2HtmlLabel5.Location = new Point(327, 106);
             guna2HtmlLabel5.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new Size(42, 17);
+            guna2HtmlLabel5.Size = new Size(44, 17);
             guna2HtmlLabel5.TabIndex = 54;
-            guna2HtmlLabel5.Text = "NgayDi";
+            guna2HtmlLabel5.Text = "Ngày đi";
             // 
             // guna2HtmlLabel8
             // 
