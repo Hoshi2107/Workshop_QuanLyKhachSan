@@ -20,24 +20,21 @@ namespace GUI_QuanLyKhachSan
 
         private void LoadLoaiTrangThaiDatPhong()
         {
-            BLL_NhanVien bUSNhanVien = new BLL_NhanVien();
-            guna2DgvNhanVien.DataSource = null;
-            guna2DgvNhanVien.DataSource = bUSNhanVien.GetNhanViensList();
-            guna2DgvNhanVien.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
-            guna2DgvNhanVien.Columns["HoTen"].HeaderText = "Họ Và Tên";
-            guna2DgvNhanVien.Columns["GioiTinh"].HeaderText = "Gioi Tinh";
-            guna2DgvNhanVien.Columns["Email"].HeaderText = "Email";
-            guna2DgvNhanVien.Columns["DiaChi"].HeaderText = "Địa chỉ";
-            guna2DgvNhanVien.Columns["MatKhau"].HeaderText = "Mật khẩu";
-            guna2DgvNhanVien.Columns["VaiTroText"].HeaderText = "Vai Trò";
-            guna2DgvNhanVien.Columns["TinhTrangText"].HeaderText = "Tình Trạng";
-            guna2DgvNhanVien.Columns["vaiTro"].Visible = false;
-            guna2DgvNhanVien.Columns["TinhTrang"].Visible = false;
-            guna2DgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
         private void LoaiTrangThaiDatphong_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void LoaiTrangThaiDatphong_Load_1(object sender, EventArgs e)
+        {
+            loadtrangthaidatphong();
+        }
+        private void loadtrangthaidatphong()
+        {
+            BUSLoaiTrangThaiDatPhong busLoaiTrangThaiDatPhong = new BUSLoaiTrangThaiDatPhong();
+            guna2DataGridView1.DataSource = busLoaiTrangThaiDatPhong.GetLoaiTrangThaiDatPhongList();
         }
     }
 }

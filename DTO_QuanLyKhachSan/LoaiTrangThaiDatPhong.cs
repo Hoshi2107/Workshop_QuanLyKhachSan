@@ -8,7 +8,7 @@ namespace DTO_QuanLyKhachSan
 {
     public class LoaiTrangThaiDatPhong
     {
-        public string MaLoaiTrangThai {  get; set; }
+        public string LoaiTrangThaiID {  get; set; }
         public string TenTrangThai {  get; set; }
 
     }

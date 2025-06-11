@@ -49,10 +49,10 @@ namespace GUI_QuanLyKhachSan
 
         }
 
-        private void FrmQuanLyKhachHang_Load(object sender, EventArgs e)
-        {
-            LoadDanhSachKhachHang();
-        }
+        //private void FrmQuanLyKhachHang_Load(object sender, EventArgs e)
+        //{
+        //    LoadDanhSachKhachHang();
+        //}
         private void LoadDanhSachKhachHang()
         {
             BLL_QuanLyKhachSan.BusKhachHang busKhachHang = new BLL_QuanLyKhachSan.BusKhachHang();
@@ -61,7 +61,7 @@ namespace GUI_QuanLyKhachSan
 
         private void FrmQuanLyKhachHang_Load(object sender, EventArgs e)
         {
-
+            LoadDanhSachKhachHang();
         }
     }
 }
