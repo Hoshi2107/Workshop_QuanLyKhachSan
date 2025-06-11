@@ -43,7 +43,7 @@ namespace GUI_QuanLyKhachSan
         private void loadLoaiDV()
         {
             BUSLoaiDV service = new BUSLoaiDV();
-            dgrLoaiDV.DataSource = service.GetLoaiDVList(); 
+            dgrLoaiDV.DataSource = service.GetLoaiDVList();
         }
 
 
@@ -117,7 +117,7 @@ namespace GUI_QuanLyKhachSan
             ClearFrom();
         }
 
-       
+
 
         private void dgrLoaiDV_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
