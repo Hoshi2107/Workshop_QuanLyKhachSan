@@ -623,6 +623,7 @@
             Controls.Add(guna2GradientPanel1);
             Name = "FrmQuanLyKhachHang";
             Text = "FrmQuanLyKhachHang";
+            Load += FrmQuanLyKhachHang_Load;
             guna2GradientPanel1.ResumeLayout(false);
             guna2GradientPanel1.PerformLayout();
             gnGroupBox_TrangThai.ResumeLayout(false);
