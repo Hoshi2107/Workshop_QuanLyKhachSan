@@ -488,6 +488,7 @@
             guna2Button2.Size = new Size(118, 33);
             guna2Button2.TabIndex = 54;
             guna2Button2.Text = "Sửa";
+            guna2Button2.Click += btnSưa_Click;
             // 
             // guna2Button1
             // 
@@ -509,6 +510,7 @@
             guna2Button1.Size = new Size(118, 33);
             guna2Button1.TabIndex = 53;
             guna2Button1.Text = "Thêm ";
+            guna2Button1.Click += btnThem_Click;
             // 
             // guna2GradientPanel1
             // 
