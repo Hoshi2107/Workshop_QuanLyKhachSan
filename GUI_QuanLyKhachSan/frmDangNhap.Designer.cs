@@ -136,7 +136,7 @@
             guna2Button1.HoverState.BorderColor = Color.FromArgb(18, 48, 100);
             guna2Button1.HoverState.FillColor = Color.Transparent;
             guna2Button1.HoverState.ForeColor = Color.FromArgb(18, 48, 100);
-            guna2Button1.Location = new Point(244, 390);
+            guna2Button1.Location = new Point(241, 336);
             guna2Button1.Margin = new Padding(5);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
@@ -152,7 +152,7 @@
             guna2CustomCheckBox1.CheckedState.BorderThickness = 0;
             guna2CustomCheckBox1.CheckedState.FillColor = Color.FromArgb(18, 48, 100);
             guna2CustomCheckBox1.CustomizableEdges = customizableEdges9;
-            guna2CustomCheckBox1.Location = new Point(65, 342);
+            guna2CustomCheckBox1.Location = new Point(60, 302);
             guna2CustomCheckBox1.Margin = new Padding(5);
             guna2CustomCheckBox1.Name = "guna2CustomCheckBox1";
             guna2CustomCheckBox1.ShadowDecoration.CustomizableEdges = customizableEdges10;
@@ -167,7 +167,7 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = Color.Gray;
-            label1.Location = new Point(93, 340);
+            label1.Location = new Point(88, 300);
             label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
             label1.Size = new Size(112, 19);
@@ -178,8 +178,8 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.Gray;
-            label2.Location = new Point(65, 151);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(88, 150);
             label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
             label2.Size = new Size(102, 17);
@@ -191,7 +191,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Bahnschrift", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(18, 48, 100);
-            label3.Location = new Point(200, 151);
+            label3.Location = new Point(186, 151);
             label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
             label3.Size = new Size(176, 16);
@@ -231,7 +231,7 @@
             guna2Button2.HoverState.BorderColor = Color.FromArgb(18, 48, 100);
             guna2Button2.HoverState.FillColor = Color.Transparent;
             guna2Button2.HoverState.ForeColor = Color.FromArgb(18, 48, 100);
-            guna2Button2.Location = new Point(53, 390);
+            guna2Button2.Location = new Point(50, 336);
             guna2Button2.Margin = new Padding(5);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges12;
@@ -240,7 +240,7 @@
             guna2Button2.Text = "Thoát";
             guna2Button2.Click += guna2Button2_Click;
             // 
-            // Form1
+            // frmDangNhap
             // 
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -260,7 +260,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(5);
-            Name = "Form1";
+            Name = "frmDangNhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             TransparencyKey = Color.Black;

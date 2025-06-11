@@ -31,8 +31,8 @@ namespace GUI_QuanLyKhachSan
         }
         private void LoaddichVu()
         {
-            //BUSDichVu bUSDichVu = new BUSDichVu();
-            //dgvDichVu.DataSource = bUSDichVu.GetDichVuList();
+            BUSDichVu bUSDichVu = new BUSDichVu();
+            guna2DgvNhanVien.DataSource = bUSDichVu.GetDichVuList();
         }
         private void DichVu_Load(object sender, EventArgs e)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL_QuanLyKhachSan;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +30,12 @@ namespace GUI_QuanLyKhachSan
 
         private void ChiTietDichVu_Load(object sender, EventArgs e)
         {
-
+            LoadchitetdichVu();
+        }
+        private void LoadchitetdichVu()
+        {
+            BUSChiTietDV bUSchitietDichVu = new BUSChiTietDV();
+            guna2DataGridView1.DataSource = bUSchitietDichVu.GetchitietDichVuList();
         }
     }
 }
