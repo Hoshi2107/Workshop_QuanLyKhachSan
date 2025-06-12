@@ -43,7 +43,7 @@ namespace GUI_QuanLyKhachSan
                 gnrdo_False.Checked = true;
             }
             gnTxt_GhiChu.Text = row.Cells["GhiChu"].Value.ToString();
-            
+
 
 
 
@@ -62,6 +62,11 @@ namespace GUI_QuanLyKhachSan
         private void FrmQuanLyKhachHang_Load(object sender, EventArgs e)
         {
             LoadDanhSachKhachHang();
+        }
+
+        private void gnDgv_KhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

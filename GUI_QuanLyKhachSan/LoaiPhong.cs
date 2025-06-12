@@ -28,5 +28,10 @@ namespace GUI_QuanLyKhachSan
 
             guna2DataGridView1.DataSource = bUSDichVu.GateLoaiPhong();
         }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

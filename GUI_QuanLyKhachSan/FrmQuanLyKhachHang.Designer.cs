@@ -219,7 +219,7 @@
             gnrdo_True.Location = new Point(10, 38);
             gnrdo_True.Margin = new Padding(3, 2, 3, 2);
             gnrdo_True.Name = "gnrdo_True";
-            gnrdo_True.Size = new Size(47, 19);
+            gnrdo_True.Size = new Size(48, 19);
             gnrdo_True.TabIndex = 0;
             gnrdo_True.Text = "True";
             gnrdo_True.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
@@ -251,7 +251,7 @@
             guna2HtmlLabel9.Location = new Point(29, 194);
             guna2HtmlLabel9.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            guna2HtmlLabel9.Size = new Size(53, 17);
+            guna2HtmlLabel9.Size = new Size(54, 17);
             guna2HtmlLabel9.TabIndex = 69;
             guna2HtmlLabel9.Text = "Ngày Tạo";
             // 
@@ -337,7 +337,7 @@
             guna2HtmlLabel4.Location = new Point(327, 116);
             guna2HtmlLabel4.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(23, 17);
+            guna2HtmlLabel4.Size = new Size(24, 17);
             guna2HtmlLabel4.TabIndex = 65;
             guna2HtmlLabel4.Text = "SĐT";
             // 
@@ -433,7 +433,7 @@
             guna2HtmlLabel2.Location = new Point(327, 23);
             guna2HtmlLabel2.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(41, 17);
+            guna2HtmlLabel2.Size = new Size(42, 17);
             guna2HtmlLabel2.TabIndex = 36;
             guna2HtmlLabel2.Text = "Họ Tên";
             // 
@@ -541,6 +541,7 @@
             gnDgv_KhachHang.ThemeStyle.RowsStyle.Height = 29;
             gnDgv_KhachHang.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             gnDgv_KhachHang.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            gnDgv_KhachHang.CellContentClick += gnDgv_KhachHang_CellContentClick;
             gnDgv_KhachHang.CellContentDoubleClick += gnDgv_KhachHang_CellContentDoubleClick;
             // 
             // guna2Button5

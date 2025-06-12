@@ -48,5 +48,10 @@ namespace GUI_QuanLyKhachSan
             BusPhong bllPhong = new BusPhong();
             guna2DgvPhong.DataSource = bllPhong.GetPhongList();
         }
+
+        private void guna2DgvPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -11,6 +11,11 @@ namespace BLL_QuanLyKhachSan
 {
     public class BLLTrangThaiDatPhong
     {
-      
+        DALTrangThaiDatPhong dalTrangThaiDatPhong = new DALTrangThaiDatPhong();
+        public List<TrangThaiDatPhong> GetAllTrangThai()
+        {
+            return dalTrangThaiDatPhong.SelectAll();
+        }
+
     }
 }
