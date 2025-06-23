@@ -168,7 +168,7 @@
             guna2DateTimePicker1.CustomizableEdges = customizableEdges3;
             guna2DateTimePicker1.Font = new Font("Segoe UI", 9F);
             guna2DateTimePicker1.Format = DateTimePickerFormat.Long;
-            guna2DateTimePicker1.Location = new Point(425, 108);
+            guna2DateTimePicker1.Location = new Point(429, 108);
             guna2DateTimePicker1.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             guna2DateTimePicker1.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             guna2DateTimePicker1.Name = "guna2DateTimePicker1";
@@ -209,7 +209,7 @@
             textdonvitinh.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             textdonvitinh.Font = new Font("Segoe UI", 9F);
             textdonvitinh.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            textdonvitinh.Location = new Point(122, 121);
+            textdonvitinh.Location = new Point(126, 121);
             textdonvitinh.Margin = new Padding(3, 5, 3, 5);
             textdonvitinh.Name = "textdonvitinh";
             textdonvitinh.PasswordChar = '\0';
@@ -230,7 +230,7 @@
             textTenDV.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             textTenDV.Font = new Font("Segoe UI", 9F);
             textTenDV.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            textTenDV.Location = new Point(425, 37);
+            textTenDV.Location = new Point(429, 37);
             textTenDV.Margin = new Padding(3, 5, 3, 5);
             textTenDV.Name = "textTenDV";
             textTenDV.PasswordChar = '\0';
@@ -327,7 +327,7 @@
             textLoaiDichVuID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             textLoaiDichVuID.Font = new Font("Segoe UI", 9F);
             textLoaiDichVuID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            textLoaiDichVuID.Location = new Point(122, 37);
+            textLoaiDichVuID.Location = new Point(126, 37);
             textLoaiDichVuID.Margin = new Padding(3, 5, 3, 5);
             textLoaiDichVuID.Name = "textLoaiDichVuID";
             textLoaiDichVuID.PasswordChar = '\0';
