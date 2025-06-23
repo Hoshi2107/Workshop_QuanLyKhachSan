@@ -22,7 +22,7 @@ namespace DAL_QuanLyKhachSan
                     TrangThaiDatPhong entity = new TrangThaiDatPhong();
                     
                         entity.TrangThaiID = reader.GetString("TrangThaiID");
-                    entity.HoaDonThueID = reader.GetString("MaHoaDonThue");
+                    entity.HoaDonThueID = reader.GetString("HoaDonThueID");
                     entity.LoaiTrangThaiID = reader.GetString("LoaiTrangThaiID");
                     entity.NgayCapNhat = reader.GetDateTime("NgayCapNhat");
                     

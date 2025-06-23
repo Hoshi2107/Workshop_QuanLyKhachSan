@@ -13,26 +13,26 @@ namespace GUI_QuanLyKhachSan
 {
     public partial class TrangThaiDatphong : Form
     {
-        private BLLTrangThaiDatPhong bll = new BLLTrangThaiDatPhong();
+
         public TrangThaiDatphong()
         {
             InitializeComponent();
         }
         private void TrangThaiDatPhong_Load(object sender, EventArgs e)
         {
-            LoadTrangThaiDatPhong();
            
+
         }
-        
+
         private void LoadTrangThaiDatPhong()
         {
             BLLTrangThaiDatPhong bllTrangThai = new BLLTrangThaiDatPhong();
 
-            
-            
+
+
 
             dgvTrangThaiDatPhong.DataSource = bllTrangThai.GetAllTrangThai();
-            
+
         }
 
         private void dgvTrangThaiDatPhong_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -42,13 +42,18 @@ namespace GUI_QuanLyKhachSan
 
         private void dgvTrangThaiDatPhong_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             DataGridViewRow row = dgvTrangThaiDatPhong.Rows[e.RowIndex];
             gntxtTrangThaiID.Text = row.Cells["TrangThaiID"].Value.ToString();
             gncboHoaDonThueID.Text = row.Cells["MaHoaDonThue"].Value.ToString();
             gncboLoaitrangThaiID.Text = row.Cells["LoaiTrangThaiID"].Value.ToString();
             gnDtpNgayCapNhat.Value = Convert.ToDateTime(row.Cells["NgayCapNhat"].Value);
 
+        }
+
+        private void TrangThaiDatphong_Load_1(object sender, EventArgs e)
+        {
+            LoadTrangThaiDatPhong();
         }
     }
 }
