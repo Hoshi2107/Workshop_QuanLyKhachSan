@@ -44,26 +44,26 @@ namespace GUI_QuanLyKhachSan
             btnThem.Enabled = true;
             btnSua.Enabled = false;
             btnXoa.Enabled = true;
-            textDichVuID.Clear();
-            textGhiChu.Clear();
-            textHoaDonThueID.Clear();
+            txtIDDichVu.Clear();
+            txtGhiChu.Clear();
+            txtIDThueHoaDon.Clear();
             textTimKiem.Clear();
-            guna2DateTimePicker1.Value = DateTime.Now;
-            textDichVuID.Enabled = false;
+            dtpNgayTao.Value = DateTime.Now;
+            txtIDDichVu.Enabled = false;
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string DichVuID = textDichVuID.Text.Trim();
-            string HoaDonThueID = textHoaDonThueID.Text.Trim();
+            string DichVuID = txtIDDichVu.Text.Trim();
+            string HoaDonThueID = txtIDThueHoaDon.Text.Trim();
 
-            DateTime ngayTao = guna2DateTimePicker1.Value;
-            bool trangThai = RdoDaThanhToan.Checked;
+            DateTime ngayTao = dtpNgayTao.Value;
+            bool trangThai = rdoDaThanhToan.Checked;
             if (string.IsNullOrEmpty(HoaDonThueID))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string ghiChu = textGhiChu.Text.Trim();
+            string ghiChu = txtGhiChu.Text.Trim();
 
             DichVu dichvu = new DichVu
             {
@@ -94,7 +94,7 @@ namespace GUI_QuanLyKhachSan
         private void btnXoa_Click(object sender, EventArgs e)
         {
 
-            string DichVuID = textDichVuID.Text.Trim();
+            string DichVuID = txtIDDichVu.Text.Trim();
 
             if (string.IsNullOrEmpty(DichVuID))
             {
@@ -123,18 +123,18 @@ namespace GUI_QuanLyKhachSan
 
         private void BtnSua_Click(object sender, EventArgs e)
         {
-            string DichVuID = textDichVuID.Text.Trim();
-            string HoaDonThueID = textHoaDonThueID.Text.Trim();
+            string DichVuID = txtIDDichVu.Text.Trim();
+            string HoaDonThueID = txtIDThueHoaDon.Text.Trim();
 
-            DateTime ngayTao = guna2DateTimePicker1.Value;
-            bool trangThai = RdoDaThanhToan.Checked;
+            DateTime ngayTao = dtpNgayTao.Value;
+            bool trangThai = rdoDaThanhToan.Checked;
 
             if (string.IsNullOrEmpty(HoaDonThueID))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string ghiChu = textGhiChu.Text.Trim();
+            string ghiChu = txtGhiChu.Text.Trim();
             DichVu dichvu = new DichVu
             {
                 DichVuID = DichVuID,
