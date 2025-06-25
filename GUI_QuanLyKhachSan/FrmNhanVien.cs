@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using BLL_QuanLyKhachSan;
 using DTO_QuanLyKhachSan;
 namespace GUI_QuanLyKhachSan
@@ -72,20 +73,7 @@ namespace GUI_QuanLyKhachSan
             string email = txtemail.Text.Trim();
             string diaChi = txtdiachi.Text.Trim();
             string matKhau = txtmatkhau.Text.Trim();
-            bool vaiTro;
-            if (rdoquanly.Checked)
-            {
-                vaiTro = true; // Quản lý
-            }
-            else if (rdonhanvien.Checked)
-            {
-                vaiTro = false; // Nhân viên
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn vai trò cho nhân viên.");
-                return;
-            }
+            
             bool tinhTrang;
             if (rdoconhoatdong.Checked)
             {
@@ -100,22 +88,38 @@ namespace GUI_QuanLyKhachSan
                 MessageBox.Show("Vui lòng chọn tình trạng cho nhân viên.");
                 return;
             }
+            bool vaiTro;
+            if (rdoquanly.Checked)
+            {
+                vaiTro = true; // Quản lý
+            }
+            else if (rdonhanvien.Checked)
+            {
+                vaiTro = false; // Nhân viên
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn vai trò cho nhân viên.");
+                return;
+            }
             if (string.IsNullOrEmpty(hoTen) || string.IsNullOrEmpty(gioiTinh) ||
                 string.IsNullOrEmpty(email) || string.IsNullOrEmpty(diaChi) || string.IsNullOrEmpty(matKhau))
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin nhân viên.");
                 return;
             }
+           
             DTO_NhanVien nv = new DTO_NhanVien
             {
-                MaNV = "",
+                 // Tự động sinh mã nhân viên
                 HoTen = hoTen,
                 GioiTinh = gioiTinh,
                 Email = email,
                 DiaChi = diaChi,
                 MatKhau = matKhau,
-                VaiTro = vaiTro,
-                TinhTrang = tinhTrang
+                TinhTrang = tinhTrang,
+                VaiTro = vaiTro
+                
             };
             BLL_NhanVien bUSNhanVien = new BLL_NhanVien();
             string result = bUSNhanVien.InsertNhanVien(nv);
@@ -139,7 +143,8 @@ namespace GUI_QuanLyKhachSan
 
         private void btnsua_Click(object sender, EventArgs e)
         {
-            string maNV = txtmanv.Text.Trim();
+            
+
             string hoTen = txthoten.Text.Trim();
             string gioiTinh = txtgioitinh.Text.Trim();
             string email = txtemail.Text.Trim();
@@ -181,7 +186,7 @@ namespace GUI_QuanLyKhachSan
             }
             DTO_NhanVien nv = new DTO_NhanVien
             {
-                MaNV = maNV,
+               
                 HoTen = hoTen,
                 GioiTinh = gioiTinh,
                 Email = email,
