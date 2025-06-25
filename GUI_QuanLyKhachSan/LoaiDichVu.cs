@@ -68,7 +68,7 @@ namespace GUI_QuanLyKhachSan
             string tenDichVu = textTenDV.Text.Trim();
             string giaDichVutext = TextGiaDV.Text.Trim();
             string donViTinh = textdonvitinh.Text.Trim();
-            DateTime ngayTao = guna2DateTimePicker1.Value;
+            DateTime ngayTao = dtpNgayTao.Value;
             bool trangThai = RdoConHoatDong.Checked;
             if (string.IsNullOrEmpty(tenDichVu) || string.IsNullOrEmpty(giaDichVutext) || string.IsNullOrEmpty(donViTinh))
             {
@@ -127,7 +127,7 @@ namespace GUI_QuanLyKhachSan
             textTenDV.Text = row.Cells["TenDichVu"].Value.ToString();
             TextGiaDV.Text = row.Cells["GiaDichVu"].Value.ToString();
             textdonvitinh.Text = row.Cells["DonViTinh"].Value.ToString();
-            guna2DateTimePicker1.Text = row.Cells["NgayTao"].Value.ToString();
+            dtpNgayTao.Text = row.Cells["NgayTao"].Value.ToString();
             textghichu.Text = row.Cells["GhiChu"].Value.ToString();
             bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
             if (trangThai)
@@ -148,7 +148,7 @@ namespace GUI_QuanLyKhachSan
             string tenDichVu = textTenDV.Text.Trim();
             string giaDichVutext = TextGiaDV.Text.Trim();
             string donViTinh = textdonvitinh.Text.Trim();
-            DateTime ngayTao = guna2DateTimePicker1.Value;
+            DateTime ngayTao = dtpNgayTao.Value;
             bool trangThai = RdoConHoatDong.Checked;
 
             if (string.IsNullOrEmpty(loaiDichVuID) || string.IsNullOrEmpty(tenDichVu) || string.IsNullOrEmpty(giaDichVutext) || string.IsNullOrEmpty(donViTinh))
@@ -191,6 +191,11 @@ namespace GUI_QuanLyKhachSan
                 loadLoaiDV();
                 ClearFrom();
             }
+
+        }
+
+        private void textTimKiem_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
