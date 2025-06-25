@@ -47,10 +47,13 @@ namespace BLL_QuanLyKhachSan
         {
             try
             {
-                nv.MaNV = dalNhanVien.generateMaNhanVien();
-                if (string.IsNullOrEmpty(nv.MaNV))
+                if (string.IsNullOrWhiteSpace(nv.MaNV))
                 {
-                    return "Mã nhân viên không hợp lệ.";
+                    nv.MaNV = dalNhanVien.generateMaNhanVien();
+                }
+                if (string.IsNullOrEmpty(nv.HoTen))
+                {
+                    return "Họ tên không được để trống.";
                 }
                 dalNhanVien.insertNhanVien(nv);
                 return string.Empty;

@@ -99,12 +99,14 @@ namespace DAL_QuanLyKhachSan
         {
             try
             {
-                string sql = @"INSERT INTO NhanVien (MaNhanVien, HoTen, Email, MatKhau, VaiTro, TrangThai) 
-                   VALUES (@0, @1, @2, @3, @4, @5)";
+                string sql = @"INSERT INTO NhanVien (MaNV, HoTen,GioiTinh, Email,DiaChi, MatKhau, VaiTro, TinhTrang) 
+                   VALUES (@0, @1, @2, @3, @4, @5,@6,@7)";
                 List<object> thamSo = new List<object>();
                 thamSo.Add(nv.MaNV);
                 thamSo.Add(nv.HoTen);
+                thamSo.Add(nv.GioiTinh);
                 thamSo.Add(nv.Email);
+                thamSo.Add (nv.DiaChi);
                 thamSo.Add(nv.MatKhau);
                 thamSo.Add(nv.VaiTro);
                 thamSo.Add(nv.TinhTrang);
@@ -136,7 +138,7 @@ namespace DAL_QuanLyKhachSan
         public string generateMaNhanVien()
         {
             string prefix = "NV";
-            string sql = "SELECT MAX(MaNhanVien) FROM NhanVien";
+            string sql = "SELECT MAX(MaNV) FROM NhanVien";
             List<object> thamSo = new List<object>();
             object result = DBUtil.Query(sql, thamSo);
             if (result != null && result.ToString().StartsWith(prefix))
