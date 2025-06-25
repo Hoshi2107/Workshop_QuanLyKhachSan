@@ -22,7 +22,6 @@ namespace DAL_QuanLyKhachSan
                     LoaiTrangThaiDatPhong entity = new LoaiTrangThaiDatPhong();
                     entity.LoaiTrangThaiID = reader.GetString("LoaiTrangThaiID");
                     entity.TenTrangThai = reader.GetString("TenTrangThai");
-                               
                     list.Add(entity);
                 }
 

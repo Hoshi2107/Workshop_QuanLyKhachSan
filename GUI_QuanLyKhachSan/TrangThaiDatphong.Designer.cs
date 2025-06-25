@@ -89,7 +89,7 @@ namespace GUI_QuanLyKhachSan
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvTrangThaiDatPhong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvTrangThaiDatPhong.ColumnHeadersHeight = 4;
+            dgvTrangThaiDatPhong.ColumnHeadersHeight = 50;
             dgvTrangThaiDatPhong.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
@@ -118,7 +118,7 @@ namespace GUI_QuanLyKhachSan
             dgvTrangThaiDatPhong.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
             dgvTrangThaiDatPhong.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             dgvTrangThaiDatPhong.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dgvTrangThaiDatPhong.ThemeStyle.HeaderStyle.Height = 4;
+            dgvTrangThaiDatPhong.ThemeStyle.HeaderStyle.Height = 50;
             dgvTrangThaiDatPhong.ThemeStyle.ReadOnly = false;
             dgvTrangThaiDatPhong.ThemeStyle.RowsStyle.BackColor = Color.White;
             dgvTrangThaiDatPhong.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
