@@ -26,7 +26,7 @@ namespace GUI_QuanLyKhachSan
         {
             BUSLoaiPhong bUSDichVu = new BUSLoaiPhong();
 
-            guna2DataGridView1.DataSource = bUSDichVu.GateLoaiPhong();
+            dgvloaiphong.DataSource = bUSDichVu.GateLoaiPhong();
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -53,7 +53,7 @@ namespace GUI_QuanLyKhachSan
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtmaloaiphong = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            dgvloaitrangthaiphong = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             txttenloaiphong = new Guna.UI2.WinForms.Guna2TextBox();
@@ -64,7 +64,7 @@ namespace GUI_QuanLyKhachSan
             btnsua = new Guna.UI2.WinForms.Guna2Button();
             btnthem = new Guna.UI2.WinForms.Guna2Button();
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvloaitrangthaiphong).BeginInit();
             guna2GradientPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -90,10 +90,10 @@ namespace GUI_QuanLyKhachSan
             txtmaloaiphong.Size = new Size(553, 24);
             txtmaloaiphong.TabIndex = 11;
             // 
-            // guna2DataGridView1
+            // dgvloaitrangthaiphong
             // 
             dataGridViewCellStyle4.BackColor = Color.White;
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvloaitrangthaiphong.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
             dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
@@ -101,9 +101,9 @@ namespace GUI_QuanLyKhachSan
             dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            guna2DataGridView1.ColumnHeadersHeight = 50;
-            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvloaitrangthaiphong.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dgvloaitrangthaiphong.ColumnHeadersHeight = 50;
+            dgvloaitrangthaiphong.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = Color.White;
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
@@ -111,38 +111,38 @@ namespace GUI_QuanLyKhachSan
             dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
             dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
-            guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(12, 50);
-            guna2DataGridView1.Margin = new Padding(3, 2, 3, 2);
-            guna2DataGridView1.Name = "guna2DataGridView1";
-            guna2DataGridView1.RowHeadersVisible = false;
-            guna2DataGridView1.RowHeadersWidth = 51;
-            guna2DataGridView1.RowTemplate.Height = 29;
-            guna2DataGridView1.Size = new Size(1059, 234);
-            guna2DataGridView1.TabIndex = 10;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 50;
-            guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            guna2DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
-            guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.ThemeStyle.RowsStyle.Height = 29;
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.CellContentClick += guna2DataGridView1_CellContentClick;
+            dgvloaitrangthaiphong.DefaultCellStyle = dataGridViewCellStyle6;
+            dgvloaitrangthaiphong.GridColor = Color.FromArgb(231, 229, 255);
+            dgvloaitrangthaiphong.Location = new Point(12, 50);
+            dgvloaitrangthaiphong.Margin = new Padding(3, 2, 3, 2);
+            dgvloaitrangthaiphong.Name = "dgvloaitrangthaiphong";
+            dgvloaitrangthaiphong.RowHeadersVisible = false;
+            dgvloaitrangthaiphong.RowHeadersWidth = 51;
+            dgvloaitrangthaiphong.RowTemplate.Height = 29;
+            dgvloaitrangthaiphong.Size = new Size(1059, 234);
+            dgvloaitrangthaiphong.TabIndex = 10;
+            dgvloaitrangthaiphong.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            dgvloaitrangthaiphong.ThemeStyle.AlternatingRowsStyle.Font = null;
+            dgvloaitrangthaiphong.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            dgvloaitrangthaiphong.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            dgvloaitrangthaiphong.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            dgvloaitrangthaiphong.ThemeStyle.BackColor = Color.White;
+            dgvloaitrangthaiphong.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            dgvloaitrangthaiphong.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            dgvloaitrangthaiphong.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            dgvloaitrangthaiphong.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F);
+            dgvloaitrangthaiphong.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            dgvloaitrangthaiphong.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dgvloaitrangthaiphong.ThemeStyle.HeaderStyle.Height = 50;
+            dgvloaitrangthaiphong.ThemeStyle.ReadOnly = false;
+            dgvloaitrangthaiphong.ThemeStyle.RowsStyle.BackColor = Color.White;
+            dgvloaitrangthaiphong.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dgvloaitrangthaiphong.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F);
+            dgvloaitrangthaiphong.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            dgvloaitrangthaiphong.ThemeStyle.RowsStyle.Height = 29;
+            dgvloaitrangthaiphong.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dgvloaitrangthaiphong.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvloaitrangthaiphong.CellContentClick += guna2DataGridView1_CellContentClick;
             // 
             // guna2HtmlLabel1
             // 
@@ -345,13 +345,13 @@ namespace GUI_QuanLyKhachSan
             ClientSize = new Size(1083, 562);
             Controls.Add(guna2Button4);
             Controls.Add(guna2TextBox9);
-            Controls.Add(guna2DataGridView1);
+            Controls.Add(dgvloaitrangthaiphong);
             Controls.Add(guna2GradientPanel1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "LoaiTrangThaiDatphong";
             Text = "ChiTietDichVu";
             Load += LoaiTrangThaiDatphong_Load_1;
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvloaitrangthaiphong).EndInit();
             guna2GradientPanel1.ResumeLayout(false);
             guna2GradientPanel1.PerformLayout();
             ResumeLayout(false);
@@ -360,7 +360,7 @@ namespace GUI_QuanLyKhachSan
         #endregion
 
         private Guna.UI2.WinForms.Guna2TextBox txtmaloaiphong;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvloaitrangthaiphong;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2TextBox txttenloaiphong;

@@ -34,7 +34,7 @@ namespace GUI_QuanLyKhachSan
         private void loadtrangthaidatphong()
         {
             BUSLoaiTrangThaiDatPhong busLoaiTrangThaiDatPhong = new BUSLoaiTrangThaiDatPhong();
-            guna2DataGridView1.DataSource = busLoaiTrangThaiDatPhong.GetLoaiTrangThaiDatPhongList();
+            dgvloaitrangthaiphong.DataSource = busLoaiTrangThaiDatPhong.GetLoaiTrangThaiDatPhongList();
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
