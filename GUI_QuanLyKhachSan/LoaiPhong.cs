@@ -33,5 +33,10 @@ namespace GUI_QuanLyKhachSan
         {
 
         }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
