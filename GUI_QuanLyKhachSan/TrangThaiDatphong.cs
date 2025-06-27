@@ -45,8 +45,8 @@ namespace GUI_QuanLyKhachSan
 
             DataGridViewRow row = dgvTrangThaiDatPhong.Rows[e.RowIndex];
             gntxtTrangThaiID.Text = row.Cells["TrangThaiID"].Value.ToString();
-            gncboHoaDonThueID.Text = row.Cells["MaHoaDonThue"].Value.ToString();
-            gncboLoaitrangThaiID.Text = row.Cells["LoaiTrangThaiID"].Value.ToString();
+            gntxtHoaDonThueID.Text = row.Cells["HoaDonThueID"].Value.ToString();
+            gntxtLoaiTrangThaiID.Text = row.Cells["LoaiTrangThaiID"].Value.ToString();
             gnDtpNgayCapNhat.Value = Convert.ToDateTime(row.Cells["NgayCapNhat"].Value);
 
         }
