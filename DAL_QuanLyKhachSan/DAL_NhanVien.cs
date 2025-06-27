@@ -140,7 +140,7 @@ namespace DAL_QuanLyKhachSan
             string prefix = "NV";
             string sql = "SELECT MAX(MaNV) FROM NhanVien";
             List<object> thamSo = new List<object>();
-            object result = DBUtil.Query(sql, thamSo);
+            object result = DBUtil.ScalarQuery(sql, thamSo);
             if (result != null && result.ToString().StartsWith(prefix))
             {
                 string maxCode = result.ToString().Substring(2);
