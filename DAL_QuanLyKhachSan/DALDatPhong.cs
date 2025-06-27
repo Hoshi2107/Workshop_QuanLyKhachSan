@@ -43,5 +43,7 @@ namespace DAL_QuanLyKhachSan
             return SelectBySql(sql, new List<object>());
         }
 
+      
+
     }
 }
