@@ -27,22 +27,22 @@ namespace GUI_QuanLyKhachSan
         private void gnDgv_KhachHang_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = gnDgv_KhachHang.Rows[e.RowIndex];
-            gnTxt_KhachHangID.Text = row.Cells["MaKhachHang"].Value.ToString();
-            gnTxt_HoTen.Text = row.Cells["HoTen"].Value.ToString();
-            gnTxt_DiaChi.Text = row.Cells["DiaChi"].Value.ToString();
-            gnTxt_GioiTinh.Text = row.Cells["GioiTinh"].Value.ToString();
-            gnTxt_SDT.Text = row.Cells["SoDienThoai"].Value.ToString();
-            gnDtp_NgayTao.Value = Convert.ToDateTime(row.Cells["NgayTao"].Value);
+            txtIDKhachHang.Text = row.Cells["MaKhachHang"].Value.ToString();
+            txtHoTen.Text = row.Cells["HoTen"].Value.ToString();
+            txtDiaChi.Text = row.Cells["DiaChi"].Value.ToString();
+            txtGioiTInh.Text = row.Cells["GioiTinh"].Value.ToString();
+            txtSDT.Text = row.Cells["SoDienThoai"].Value.ToString();
+            dtpNgayTao.Value = Convert.ToDateTime(row.Cells["NgayTao"].Value);
             bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
             if (trangThai)
             {
-                gnrdo_True.Checked = true;
+                rdoTrue.Checked = true;
             }
             else
             {
-                gnrdo_False.Checked = true;
+                rdoFalse.Checked = true;
             }
-            gnTxt_GhiChu.Text = row.Cells["GhiChu"].Value.ToString();
+            txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();
 
 
 

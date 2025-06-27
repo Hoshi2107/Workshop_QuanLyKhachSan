@@ -1,4 +1,5 @@
 ﻿using BLL_QuanLyKhachSan;
+using DTO_QuanLyKhachSan;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -34,13 +35,13 @@ namespace GUI_QuanLyKhachSan
         private void LoadComboBox()
         {
             BLL_NhanVien bllNhanVien = new BLL_NhanVien();
-            gnCbo_MaNV.DataSource = bllNhanVien.GetNhanVienList();
-            gnCbo_MaNV.DisplayMember = "HoTen";
-            gnCbo_MaNV.ValueMember = "MaNV";
+            cboMaNv.DataSource = bllNhanVien.GetNhanVienList();
+            cboMaNv.DisplayMember = "HoTen";
+            cboMaNv.ValueMember = "MaNV";
             BusPhong bllPhong = new BusPhong();
-            gnCbo_PhongID.DataSource = bllPhong.GetPhongList();
-            gnCbo_PhongID.DisplayMember = "TenPhong";
-            gnCbo_PhongID.ValueMember = "MaPhong";
+            cboIDPhong.DataSource = bllPhong.GetPhongList();
+            cboIDPhong.DisplayMember = "TenPhong";
+            cboIDPhong.ValueMember = "MaPhong";
         }
 
 
@@ -57,16 +58,56 @@ namespace GUI_QuanLyKhachSan
         private void guna2DgvDatPhong_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = guna2DgvDatPhong.Rows[e.RowIndex];
-            gnTxt_HoaDonTheoID.Text = row.Cells["MaHoaDonThue"].Value.ToString();
-            gnCbo_KhachHangID.Text = row.Cells["MaKhachHang"].Value.ToString();
-            gnCbo_PhongID.Text = row.Cells["MaPhong"].Value.ToString();
-            gnDtp_NgayDen.Value = Convert.ToDateTime(row.Cells["NgayDen"].Value);
-            gnDtp_NgayDi.Value = Convert.ToDateTime(row.Cells["NgayDi"].Value);
-            gnCbo_MaNV.Text = row.Cells["MaNV"].Value.ToString();
-            
-            
-            gnTxt_GhiChu.Text = row.Cells["GhiChu"].Value.ToString();
-            
+            txtHoaDonTheoID.Text = row.Cells["MaHoaDonThue"].Value.ToString();
+            cboKhachHang.Text = row.Cells["MaKhachHang"].Value.ToString();
+            cboIDPhong.Text = row.Cells["MaPhong"].Value.ToString();
+            dtpNgayDen.Value = Convert.ToDateTime(row.Cells["NgayDen"].Value);
+            dtpNgayDi.Value = Convert.ToDateTime(row.Cells["NgayDi"].Value);
+            cboMaNv.Text = row.Cells["MaNV"].Value.ToString();
+
+
+            txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();
+
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            LamMoiForm();
+            LoadDanhSachDatPhong();
+        }
+
+        private void LamMoiForm()
+        {
+            txtHoaDonTheoID.Clear(); // TextBox
+            txtGhiChu.Clear();
+
+            // ComboBox
+            cboKhachHang.SelectedIndex = -1;
+            cboIDPhong.SelectedIndex = -1;
+            cboMaNv.SelectedIndex = -1;
+
+            // DateTimePicker
+            dtpNgayDen.Value = DateTime.Now;
+            dtpNgayDi.Value = DateTime.Now.AddDays(1);
+
+            // Xóa chọn dòng trong DataGridView
+            guna2DgvDatPhong.ClearSelection();
+        }
+
     }
 }
