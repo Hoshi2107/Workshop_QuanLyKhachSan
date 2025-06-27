@@ -17,13 +17,23 @@ namespace DAL_QuanLyKhachSan
             SqlConnection conn = new SqlConnection(connectionString);
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.CommandType = cmdType;
-
-            for (int i = 0; i < args.Count; i++)
+            if (args != null)
             {
-                cmd.Parameters.AddWithValue($"@{i}", args[i]);
-            }
+                for (int i = 0; i < args.Count; i++)
+                {
+                    if (args[i] is SqlParameter param)
+                    {
+                        cmd.Parameters.Add(param);
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue($"@{i}", args[i]);
+                    }
+                }
 
+            }
             return cmd;
+
         }
 
 
@@ -36,12 +46,19 @@ namespace DAL_QuanLyKhachSan
             {
                 cmd.ExecuteNonQuery();
                 cmd.Transaction.Commit();
-
             }
             catch (Exception ex)
             {
-                cmd.Transaction.Rollback();
-                throw;
+                if (cmd.Transaction != null)
+                {
+                    cmd.Transaction.Rollback();
+                }
+
+                throw new Exception("Lỗi thực hiện câu lệnh SQL: " + ex.Message);
+            }
+            finally
+            {
+                cmd.Connection.Close();
             }
         }
         public static SqlDataReader Query(string sql, List<object> args, CommandType cmdType = CommandType.Text)
@@ -59,40 +76,26 @@ namespace DAL_QuanLyKhachSan
             }
         }
 
-        public static T Value<T>(string sql, List<object> args, CommandType cmdType = CommandType.Text) where T : new()
+        public static object Value(string sql, List<object> args, CommandType cmdType = CommandType.Text)
         {
             try
             {
-                SqlCommand cmd = GetCommand(sql, args, cmdType);
-                cmd.Connection.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read())
+                using (SqlCommand cmd = GetCommand(sql, args, cmdType))
                 {
-                    T result = new T();
-                    Type type = typeof(T);
-
-                    for (int i = 0; i < reader.FieldCount; i++)
+                    cmd.Connection.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        string columnName = reader.GetName(i);
-                        PropertyInfo propertyInfo = type.GetProperty(columnName);
-
-                        if (propertyInfo != null && propertyInfo.CanWrite)
+                        if (reader.Read())
                         {
-                            object value = reader.IsDBNull(i) ? null : reader.GetValue(i);
-                            if (value != null)
-                                propertyInfo.SetValue(result, Convert.ChangeType(value, propertyInfo.PropertyType));
+                            return reader[0]; // hoặc reader["TenCot"]
                         }
                     }
-
-                    return result;
                 }
-
-                return default;
+                return null;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw new Exception("Lỗi khi thực hiện câu lệnh SQL: " + ex.Message);
             }
         }
         public static object ScalarQuery(string sql, List<object> args, CommandType cmdType = CommandType.Text)

@@ -50,7 +50,7 @@ namespace GUI_QuanLyKhachSan
         private void loadDanhSachNhanVien()
         {
             BLL_NhanVien bUSNhanVien = new BLL_NhanVien();
-            guna2DgvNhanVien.DataSource = null;
+            
             guna2DgvNhanVien.DataSource = bUSNhanVien.GetNhanViensList();
             guna2DgvNhanVien.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
             guna2DgvNhanVien.Columns["HoTen"].HeaderText = "Họ Và Tên";
@@ -67,7 +67,7 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            
+            string maNV = txtmanv.Text.Trim();
             string hoTen = txthoten.Text.Trim();
             string gioiTinh = txtgioitinh.Text.Trim();
             string email = txtemail.Text.Trim();
@@ -111,7 +111,7 @@ namespace GUI_QuanLyKhachSan
            
             DTO_NhanVien nv = new DTO_NhanVien
             {
-                 // Tự động sinh mã nhân viên
+                
                 HoTen = hoTen,
                 GioiTinh = gioiTinh,
                 Email = email,
