@@ -67,13 +67,13 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            
+
             string hoTen = txthoten.Text.Trim();
             string gioiTinh = txtgioitinh.Text.Trim();
             string email = txtemail.Text.Trim();
             string diaChi = txtdiachi.Text.Trim();
             string matKhau = txtmatkhau.Text.Trim();
-            
+
             bool tinhTrang;
             if (rdoconhoatdong.Checked)
             {
@@ -108,10 +108,10 @@ namespace GUI_QuanLyKhachSan
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin nhân viên.");
                 return;
             }
-           
+
             DTO_NhanVien nv = new DTO_NhanVien
             {
-                 // Tự động sinh mã nhân viên
+                // Tự động sinh mã nhân viên
                 HoTen = hoTen,
                 GioiTinh = gioiTinh,
                 Email = email,
@@ -119,7 +119,7 @@ namespace GUI_QuanLyKhachSan
                 MatKhau = matKhau,
                 TinhTrang = tinhTrang,
                 VaiTro = vaiTro
-                
+
             };
             BLL_NhanVien bUSNhanVien = new BLL_NhanVien();
             string result = bUSNhanVien.InsertNhanVien(nv);
@@ -143,8 +143,6 @@ namespace GUI_QuanLyKhachSan
 
         private void btnsua_Click(object sender, EventArgs e)
         {
-            
-
             string hoTen = txthoten.Text.Trim();
             string gioiTinh = txtgioitinh.Text.Trim();
             string email = txtemail.Text.Trim();
@@ -186,7 +184,7 @@ namespace GUI_QuanLyKhachSan
             }
             DTO_NhanVien nv = new DTO_NhanVien
             {
-               
+
                 HoTen = hoTen,
                 GioiTinh = gioiTinh,
                 Email = email,
@@ -208,6 +206,51 @@ namespace GUI_QuanLyKhachSan
                 MessageBox.Show(result);
             }
 
+        }
+
+        private void guna2DgvNhanVien_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void guna2DgvNhanVien_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = guna2DgvNhanVien.Rows[e.RowIndex];
+            //Đổ dữ liệu vào các ô nhập liệu trên form
+            txtmanv.Text = row.Cells["MaNV"].Value.ToString();
+            txthoten.Text = row.Cells["HoTen"].Value.ToString();
+            txtgioitinh.Text = row.Cells["GioiTinh"].Value.ToString();
+            txtemail.Text = row.Cells["Email"].Value.ToString();
+            txtdiachi.Text = row.Cells["DiaChi"].Value.ToString();
+            txtmatkhau.Text = row.Cells["MatKhau"].Value.ToString();
+
+            bool vaiTro = Convert.ToBoolean(row.Cells["VaiTro"].Value);
+            if (vaiTro == false)
+            {
+                rdonhanvien.Checked = true;
+            }
+            else
+            {
+                rdoquanly.Checked = true;
+            }
+
+            bool trangThai = Convert.ToBoolean(row.Cells["TinhTrang"].Value);
+            if (trangThai == false)
+            {
+                rdoconhoatdong.Checked = true;
+            }
+            else
+            {
+                rdoconhoatdong.Checked = true;
+            }
+
+            //Bật nút sửa
+            btnthem.Enabled = true;
+            btnsua.Enabled = true;
+            btnxoa.Enabled = true;
+
+            //Tắt
+            txtmanv.Enabled = false;
         }
     }
 }

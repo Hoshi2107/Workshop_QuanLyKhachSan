@@ -10,11 +10,65 @@ namespace BLL_QuanLyKhachSan
 {
     public class BusKhachHang
     {
-        DALDatPhong dalDatPhong = new DALDatPhong();
-        public List<DatPhong> GetKhachHangList()
+        DALKhachHang dalKhachHang = new DALKhachHang();
+        public List<KhachHang> GetKhachHangList()
         {
-            return dalDatPhong.SelectAll();
+            return dalKhachHang.SelectAll();
         }
+        public string UpdateKhachHang(KhachHang kh)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(kh.KhachHangID))
+                {
+                    return "Mã nhân viên không hợp lệ ! ! !";
+                }
 
+                dalKhachHang.updateKhachHang(kh);
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi: " + ex.Message;
+            }
+        }
+        public string insertKhachHang(KhachHang kh)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(kh.KhachHangID))
+                {
+                    kh.KhachHangID = dalKhachHang.generateKhachHangID();
+                }
+                if (string.IsNullOrEmpty(kh.HoTen))
+                {
+                    return "Họ tên không được để trống.";
+                }
+                dalKhachHang.insertKhachHang(kh);
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi: " + ex.Message;
+            }
+        }
+        
+        public string deletekhachhang(string maKhachHang)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(maKhachHang))
+                {
+                    return "Mã khách hàng không hợp lệ ! ! !";
+                }
+                dalKhachHang.deleteKhachHang(maKhachHang);
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi: " + ex.Message;
+            }
+        }
     }
+
 }
