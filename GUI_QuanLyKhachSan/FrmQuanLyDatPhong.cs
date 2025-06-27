@@ -1,4 +1,5 @@
 ﻿using BLL_QuanLyKhachSan;
+using DTO_QuanLyKhachSan;
 using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
@@ -63,10 +64,50 @@ namespace GUI_QuanLyKhachSan
             dtpNgayDen.Value = Convert.ToDateTime(row.Cells["NgayDen"].Value);
             dtpNgayDi.Value = Convert.ToDateTime(row.Cells["NgayDi"].Value);
             cboMaNv.Text = row.Cells["MaNV"].Value.ToString();
-            
-            
+
+
             txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();
-            
+
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+            LamMoiForm();
+            LoadDanhSachDatPhong();
+        }
+
+        private void LamMoiForm()
+        {
+            txtHoaDonTheoID.Clear(); // TextBox
+            txtGhiChu.Clear();
+
+            // ComboBox
+            cboKhachHang.SelectedIndex = -1;
+            cboIDPhong.SelectedIndex = -1;
+            cboMaNv.SelectedIndex = -1;
+
+            // DateTimePicker
+            dtpNgayDen.Value = DateTime.Now;
+            dtpNgayDi.Value = DateTime.Now.AddDays(1);
+
+            // Xóa chọn dòng trong DataGridView
+            guna2DgvDatPhong.ClearSelection();
+        }
+
     }
 }

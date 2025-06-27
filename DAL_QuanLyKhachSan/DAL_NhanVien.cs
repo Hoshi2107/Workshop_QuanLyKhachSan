@@ -43,28 +43,25 @@ namespace DAL_QuanLyKhachSan
         public List<DTO_NhanVien> SelectBySql(string sql, List<object> args, CommandType cmdType = CommandType.Text)
         {
             List<DTO_NhanVien> list = new List<DTO_NhanVien>();
-            try
+            using (SqlDataReader reader = DBUtil.Query(sql, args, cmdType))
             {
-                SqlDataReader reader = DBUtil.Query(sql, args);
+                
                 while (reader.Read())
                 {
-                    DTO_NhanVien entity = new DTO_NhanVien();
-                    entity.MaNV = reader.GetString("MaNV");
-                    entity.HoTen = reader.GetString("HoTen");
-                    entity.GioiTinh = reader.GetString("GioiTinh");
-                    entity.Email = reader.GetString("Email");
-                    entity.DiaChi = reader.GetString("DiaChi");
-                    entity.MatKhau = reader.GetString("MatKhau");
-
-                    entity.TinhTrang = reader.GetBoolean("TinhTrang");
-                    entity.VaiTro = reader.GetBoolean("VaiTro");
+                    DTO_NhanVien entity = new DTO_NhanVien()
+                    {
+                        MaNV = reader["MaNV"].ToString(),
+                        HoTen = reader["HoTen"].ToString(),
+                        Email = reader["Email"].ToString(),
+                        MatKhau = reader["MatKhau"].ToString(),
+                        VaiTro = bool.Parse(reader["VaiTro"].ToString()),
+                        TinhTrang = bool.Parse(reader["TinhTrang"].ToString()),
+                    };
+                    
                     list.Add(entity);
                 }
             }
-            catch (Exception)
-            {
-                throw;
-            }
+            
             return list;
         }
 
@@ -101,16 +98,18 @@ namespace DAL_QuanLyKhachSan
             try
             {
                 string sql = @"INSERT INTO NhanVien (MaNV, HoTen,GioiTinh, Email,DiaChi, MatKhau, VaiTro, TinhTrang) 
-                   VALUES (@0, @1, @2, @3, @4, @5, @6, @7)";
-                List<object> thamSo = new List<object>();
-                thamSo.Add(nv.MaNV); 
-                thamSo.Add(nv.HoTen);
-                thamSo.Add(nv.GioiTinh);
-                thamSo.Add(nv.Email);
-                thamSo.Add (nv.DiaChi);
-                thamSo.Add(nv.MatKhau);
-                thamSo.Add(nv.VaiTro);
-                thamSo.Add(nv.TinhTrang);
+                   VALUES (@MaNV, @HoTen, @GioiTinh, @Email, @DiaChi, @MatKhau, @VaiTro, @TinhTrang)";
+                List<object> thamSo = new List<object>()
+                {
+                    new SqlParameter("@MaNV", nv.MaNV),
+                    new SqlParameter("@HoTen", nv.HoTen),
+                    new SqlParameter("@GioiTinh", nv.GioiTinh),
+                    new SqlParameter("@Email", nv.Email),
+                    new SqlParameter("@DiaChi", nv.DiaChi),
+                    new SqlParameter("@MatKhau", nv.MatKhau),
+                    new SqlParameter("@VaiTro", nv.VaiTro),
+                    new SqlParameter("@TinhTrang", nv.TinhTrang)
+                };
                 DBUtil.Update(sql, thamSo);
             }
             catch (Exception e)
@@ -119,7 +118,7 @@ namespace DAL_QuanLyKhachSan
             }
 
         }
-
+        
         public void deleteNhanVien(string maNv)
         {
             try
@@ -139,9 +138,9 @@ namespace DAL_QuanLyKhachSan
         public string generateMaNhanVien()
         {
             string prefix = "NV";
-            string sql = "SELECT MAX(MaNV) FROM NhanVien";
+            string sql = "SELECT MAX(MaNhanVien) FROM NhanVien";
             List<object> thamSo = new List<object>();
-            object result = DBUtil.Query(sql, thamSo);
+            object result = DBUtil.ScalarQuery(sql, thamSo);
             if (result != null && result.ToString().StartsWith(prefix))
             {
                 string maxCode = result.ToString().Substring(2);

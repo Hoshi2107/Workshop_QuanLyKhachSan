@@ -340,6 +340,8 @@
             guna2DgvNhanVien.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DgvNhanVien.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             guna2DgvNhanVien.CellContentClick += guna2DgvNhanVien_CellContentClick;
+            guna2DgvNhanVien.CellContentDoubleClick += guna2DgvNhanVien_CellContentDoubleClick;
+            guna2DgvNhanVien.CellDoubleClick += guna2DgvNhanVien_CellDoubleClick;
             // 
             // guna2Button4
             // 
@@ -640,7 +642,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
-            ClientSize = new Size(1083, 749);
+            ClientSize = new Size(1083, 692);
             Controls.Add(guna2GradientPanel1);
             Controls.Add(btnlammoi);
             Controls.Add(txttimkiem);

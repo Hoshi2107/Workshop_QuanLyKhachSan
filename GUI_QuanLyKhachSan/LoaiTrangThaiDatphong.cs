@@ -1,4 +1,5 @@
 ﻿using BLL_QuanLyKhachSan;
+using DAL_QuanLyKhachSan;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,12 +35,14 @@ namespace GUI_QuanLyKhachSan
         private void loadtrangthaidatphong()
         {
             BUSLoaiTrangThaiDatPhong busLoaiTrangThaiDatPhong = new BUSLoaiTrangThaiDatPhong();
-            dgvloaitrangthaiphong.DataSource = busLoaiTrangThaiDatPhong.GetLoaiTrangThaiDatPhongList();
+            guna2DataGridView1.DataSource = busLoaiTrangThaiDatPhong.GetLoaiTrangThaiDatPhongList();
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            DataGridViewRow row = guna2DataGridView1.Rows[e.RowIndex];
+            gntxtMaLoaiPhong.Text = row.Cells["LoaiTrangThaiID"].Value.ToString();
+            gntxtTenLoaiPhong.Text = row.Cells["TenTrangThai"].Value.ToString();
         }
     }
 }

@@ -445,6 +445,7 @@
             guna2Button5.Size = new Size(118, 33);
             guna2Button5.TabIndex = 91;
             guna2Button5.Text = "Làm mới";
+            guna2Button5.Click += guna2Button5_Click;
             // 
             // guna2Button3
             // 
@@ -466,6 +467,7 @@
             guna2Button3.Size = new Size(118, 33);
             guna2Button3.TabIndex = 90;
             guna2Button3.Text = "Xóa";
+            guna2Button3.Click += guna2Button3_Click;
             // 
             // guna2Button2
             // 
@@ -487,6 +489,7 @@
             guna2Button2.Size = new Size(118, 33);
             guna2Button2.TabIndex = 89;
             guna2Button2.Text = "Sửa";
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // guna2Button1
             // 
@@ -508,13 +511,14 @@
             guna2Button1.Size = new Size(118, 33);
             guna2Button1.TabIndex = 88;
             guna2Button1.Text = "Thêm ";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // FrmQuanLyDatPhong
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
-            ClientSize = new Size(1083, 749);
+            ClientSize = new Size(1083, 661);
             Controls.Add(guna2Button5);
             Controls.Add(guna2Button3);
             Controls.Add(guna2Button2);

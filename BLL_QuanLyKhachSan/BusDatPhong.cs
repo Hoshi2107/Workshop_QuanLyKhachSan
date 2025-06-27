@@ -15,7 +15,7 @@ namespace BLL_QuanLyKhachSan
         public List<DatPhong> GetDatPhongList()
         {
             return dalDatPhong.SelectAll();
-        }
+        }   
     }
 
 }
