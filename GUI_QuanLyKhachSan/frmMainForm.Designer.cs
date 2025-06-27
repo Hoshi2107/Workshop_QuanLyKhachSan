@@ -138,7 +138,7 @@
             guna2PictureBox1.CustomizableEdges = customizableEdges1;
             guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
             guna2PictureBox1.ImageRotate = 0F;
-            guna2PictureBox1.Location = new Point(4, 4);
+            guna2PictureBox1.Location = new Point(0, 0);
             guna2PictureBox1.Margin = new Padding(4);
             guna2PictureBox1.Name = "guna2PictureBox1";
             guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
