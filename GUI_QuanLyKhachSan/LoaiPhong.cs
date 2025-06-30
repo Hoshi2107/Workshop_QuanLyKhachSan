@@ -26,9 +26,9 @@ namespace GUI_QuanLyKhachSan
         }
         private void Loadloaiphong()
         {
-            //BUSLoaiPhong bUSDichVu = new BUSLoaiPhong();
+            BUSLoaiPhong bUSDichVu = new BUSLoaiPhong();
 
-            //dgvloaiphong.DataSource = bUSDichVu.GateLoaiPhong();
+            dgvloaiphong.DataSource = bUSDichVu.GateLoaiPhong();
         }
 
         private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -44,77 +44,19 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Kiểm tra click vào dòng hợp lệ
-            if (e.RowIndex >= 0 && e.RowIndex < dgvloaiphong.Rows.Count)
-            {
-                DataGridViewRow row = dgvloaiphong.Rows[e.RowIndex];
-
-                // Lấy dữ liệu từ từng cột, chỉnh tên cột nếu cần
-                txtMaLoaiPhong.Text = row.Cells["MaLoaiPhong"].Value?.ToString();
-                txtTenLoaiPhong.Text = row.Cells["TenLoaiPhong"].Value?.ToString();
-                txtGhiChu.Text = row.Cells["GhiChu"].Value?.ToString();
-                dtpNgayTao.Value = DateTime.TryParse(row.Cells["NgayTao"].Value?.ToString(), out DateTime ngayTao) ? ngayTao : DateTime.Now;
-
-                // Nếu có cột Trạng Thái dạng 0/1, thiết lập RadioButton
-                if (row.Cells["TrangThai"].Value != null)
-                {
-                    string trangThai = row.Cells["TrangThai"].Value.ToString();
-                    if (trangThai == "0")
-                    {
-                        guna2RadioButton1.Checked = true;
-                    }
-                    else if (trangThai == "1")
-                    {
-                        guna2RadioButton2.Checked = true;
-                    }
-                    else
-                    {
-                        guna2RadioButton1.Checked = false;
-                        guna2RadioButton2.Checked = false;
-                    }
-                }
-
-                // Cập nhật trạng thái nút
-                btnThem.Enabled = false;
-                btnSua.Enabled = true;
-                btnXoa.Enabled = true;
-            }
+           
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string maLoaiPhong = txtMaLoaiPhong.Text.Trim();
-
-            if (string.IsNullOrEmpty(maLoaiPhong))
-            {
-                MessageBox.Show("Vui lòng chọn loại phòng cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            DialogResult confirm = MessageBox.Show("Bạn có chắc muốn xóa loại phòng này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (confirm == DialogResult.Yes)
-            {
-                BUSLoaiPhong busLoaiPhong = new BUSLoaiPhong();
-                string result = busLoaiPhong.XoaLoaiPhong(maLoaiPhong);
-
-                if (!string.IsNullOrEmpty(result))
-                {
-                    MessageBox.Show("Lỗi: " + result, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                MessageBox.Show("Xóa loại phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Loadloaiphong();
-                ClearForm();
-            }
+          
         }
         private void ClearForm()
         {
             // Reset trạng thái nút
             btnThem.Enabled = true;
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
 
             // Xóa dữ liệu các TextBox
             txtMaLoaiPhong.Clear();
