@@ -364,6 +364,7 @@
             guna2Button4.Size = new Size(118, 33);
             guna2Button4.TabIndex = 32;
             guna2Button4.Text = "Tìm kiếm";
+            guna2Button4.Click += guna2Button4_Click;
             // 
             // btnxoa
             // 
@@ -386,6 +387,7 @@
             btnxoa.Size = new Size(118, 33);
             btnxoa.TabIndex = 31;
             btnxoa.Text = "Xóa";
+            btnxoa.Click += btnxoa_Click;
             // 
             // btnsua
             // 
