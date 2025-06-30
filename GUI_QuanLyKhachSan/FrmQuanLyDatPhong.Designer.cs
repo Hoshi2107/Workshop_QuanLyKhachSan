@@ -381,6 +381,7 @@
             guna2DgvDatPhong.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             guna2DgvDatPhong.CellContentClick += guna2DgvDatPhong_CellContentClick;
             guna2DgvDatPhong.CellContentDoubleClick += guna2DgvDatPhong_CellContentDoubleClick;
+            guna2DgvDatPhong.CellDoubleClick += guna2DgvDatPhong_CellDoubleClick;
             // 
             // txtTimKiem
             // 

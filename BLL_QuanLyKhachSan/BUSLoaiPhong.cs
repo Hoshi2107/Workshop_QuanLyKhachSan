@@ -15,5 +15,25 @@ namespace BLL_QuanLyKhachSan
         {
             return dalloaiPhong.selectAll();
         }
+
+        public string XoaLoaiPhong(string maLoaiPhong)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(maLoaiPhong))
+                {
+                    return "Mã loại phòng không hợp lệ.";
+                }
+
+                dalloaiPhong.Delete(maLoaiPhong);
+                return null; // thành công
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi BUS khi xóa loại phòng: " + ex.Message);
+                return "Có lỗi xảy ra khi xóa loại phòng: " + ex.Message;
+            }
+        }
+
     }
 }

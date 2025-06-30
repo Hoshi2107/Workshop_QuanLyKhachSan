@@ -40,5 +40,20 @@ namespace DAL_QuanLyKhachSan
             String sql = "SELECT * FROM LoaiPhong";
             return SelectBySql(sql, new List<object>());
         }
+
+        public void Delete(string maLoaiPhong)
+        {
+            try
+            {
+                string sql = "DELETE FROM LoaiPhong WHERE MaLoaiPhong = @0";
+                DBUtil.Update(sql, new List<object> { maLoaiPhong });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi DAL khi xóa loại phòng: " + ex.Message);
+                throw; // Để BUS bắt lỗi xử lý
+            }
+        }
+
     }
 }

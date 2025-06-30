@@ -109,5 +109,9 @@ namespace GUI_QuanLyKhachSan
             guna2DgvDatPhong.ClearSelection();
         }
 
+        private void guna2DgvDatPhong_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
