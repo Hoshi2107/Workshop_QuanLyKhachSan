@@ -76,14 +76,23 @@ namespace DAL_QuanLyKhachSan
             string sql = "SELECT MAX(DichVuID) FROM DichVu";
             object result = DBUtil.ScalarQuery(sql, new List<object>());
 
-            if (result != null && result.ToString().StartsWith(prefix))
+            if (result != null && result != DBNull.Value)
             {
-                string maxCode = result.ToString().Substring(2);
-                int newNumber = int.Parse(maxCode) + 1;
-                return $"{prefix}{newNumber:D3}";
+                string currentMaxID = result.ToString();
+
+                if (currentMaxID.StartsWith(prefix))
+                {
+                    string numberPart = currentMaxID.Substring(prefix.Length); // Cắt đúng sau tiền tố
+                    if (int.TryParse(numberPart, out int number))
+                    {
+                        int newNumber = number + 1;
+                        return $"{prefix}{newNumber:D3}";
+                    }
+                }
             }
 
             return $"{prefix}001";
         }
+
     }
 }
