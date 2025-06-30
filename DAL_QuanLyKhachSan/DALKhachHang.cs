@@ -68,12 +68,12 @@ namespace DAL_QuanLyKhachSan
                 throw;
             }
         }
-        public void deleteKhachHang(string khachHangID)
+        public void deleteKhachHang(KhachHang khachHangID)
         {
             try
             {
                 string sql = "DELETE FROM KhachHang WHERE KhachHangID = @0";
-                List<object> thamSo = new List<object> { khachHangID };
+                List<object> thamSo = new List<object> { khachHangID.KhachHangID };
                 DBUtil.Update(sql, thamSo);
             }
             catch (Exception)
@@ -126,6 +126,18 @@ namespace DAL_QuanLyKhachSan
         {
             String sql = "SELECT * FROM KhachHang";
             return SelectBySql(sql, new List<object>());
+        }
+        public List<KhachHang> searchByKeyword(string keyword)
+        {
+            keyword = keyword.Trim().ToLower();
+
+            var dsKhachHang = selectAll();
+
+            return dsKhachHang.Where(KH =>
+                (!string.IsNullOrEmpty(KH.KhachHangID) && KH.KhachHangID.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(KH.HoTen) && KH.HoTen.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(KH.DiaChi) && KH.DiaChi.ToLower().Contains(keyword))
+            ).ToList();
         }
     }
 }

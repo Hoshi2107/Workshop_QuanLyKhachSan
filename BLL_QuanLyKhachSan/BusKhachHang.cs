@@ -52,21 +52,37 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi: " + ex.Message;
             }
         }
-        
-        public string deletekhachhang(string maKhachHang)
+
+        public string deletekhachhang(KhachHang QlKH)
         {
             try
             {
-                if (string.IsNullOrEmpty(maKhachHang))
+                if (string.IsNullOrWhiteSpace(QlKH.KhachHangID))
                 {
-                    return "Mã khách hàng không hợp lệ ! ! !";
+                    return "Chưa chọn dòng để xóa";
                 }
-                dalKhachHang.deleteKhachHang(maKhachHang);
+                dalKhachHang.deleteKhachHang(QlKH);
                 return string.Empty;
             }
             catch (Exception ex)
             {
                 return "Lỗi: " + ex.Message;
+            }
+        }
+        public List<KhachHang> TimKiem(string keyword)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(keyword))
+                {
+                    return dalKhachHang.selectAll();
+                }
+                keyword = keyword.Trim().ToLower();
+                return dalKhachHang.searchByKeyword(keyword);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tìm kiếm nhân viên: " + ex.Message);
             }
         }
     }
