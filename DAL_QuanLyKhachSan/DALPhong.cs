@@ -42,7 +42,85 @@ namespace DAL_QuanLyKhachSan
             }
             return list;
         }
+        public List<Phong> selectAll()
+        {
+            string sql = "SELECT * FROM Phong";
+            return SelectBySql(sql, new List<object>());
+        }
+        public void insertPhong(Phong phong)
+        {
+            try
+            {
+                string sql = @"INSERT INTO Phong (PhongID, TenPhong, MaLoaiPhong, GiaPhong, NgayTao, TinhTrang, GhiChu) 
+                               VALUES (@0, @1, @2, @3, @4, @5, @6)";
+                List<object> thamSo = new List<object>
+                {
+                    phong.MaPhong,
+                    phong.TenPhong,
+                    phong.MaLoaiPhong,
+                    phong.GiaPhong,
+                    phong.NgayTao,
+                    phong.TinhTrang,
+                    phong.GhiChu
+                };
+                DBUtil.Update(sql, thamSo);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi thêm Phòng: " + ex.Message);
+            }
+        }
+        public void updatePhong(Phong phong)
+        {
+            try
+            {
+                string sql = @"UPDATE Phong 
+                               SET TenPhong = @1, MaLoaiPhong = @2, GiaPhong = @3, NgayTao = @4, TinhTrang = @5, GhiChu = @6 
+                               WHERE PhongID = @0";
+                List<object> thamSo = new List<object>
+                {
+                    phong.MaPhong,
+                    phong.TenPhong,
+                    phong.MaLoaiPhong,
+                    phong.GiaPhong,
+                    phong.NgayTao,
+                    phong.TinhTrang,
+                    phong.GhiChu
+                };
+                DBUtil.Update(sql, thamSo);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi cập nhật Phòng: " + ex.Message);
+            }
+        }
+        public void deletephong(Phong phong)
+        {
+            try
+            {
+                string sql = "DELETE FROM Phong WHERE PhongID = @0";
+                List<object> thamSo = new List<object> { phong.MaPhong };
+                DBUtil.Update(sql, thamSo);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi xóa Phòng: " + ex.Message);
+            }
+        }
+        public string generateMaPhong()
+        {
+            string prefix = "P";
+            string sql = "SELECT MAX(PhongID) FROM Phong";
+            List<object> thamSo = new List<object>();
+            object result = DBUtil.ScalarQuery(sql, thamSo);
+            if (result != null && result.ToString().StartsWith(prefix))
+            {
+                string maxCode = result.ToString().Substring(2);
+                int newNumber = int.Parse(maxCode) + 1;
+                return $"{prefix}{newNumber:D3}";
+            }
 
-
+            return $"{prefix}001";
+        }
     }
 }

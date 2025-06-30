@@ -32,7 +32,7 @@ namespace GUI_QuanLyKhachSan
         private void LoaddichVu()
         {
             BUSDichVu bUSDichVu = new BUSDichVu();
-            guna2DgvNhanVien.DataSource = bUSDichVu.GetDichVuList();
+            dgvDichVu.DataSource = bUSDichVu.GetDichVuList();
         }
         private void DichVu_Load(object sender, EventArgs e)
         {
@@ -55,14 +55,15 @@ namespace GUI_QuanLyKhachSan
         {
             string DichVuID = txtIDDichVu.Text.Trim();
             string HoaDonThueID = txtIDThueHoaDon.Text.Trim();
-
             DateTime ngayTao = dtpNgayTao.Value;
             bool trangThai = rdoDaThanhToan.Checked;
+
             if (string.IsNullOrEmpty(HoaDonThueID))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
             string ghiChu = txtGhiChu.Text.Trim();
 
             DichVu dichvu = new DichVu
@@ -74,21 +75,18 @@ namespace GUI_QuanLyKhachSan
                 GhiChu = ghiChu
             };
 
-            BUSDichVu dichVu = new BUSDichVu();
-            string result = dichVu.AddDichVu(dichvu);
+            BUSDichVu busDichVu = new BUSDichVu(); // đổi tên biến
+            string result = busDichVu.AddDichVu(dichvu); // gọi đúng tên biến DTO
 
-            if (result == "Vui lòng nhập đủ thông tin hợp lệ!")
+            if (!string.IsNullOrEmpty(result))
             {
                 MessageBox.Show(result);
                 return;
             }
 
-            if (string.IsNullOrEmpty(result) || result == "")
-            {
-                MessageBox.Show("Thêm mới loại dịch vụ thành công");
-                LoaddichVu();
-                ClearFrom();
-            }
+            MessageBox.Show("Thêm mới dịch vụ thành công!");
+            LoaddichVu();
+            ClearFrom();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -169,30 +167,52 @@ namespace GUI_QuanLyKhachSan
 
         private void dgrDichVu_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //DataGridViewRow row = dgrDichVu.Rows[e.RowIndex];
-            //textDichVuID.Text = row.Cells["DichVuID"].Value.ToString();
-            //textHoaDonThueID.Text = row.Cells["HoaDonThueID"].Value.ToString();
-            //textGhiChu.Text = row.Cells["GhiChu"].Value.ToString();            
-            //guna2DateTimePicker1.Text = row.Cells["NgayTao"].Value.ToString();
-            //bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
-            //if (trangThai)
-            //{
-            //    RdoDaThanhToan.Checked = true;
-            //}
-            //else
-            //{
-            //    RdoChuaThanhToan.Checked = true;
-            //}
-            //btnThem.Enabled = false;
-            //btnSua.Enabled = true;
-            //btnXoa.Enabled = true;
-            //textDichVuID.Enabled = false;
+            DataGridViewRow row = dgvDichVu.Rows[e.RowIndex];
+            txtIDDichVu.Text = row.Cells["DichVuID"].Value.ToString();
+            txtIDThueHoaDon.Text = row.Cells["HoaDonThueID"].Value.ToString();
+            txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();            
+            dtpNgayTao.Text = row.Cells["NgayTao"].Value.ToString();
+            bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
+            if (trangThai)
+            {
+                rdoDaThanhToan.Checked = true;
+            }
+            else
+            {
+                rdoChuaThanhToan.Checked = true;
+            }
+            btnThem.Enabled = false;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            txtIDDichVu.Enabled = false;
 
         }
 
         private void guna2DgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvDichVu.Rows[e.RowIndex];
+                txtIDDichVu.Text = row.Cells["DichVuID"].Value.ToString();
+                txtIDThueHoaDon.Text = row.Cells["HoaDonThueID"].Value.ToString();
+                txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();
+                dtpNgayTao.Text = row.Cells["NgayTao"].Value.ToString();
 
+                bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
+                if (trangThai)
+                {
+                    rdoDaThanhToan.Checked = true;
+                }
+                else
+                {
+                    rdoChuaThanhToan.Checked = true;
+                }
+
+                btnThem.Enabled = false;
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+                txtIDDichVu.Enabled = false;
+            }
         }
 
         private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)

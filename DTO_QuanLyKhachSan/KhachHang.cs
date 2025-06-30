@@ -18,7 +18,7 @@ namespace DTO_QuanLyKhachSan
         public bool TrangThai { get; set; }
         public string GhiChu { get; set; }
 
-        public bool TrangThaiText => TrangThai ? true : false;
+        
 
     }
 }
