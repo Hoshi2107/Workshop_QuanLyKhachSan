@@ -28,7 +28,7 @@ namespace GUI_QuanLyKhachSan
         }
         private void ClearFrom()
         {
-            //btnThem.Enabled = true;
+            btnThem.Enabled = true;
             //btnSưa.Enabled = false;
             //btnXóa.Enabled = true;
             //textLoaiDichVuID.Clear();
@@ -64,18 +64,18 @@ namespace GUI_QuanLyKhachSan
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string loaiDichVuID = textLoaiDichVuID.Text.Trim();
-            string tenDichVu = textTenDV.Text.Trim();
+            string loaiDichVuID = txtLoaiDichVuID.Text.Trim();
+            string tenDichVu = txtTenDV.Text.Trim();
             string giaDichVutext = TextGiaDV.Text.Trim();
-            string donViTinh = textdonvitinh.Text.Trim();
+            string donViTinh = txtdonvitinh.Text.Trim();
             DateTime ngayTao = dtpNgayTao.Value;
-            bool trangThai = RdoConHoatDong.Checked;
+            bool trangThai = rdoConHoatDong.Checked;
             if (string.IsNullOrEmpty(tenDichVu) || string.IsNullOrEmpty(giaDichVutext) || string.IsNullOrEmpty(donViTinh))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string ghiChu = textghichu.Text.Trim();
+            string ghiChu = txtghichu.Text.Trim();
             if (!decimal.TryParse(giaDichVutext, out decimal giaDichVu))
             {
                 MessageBox.Show("Đơn giá không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -123,20 +123,20 @@ namespace GUI_QuanLyKhachSan
         {
             DataGridViewRow row = dgrLoaiDV.Rows[e.RowIndex];
 
-            textLoaiDichVuID.Text = row.Cells["LoaiDichVuID"].Value.ToString();
-            textTenDV.Text = row.Cells["TenDichVu"].Value.ToString();
+            txtLoaiDichVuID.Text = row.Cells["LoaiDichVuID"].Value.ToString();
+            txtTenDV.Text = row.Cells["TenDichVu"].Value.ToString();
             TextGiaDV.Text = row.Cells["GiaDichVu"].Value.ToString();
-            textdonvitinh.Text = row.Cells["DonViTinh"].Value.ToString();
+            txtdonvitinh.Text = row.Cells["DonViTinh"].Value.ToString();
             dtpNgayTao.Text = row.Cells["NgayTao"].Value.ToString();
-            textghichu.Text = row.Cells["GhiChu"].Value.ToString();
+            txtghichu.Text = row.Cells["GhiChu"].Value.ToString();
             bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
             if (trangThai)
             {
-                RdoConHoatDong.Checked = true;
+                rdoConHoatDong.Checked = true;
             }
             else
             {
-                RdoKhongHoatDong.Checked = true;
+                rdoKhongHoatDong.Checked = true;
             }
 
 
@@ -144,12 +144,12 @@ namespace GUI_QuanLyKhachSan
 
         private void btnSưa_Click(object sender, EventArgs e)
         {
-            string loaiDichVuID = textLoaiDichVuID.Text.Trim();
-            string tenDichVu = textTenDV.Text.Trim();
+            string loaiDichVuID = txtLoaiDichVuID.Text.Trim();
+            string tenDichVu = txtTenDV.Text.Trim();
             string giaDichVutext = TextGiaDV.Text.Trim();
-            string donViTinh = textdonvitinh.Text.Trim();
+            string donViTinh = txtdonvitinh.Text.Trim();
             DateTime ngayTao = dtpNgayTao.Value;
-            bool trangThai = RdoConHoatDong.Checked;
+            bool trangThai = rdoConHoatDong.Checked;
 
             if (string.IsNullOrEmpty(loaiDichVuID) || string.IsNullOrEmpty(tenDichVu) || string.IsNullOrEmpty(giaDichVutext) || string.IsNullOrEmpty(donViTinh))
             {
@@ -157,7 +157,7 @@ namespace GUI_QuanLyKhachSan
                 return;
             }
 
-            string ghiChu = textghichu.Text.Trim();
+            string ghiChu = txtghichu.Text.Trim();
 
             if (!decimal.TryParse(giaDichVutext, out decimal giaDichVu))
             {
