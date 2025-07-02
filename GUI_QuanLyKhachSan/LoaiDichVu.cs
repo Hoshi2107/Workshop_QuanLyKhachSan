@@ -101,59 +101,52 @@ namespace GUI_QuanLyKhachSan
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            BUSLoaiDV service = new BUSLoaiDV();
-
-            // Tự động tạo mã nếu bạn không nhập thủ công
-            string loaiDichVuID = txtLoaiDichVuID.Text.Trim();
-            if (string.IsNullOrEmpty(loaiDichVuID))
-            {
-                loaiDichVuID = service.GenerateNewLoaiDichVuID(); // cần có hàm này trong BUS
-                txtLoaiDichVuID.Text = loaiDichVuID;
-            }
-
+            string maLoaiDichVu = txtLoaiDichVuID.Text.Trim();
             string tenDichVu = txtTenDV.Text.Trim();
-            string giaDichVutext = TextGiaDV.Text.Trim();
+            string giaDichVuText = TextGiaDV.Text.Trim();
             string donViTinh = txtdonvitinh.Text.Trim();
-            DateTime ngayTao = dtpNgayTao.Value;
-            bool trangThai = rdoConHoatDong.Checked;
-
-            if (string.IsNullOrEmpty(tenDichVu) || string.IsNullOrEmpty(giaDichVutext) || string.IsNullOrEmpty(donViTinh))
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            if (!decimal.TryParse(giaDichVutext, out decimal giaDichVu))
-            {
-                MessageBox.Show("Đơn giá không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
             string ghiChu = txtghichu.Text.Trim();
 
-            DTO_LoaiDichVu ldv = new DTO_LoaiDichVu
+            // Kiểm tra nhập liệu
+            if (string.IsNullOrEmpty(tenDichVu) || string.IsNullOrEmpty(giaDichVuText) || string.IsNullOrEmpty(donViTinh))
             {
-                LoaiDichVuID = loaiDichVuID,
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
+            // Kiểm tra định dạng số
+            if (!decimal.TryParse(giaDichVuText, out decimal giaDichVu))
+            {
+                MessageBox.Show("Giá dịch vụ không hợp lệ!");
+                return;
+            }
+
+            // Tạo DTO
+            DTO_LoaiDichVu loaiDV = new DTO_LoaiDichVu
+            {
+                LoaiDichVuID = maLoaiDichVu,
                 TenDichVu = tenDichVu,
                 GiaDichVu = giaDichVu,
                 DonViTinh = donViTinh,
-                NgayTao = ngayTao,
-                TrangThai = trangThai,
+                NgayTao = dtpNgayTao.Value,
+                TrangThai = rdoConHoatDong.Checked,
                 GhiChu = ghiChu
             };
 
-            string result = service.AddLoaiDichVu(ldv);
+            // Gọi BLL
+            BUSLoaiDV bus = new BUSLoaiDV();
+            string result = bus.AddLoaiDichVu(loaiDV);
 
-            if (!string.IsNullOrEmpty(result))
+            if (string.IsNullOrEmpty(result))
             {
-                MessageBox.Show(result, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                MessageBox.Show("Thêm loại dịch vụ thành công!");
+                loadLoaiDV();
+                ClearFrom();
             }
-
-            MessageBox.Show("Thêm mới loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            loadLoaiDV();    // đảm bảo bạn gọi đúng hàm (không bị typo)
-            ClearFrom();     // xóa form để nhập tiếp
-
+            else
+            {
+                MessageBox.Show(result);
+            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

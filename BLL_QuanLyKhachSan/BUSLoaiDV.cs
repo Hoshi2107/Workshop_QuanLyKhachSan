@@ -18,20 +18,20 @@ namespace BLL_QuanLyKhachSan
         {
             try
             {
-                ldv.LoaiDichVuID = dalloaisp.genereteMaLoaiDV();
-
-                if (string.IsNullOrEmpty(ldv.LoaiDichVuID))
+                if (string.IsNullOrWhiteSpace(ldv.LoaiDichVuID))
                 {
-                    return "Mã Loại không hợp lệ!";
+                    ldv.LoaiDichVuID = dalloaisp.genereteMaLoaiDV();
                 }
-
-                dalloaisp.addLoaiDichVu(ldv); 
-                return "Thêm loại dịch vụ thành công!";
+                if (string.IsNullOrEmpty(ldv.TenDichVu))
+                {
+                    return "Tên dịch vụ không được để trống.";
+                }
+                dalloaisp.addLoaiDichVu(ldv);
+                return string.Empty;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Lỗi khi thêm loại dịch vụ: " + ex.Message);
-                return "Có lỗi xảy ra! Vui lòng kiểm tra lại.";
+                return "Lỗi: " + ex.Message;
             }
         }
         public string UpdateLoaiDichVu(DTO_LoaiDichVu ldv)
