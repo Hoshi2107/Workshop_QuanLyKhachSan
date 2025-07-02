@@ -54,7 +54,7 @@ namespace GUI_QuanLyKhachSan
             guna2DgvNhanVien.DataSource = bUSNhanVien.GetNhanViensList();
             guna2DgvNhanVien.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
             guna2DgvNhanVien.Columns["HoTen"].HeaderText = "Họ Và Tên";
-            guna2DgvNhanVien.Columns["GioiTinh"].HeaderText = "Gioi Tinh";
+            guna2DgvNhanVien.Columns["GioiTinh"].HeaderText = "Giới Tính";
             guna2DgvNhanVien.Columns["Email"].HeaderText = "Email";
             guna2DgvNhanVien.Columns["DiaChi"].HeaderText = "Địa chỉ";
             guna2DgvNhanVien.Columns["MatKhau"].HeaderText = "Mật khẩu";

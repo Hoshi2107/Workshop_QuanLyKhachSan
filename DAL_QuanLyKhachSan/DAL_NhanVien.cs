@@ -52,7 +52,9 @@ namespace DAL_QuanLyKhachSan
                     {
                         MaNV = reader["MaNV"].ToString(),
                         HoTen = reader["HoTen"].ToString(),
+                        GioiTinh = reader["GioiTinh"].ToString(),
                         Email = reader["Email"].ToString(),
+                        DiaChi = reader["DiaChi"].ToString(),
                         MatKhau = reader["MatKhau"].ToString(),
                         VaiTro = bool.Parse(reader["VaiTro"].ToString()),
                         TinhTrang = bool.Parse(reader["TinhTrang"].ToString()),
@@ -76,12 +78,14 @@ namespace DAL_QuanLyKhachSan
             try
             {
                 string sql = @"UPDATE NhanVien
-                                   SET HoTen = @1, Email = @2, MatKhau = @3, VaiTro = @4, TrangThai = @5
+                                   SET HoTen = @1, GioiTinh = @2, Email = @3, DiaChi = @4, MatKhau = @5, VaiTro = @6, TrangThai = @7
                                     WHERE MaNhanVien = @0";
                 List<object> thamSo = new List<object>();
                 thamSo.Add(nv.MaNV);
                 thamSo.Add(nv.HoTen);
+                thamSo.Add(nv.GioiTinh);
                 thamSo.Add(nv.Email);
+                thamSo.Add(nv.DiaChi);
                 thamSo.Add(nv.MatKhau);
                 thamSo.Add(nv.VaiTro);
                 thamSo.Add(nv.TinhTrang);
