@@ -70,6 +70,31 @@ namespace BLL_QuanLyKhachSan
                 return "Có lỗi xảy ra! Vui lòng kiểm tra lại.";
             }
         }
-       
+        public string GenerateNewLoaiDichVuID()
+        {
+            string prefix = "LDV";  // Đặt ở đây để cả try và catch đều dùng được
+
+            try
+            {
+                string sql = "SELECT MAX(LoaiDichVuID) FROM LoaiDichVu";
+                object result = DBUtil.ScalarQuery(sql, new List<object>());
+
+                if (result != null && result.ToString().StartsWith(prefix))
+                {
+                    string numberPart = result.ToString().Substring(prefix.Length);
+                    if (int.TryParse(numberPart, out int number))
+                    {
+                        return $"{prefix}{(number + 1):D3}";
+                    }
+                }
+
+                return $"{prefix}001";
+            }
+            catch (Exception ex)
+            {
+                return $"{prefix}001"; // Bây giờ prefix có thể dùng được
+            }
+        }
+
     }
 }

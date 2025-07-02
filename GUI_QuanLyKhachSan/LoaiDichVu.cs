@@ -29,16 +29,16 @@ namespace GUI_QuanLyKhachSan
         private void ClearFrom()
         {
             btnThem.Enabled = true;
-            //btnSưa.Enabled = false;
-            //btnXóa.Enabled = true;
-            //textLoaiDichVuID.Clear();
-            //textghichu.Clear();
-            //TextGiaDV.Clear();
-            //textTimKiem.Clear();
-            //textTenDV.Clear();
-            //textdonvitinh.Clear();
-            //guna2DateTimePicker1.Value = DateTime.Now;
-            //textLoaiDichVuID.Enabled = false;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = true;
+            txtLoaiDichVuID.Clear();
+            txtghichu.Clear();
+            TextGiaDV.Clear();
+            txtTimKiem.Clear();
+            txtTenDV.Clear();
+            txtdonvitinh.Clear();
+            dtpNgayTao.Value= DateTime.Now;
+            txtLoaiDichVuID.Enabled = true;
         }
         private void loadLoaiDV()
         {
@@ -64,23 +64,36 @@ namespace GUI_QuanLyKhachSan
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            BUSLoaiDV service = new BUSLoaiDV();
+
+            // Tự động tạo mã nếu bạn không nhập thủ công
             string loaiDichVuID = txtLoaiDichVuID.Text.Trim();
+            if (string.IsNullOrEmpty(loaiDichVuID))
+            {
+                loaiDichVuID = service.GenerateNewLoaiDichVuID(); // cần có hàm này trong BUS
+                txtLoaiDichVuID.Text = loaiDichVuID;
+            }
+
             string tenDichVu = txtTenDV.Text.Trim();
             string giaDichVutext = TextGiaDV.Text.Trim();
             string donViTinh = txtdonvitinh.Text.Trim();
             DateTime ngayTao = dtpNgayTao.Value;
             bool trangThai = rdoConHoatDong.Checked;
+
             if (string.IsNullOrEmpty(tenDichVu) || string.IsNullOrEmpty(giaDichVutext) || string.IsNullOrEmpty(donViTinh))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            string ghiChu = txtghichu.Text.Trim();
+
             if (!decimal.TryParse(giaDichVutext, out decimal giaDichVu))
             {
                 MessageBox.Show("Đơn giá không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            string ghiChu = txtghichu.Text.Trim();
+
             DTO_LoaiDichVu ldv = new DTO_LoaiDichVu
             {
                 LoaiDichVuID = loaiDichVuID,
@@ -92,22 +105,17 @@ namespace GUI_QuanLyKhachSan
                 GhiChu = ghiChu
             };
 
-            BUSLoaiDV service = new BUSLoaiDV();
             string result = service.AddLoaiDichVu(ldv);
 
-            if (result == "Vui lòng nhập đủ thông tin hợp lệ!")
+            if (!string.IsNullOrEmpty(result))
             {
-                MessageBox.Show(result);
+                MessageBox.Show(result, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (string.IsNullOrEmpty(result) || result == "")
-            {
-                MessageBox.Show("Thêm mới loại dịch vụ thành công");
-                loadLoaiDV();
-                ClearFrom();
-            }
-
+            MessageBox.Show("Thêm mới loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            loadLoaiDV();    // đảm bảo bạn gọi đúng hàm (không bị typo)
+            ClearFrom();     // xóa form để nhập tiếp
 
         }
 
