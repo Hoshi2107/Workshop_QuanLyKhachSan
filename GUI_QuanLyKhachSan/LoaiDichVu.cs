@@ -28,22 +28,38 @@ namespace GUI_QuanLyKhachSan
         }
         private void ClearFrom()
         {
+            txtLoaiDichVuID.Clear();
+            txtTenDV.Clear();
+            TextGiaDV.Clear();
+            txtdonvitinh.Clear();
+            txtghichu.Clear();
+            txtTimKiem.Clear();
+            dtpNgayTao.Value = DateTime.Now;
+
+            rdoConHoatDong.Checked = true; // mặc định là còn hoạt động
+
+            // Trạng thái nút
             btnThem.Enabled = true;
             btnSua.Enabled = false;
-            btnXoa.Enabled = true;
-            txtLoaiDichVuID.Clear();
-            txtghichu.Clear();
-            TextGiaDV.Clear();
-            txtTimKiem.Clear();
-            txtTenDV.Clear();
-            txtdonvitinh.Clear();
-            dtpNgayTao.Value= DateTime.Now;
-            txtLoaiDichVuID.Enabled = true;
+            btnXoa.Enabled = false;
+
+            // Cho phép tạo mã tự động
+            txtLoaiDichVuID.Enabled = false;
         }
         private void loadLoaiDV()
         {
-            BUSLoaiDV service = new BUSLoaiDV();
-            dgrLoaiDV.DataSource = service.GetLoaiDVList();
+            try
+            {
+                BUSLoaiDV bus = new BUSLoaiDV();
+                dgrLoaiDV.DataSource = bus.GetLoaiDVList();
+
+                // Tùy chọn: tự động căn lại cột cho đẹp
+                dgrLoaiDV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
 
@@ -54,7 +70,28 @@ namespace GUI_QuanLyKhachSan
 
         private void dgrLoaiDV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0) // Đảm bảo không click vào header
+            {
+                DataGridViewRow row = dgrLoaiDV.Rows[e.RowIndex];
 
+                txtLoaiDichVuID.Text = row.Cells["LoaiDichVuID"].Value.ToString();
+                txtTenDV.Text = row.Cells["TenDichVu"].Value.ToString();
+                TextGiaDV.Text = row.Cells["GiaDichVu"].Value.ToString();
+                txtdonvitinh.Text = row.Cells["DonViTinh"].Value.ToString();
+                dtpNgayTao.Value = Convert.ToDateTime(row.Cells["NgayTao"].Value);
+                txtghichu.Text = row.Cells["GhiChu"].Value.ToString();
+
+                bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
+                rdoConHoatDong.Checked = trangThai;
+                rdoKhongHoatDong.Checked = !trangThai;
+
+                // Bật/tắt các nút phù hợp
+                btnThem.Enabled = false;
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+
+                txtLoaiDichVuID.Enabled = false; // Không cho sửa mã
+            }
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -165,13 +202,13 @@ namespace GUI_QuanLyKhachSan
                 return;
             }
 
-            string ghiChu = txtghichu.Text.Trim();
-
             if (!decimal.TryParse(giaDichVutext, out decimal giaDichVu))
             {
                 MessageBox.Show("Đơn giá không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            string ghiChu = txtghichu.Text.Trim();
 
             DTO_LoaiDichVu ldv = new DTO_LoaiDichVu
             {
@@ -185,27 +222,52 @@ namespace GUI_QuanLyKhachSan
             };
 
             BUSLoaiDV service = new BUSLoaiDV();
-            string result = service.UpdateLoaiDichVu(ldv); // Thay đổi phương thức từ AddLoaiDichVu thành UpdateLoaiDichVu
+            string result = service.UpdateLoaiDichVu(ldv);
 
-            if (result == "Vui lòng nhập đủ thông tin hợp lệ!")
+            if (!string.IsNullOrEmpty(result))
             {
-                MessageBox.Show(result);
+                MessageBox.Show(result, "Thông báo lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (string.IsNullOrEmpty(result) || result == "")
-            {
-                MessageBox.Show("Cập nhật loại dịch vụ thành công");
-                loadLoaiDV();
-                ClearFrom();
-            }
-
+            MessageBox.Show("Cập nhật loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            loadLoaiDV();
+            ClearFrom();
         }
 
         private void textTimKiem_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string loaiDichVuID = txtLoaiDichVuID.Text.Trim();
+
+            if (string.IsNullOrEmpty(loaiDichVuID))
+            {
+                MessageBox.Show("Vui lòng chọn loại dịch vụ cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult confirm = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (confirm == DialogResult.Yes)
+            {
+                BUSLoaiDV service = new BUSLoaiDV();
+                string result = service.DeleteLoaiDichVu(loaiDichVuID);
+
+                if (!string.IsNullOrEmpty(result))
+                {
+                    MessageBox.Show("Lỗi: " + result, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                MessageBox.Show("Xóa loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadLoaiDV();
+                ClearFrom();
+            }
+        }
+
     }
 
 }
