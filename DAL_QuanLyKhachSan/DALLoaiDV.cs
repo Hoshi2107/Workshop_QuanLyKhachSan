@@ -108,7 +108,7 @@ namespace DAL_QuanLyKhachSan
                 Console.WriteLine("Lỗi khi cập nhật loại dịch vụ: " + ex.Message);
             }
         }
-        public void deleteLoaiDichVu(string loaiDichVuID)
+        public void deleteLoaiDichVu(DTO_LoaiDichVu loaiDichVuID)
         {
             try
             {

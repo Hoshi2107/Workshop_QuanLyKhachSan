@@ -38,36 +38,33 @@ namespace BLL_QuanLyKhachSan
         {
             try
             {
-                if (string.IsNullOrEmpty(ldv.LoaiDichVuID)) 
+                if (string.IsNullOrEmpty(ldv.LoaiDichVuID))
                 {
-                    return "Mã loại dịch vụ không hợp lệ!";
+                    return "Mã dịch vụ không hợp lệ ! ! !";
                 }
 
-                dalloaisp.updateLoaiDichVu(ldv); 
-                return "Cập nhật loại dịch vụ thành công!";
+                dalloaisp.updateLoaiDichVu(ldv);
+                return string.Empty;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Lỗi khi cập nhật loại dịch vụ: " + ex.Message);
-                return "Có lỗi xảy ra! Vui lòng kiểm tra lại.";
+                return "Lỗi: " + ex.Message;
             }
         }
-        public string DeleteLoaiDichVu(string loaiDichVuID)
+        public string DeleteLoaiDichVu(DTO_LoaiDichVu ldv)
         {
             try
             {
-                if (string.IsNullOrEmpty(loaiDichVuID))
+                if (string.IsNullOrWhiteSpace(ldv.LoaiDichVuID))
                 {
-                    return "Mã loại dịch vụ không hợp lệ.";
+                    return "Chưa chọn dòng để xóa";
                 }
-
-                dalloaisp.deleteLoaiDichVu(loaiDichVuID); 
-                return "Xóa loại dịch vụ thành công!";
+                dalloaisp.deleteLoaiDichVu(ldv);
+                return string.Empty;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Lỗi khi xóa loại dịch vụ: " + ex.Message);
-                return "Có lỗi xảy ra! Vui lòng kiểm tra lại.";
+                return "Lỗi: " + ex.Message;
             }
         }
         public string GenerateNewLoaiDichVuID()

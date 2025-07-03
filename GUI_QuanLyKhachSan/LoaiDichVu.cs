@@ -235,30 +235,30 @@ namespace GUI_QuanLyKhachSan
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string loaiDichVuID = txtLoaiDichVuID.Text.Trim();
-
-            if (string.IsNullOrEmpty(loaiDichVuID))
+            if (dgrLoaiDV.SelectedRows.Count > 0)
             {
-                MessageBox.Show("Vui lòng chọn loại dịch vụ cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                // Lấy mã nhân viên từ dòng đang chọn
+                string loaiDichVuID = dgrLoaiDV.SelectedRows[0].Cells["LoaiDichVuID"].Value.ToString();
 
-            DialogResult confirm = MessageBox.Show("Bạn có chắc muốn xóa không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (confirm == DialogResult.Yes)
-            {
-                BUSLoaiDV service = new BUSLoaiDV();
-                string result = service.DeleteLoaiDichVu(loaiDichVuID);
+                // Gọi hàm xóa trong BUS
+                BUSLoaiDV busldv = new BUSLoaiDV();
+                string result = busLoaiDichVu.DeleteLoaiDichVu(new DTO_LoaiDichVu { LoaiDichVuID = loaiDichVuID });
 
-                if (!string.IsNullOrEmpty(result))
+                if (string.IsNullOrEmpty(result))
                 {
-                    MessageBox.Show("Lỗi: " + result, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    MessageBox.Show("Xóa thành công!");
+                    loadLoaiDV(); // load lại danh sách sau khi xóa
                 }
-
-                MessageBox.Show("Xóa loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                loadLoaiDV();
-                ClearFrom();
+                else
+                {
+                    MessageBox.Show("Lỗi khi xóa: " + result);
+                }
             }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn dòng cần xóa!");
+            }
+
         }
 
     }
