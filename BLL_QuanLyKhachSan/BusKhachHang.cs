@@ -11,10 +11,17 @@ namespace BLL_QuanLyKhachSan
     public class BusKhachHang
     {
         DALKhachHang dalKhachHang = new DALKhachHang();
+
         public List<KhachHang> GetKhachHangList()
         {
             return dalKhachHang.SelectAll();
         }
+
+        public string GenerateNewKhachHangID()
+        {
+            return dalKhachHang.generateKhachHangID();
+        }
+
         public string UpdateKhachHang(KhachHang kh)
         {
             try

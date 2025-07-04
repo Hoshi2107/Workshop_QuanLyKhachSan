@@ -20,7 +20,7 @@ namespace DAL_QuanLyKhachSan
                 while (reader.Read())
                 {
                     DatPhong entity = new DatPhong();
-                    entity.MaHoaDonThue = reader.GetString("HoaDonThueID");
+                    entity.HoaDonThueID = reader.GetString("HoaDonThueID");
                     entity.MaKhachHang = reader.GetString("KhachHangID");
                     entity.MaPhong = reader.GetString("PhongID");
                     entity.NgayDen = reader.GetDateTime("NgayDen");
@@ -42,8 +42,52 @@ namespace DAL_QuanLyKhachSan
             string sql = "SELECT * FROM DatPhong";
             return SelectBySql(sql, new List<object>());
         }
+        public void insertDatPhong(DatPhong dp)
+        {
+            try
+            {
+                string sql = @"INSERT INTO DatPhong (HoaDonThueID, KhachHangID, PhongID, NhanVienID, NgayDen, NgayDi, GhiChu) 
+                       VALUES (@0, @1, @2, @3, @4, @5, @6)";
 
-      
+                List<object> parameters = new List<object>
+        {
+            dp.HoaDonThueID,
+            dp.MaKhachHang,
+            dp.MaPhong,
+            dp.MaNV,
+            dp.NgayDen,
+            dp.NgayDi,
+            dp.GhiChu
+        };
+
+                DBUtil.Update(sql, parameters);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public string generateDatPhongID()
+        {
+            string prefix = "DP";
+            string sql = "SELECT MAX(HoaDonThueID) FROM DatPhong";
+            List<object> thamSo = new List<object>();
+
+            object result = DBUtil.ScalarQuery(sql, thamSo);
+            if (result != null && result.ToString().StartsWith(prefix))
+            {
+                string maxCode = result.ToString().Substring(prefix.Length); // bỏ tiền tố "DP"
+                if (int.TryParse(maxCode, out int number))
+                {
+                    int newNumber = number + 1;
+                    return $"{prefix}{newNumber:D3}";
+                }
+            }
+
+            return $"{prefix}001";
+        }
+
+
 
     }
 }

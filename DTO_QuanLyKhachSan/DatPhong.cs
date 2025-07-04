@@ -8,7 +8,7 @@ namespace DTO_QuanLyKhachSan
 {
     public class DatPhong
     {
-        public string MaHoaDonThue {  get; set; }
+        public string HoaDonThueID {  get; set; }
         public string MaKhachHang {  get; set; }
         public string MaPhong {  get; set; }
         public DateTime NgayDen {  get; set; }
