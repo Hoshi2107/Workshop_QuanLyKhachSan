@@ -28,22 +28,20 @@ namespace GUI_QuanLyKhachSan
         }
         private void ClearFrom()
         {
+            btnThem.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = true;
+
             txtLoaiDichVuID.Clear();
             txtTenDV.Clear();
             TextGiaDV.Clear();
             txtdonvitinh.Clear();
             txtghichu.Clear();
             txtTimKiem.Clear();
+
             dtpNgayTao.Value = DateTime.Now;
+            rdoConHoatDong.Checked = true;
 
-            rdoConHoatDong.Checked = true; // mặc định là còn hoạt động
-
-            // Trạng thái nút
-            btnThem.Enabled = true;
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
-
-            // Cho phép tạo mã tự động
             txtLoaiDichVuID.Enabled = false;
         }
         private void loadLoaiDV()
@@ -230,37 +228,52 @@ namespace GUI_QuanLyKhachSan
 
         private void textTimKiem_TextChanged(object sender, EventArgs e)
         {
-
+            string keyword = txtTimKiem.Text;
+            BUSLoaiDV bus = new BUSLoaiDV();
+            dgrLoaiDV.DataSource = bus.TimKiem(keyword);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (dgrLoaiDV.SelectedRows.Count > 0)
+            string loaiDichVuID = txtLoaiDichVuID.Text.Trim();
+
+            if (string.IsNullOrEmpty(loaiDichVuID))
             {
-                // Lấy mã nhân viên từ dòng đang chọn
-                string loaiDichVuID = dgrLoaiDV.SelectedRows[0].Cells["LoaiDichVuID"].Value.ToString();
+                MessageBox.Show("Vui lòng chọn loại dịch vụ cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-                // Gọi hàm xóa trong BUS
-                BUSLoaiDV busldv = new BUSLoaiDV();
-                string result = busLoaiDichVu.DeleteLoaiDichVu(new DTO_LoaiDichVu { LoaiDichVuID = loaiDichVuID });
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa loại dịch vụ này?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                string deleteResult = busLoaiDichVu.DeleteLoaiDichVu(loaiDichVuID);
 
-                if (string.IsNullOrEmpty(result))
+                if (string.IsNullOrEmpty(deleteResult))
                 {
-                    MessageBox.Show("Xóa thành công!");
-                    loadLoaiDV(); // load lại danh sách sau khi xóa
+                    MessageBox.Show("Xóa loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadLoaiDV();   // Load lại danh sách sau khi xóa
+                    ClearFrom();    // Xóa dữ liệu trên form
                 }
                 else
                 {
-                    MessageBox.Show("Lỗi khi xóa: " + result);
+                    MessageBox.Show(deleteResult, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn dòng cần xóa!");
             }
 
         }
 
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            ClearFrom();
+            loadLoaiDV();
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTimKiem.Text.Trim();
+            BUSLoaiDV busLoaiDV = new BUSLoaiDV();
+            dgrLoaiDV.DataSource = busLoaiDV.TimKiem(keyword);
+        }
     }
 
 }

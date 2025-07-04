@@ -423,6 +423,7 @@
             btnLamMoi.Size = new Size(135, 44);
             btnLamMoi.TabIndex = 58;
             btnLamMoi.Text = "Làm mới";
+            btnLamMoi.Click += btnLamMoi_Click;
             // 
             // btnFind
             // 
@@ -443,6 +444,7 @@
             btnFind.Size = new Size(135, 44);
             btnFind.TabIndex = 56;
             btnFind.Text = "Tìm kiếm";
+            btnFind.Click += btnFind_Click;
             // 
             // btnXoa
             // 

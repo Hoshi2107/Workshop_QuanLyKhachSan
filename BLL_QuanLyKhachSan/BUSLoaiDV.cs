@@ -51,22 +51,25 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi: " + ex.Message;
             }
         }
-        public string DeleteLoaiDichVu(DTO_LoaiDichVu ldv)
+        public string DeleteLoaiDichVu(string loaiDichVuID)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(ldv.LoaiDichVuID))
+                if (string.IsNullOrWhiteSpace(loaiDichVuID))
                 {
-                    return "Chưa chọn dòng để xóa";
+                    return "Chưa chọn dòng để xóa!";
                 }
-                dalloaisp.deleteLoaiDichVu(ldv);
-                return string.Empty;
+
+                dalloaisp.deleteLoaiDichVu(loaiDichVuID);
+                return string.Empty; // Trả về chuỗi rỗng nếu xóa thành công
             }
             catch (Exception ex)
             {
                 return "Lỗi: " + ex.Message;
             }
         }
+
+        
         public string GenerateNewLoaiDichVuID()
         {
             string prefix = "LDV";  // Đặt ở đây để cả try và catch đều dùng được
@@ -90,6 +93,23 @@ namespace BLL_QuanLyKhachSan
             catch (Exception ex)
             {
                 return $"{prefix}001"; // Bây giờ prefix có thể dùng được
+            }
+        }
+        public List<DTO_LoaiDichVu> TimKiem(string keyword)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(keyword))
+                {
+                    return dalloaisp.selectAll(); // Gọi lại danh sách tất cả nếu không nhập gì
+                }
+
+                keyword = keyword.Trim().ToLower();
+                return dalloaisp.searchByKeyword(keyword);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tìm kiếm loại dịch vụ: " + ex.Message);
             }
         }
 

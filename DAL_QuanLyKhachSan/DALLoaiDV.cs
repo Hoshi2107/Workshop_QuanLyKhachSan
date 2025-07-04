@@ -108,7 +108,7 @@ namespace DAL_QuanLyKhachSan
                 Console.WriteLine("Lỗi khi cập nhật loại dịch vụ: " + ex.Message);
             }
         }
-        public void deleteLoaiDichVu(DTO_LoaiDichVu loaiDichVuID)
+        public void deleteLoaiDichVu(string loaiDichVuID)
         {
             try
             {
@@ -122,5 +122,22 @@ namespace DAL_QuanLyKhachSan
                 Console.WriteLine("Lỗi khi xóa loại dịch vụ: " + ex.Message);
             }
         }
+        public List<DTO_LoaiDichVu> searchByKeyword(string keyword)
+        {
+            if (string.IsNullOrWhiteSpace(keyword))
+                return selectAll(); // Nếu không nhập gì thì trả về toàn bộ danh sách
+
+            keyword = keyword.Trim().ToLower();
+
+            var dsLoaiDichVu = selectAll();
+
+            return dsLoaiDichVu.Where(ldv =>
+                (!string.IsNullOrEmpty(ldv.LoaiDichVuID) && ldv.LoaiDichVuID.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(ldv.TenDichVu) && ldv.TenDichVu.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(ldv.DonViTinh) && ldv.DonViTinh.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(ldv.GhiChu) && ldv.GhiChu.ToLower().Contains(keyword))
+            ).ToList();
+        }
+
     }
 }
