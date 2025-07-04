@@ -32,11 +32,6 @@ namespace GUI_QuanLyKhachSan
             guna2DgvDatPhong.DataSource = bUSDatPhong.GetDatPhongList();
 
         }
-        private void LoadNewKhachHangID()
-        {
-            BusKhachHang busKhachHang = new BusKhachHang();
-            txtMaKhachHang.Text = busKhachHang.GenerateNewKhachHangID();
-        }
         private void LoadComboBox()
         {
             BLL_NhanVien bllNhanVien = new BLL_NhanVien();
@@ -71,7 +66,6 @@ namespace GUI_QuanLyKhachSan
             btnThem.Enabled = true;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
-            txtHoaDonTheoID.Enabled = false;  
         }
 
         private void guna2DgvDatPhong_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

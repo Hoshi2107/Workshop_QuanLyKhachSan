@@ -46,7 +46,7 @@ namespace DAL_QuanLyKhachSan
         {
             try
             {
-                string sql = @"INSERT INTO DatPhong (HoaDonThueID, KhachHangID, PhongID, NhanVienID, NgayDen, NgayDi, GhiChu) 
+                string sql = @"INSERT INTO DatPhong (HoaDonThueID, KhachHangID, PhongID, MaNV, NgayDen, NgayDi, GhiChu) 
                        VALUES (@0, @1, @2, @3, @4, @5, @6)";
 
                 List<object> parameters = new List<object>

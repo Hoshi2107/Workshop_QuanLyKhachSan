@@ -16,12 +16,6 @@ namespace BLL_QuanLyKhachSan
         {
             return dalKhachHang.SelectAll();
         }
-
-        public string GenerateNewKhachHangID()
-        {
-            return dalKhachHang.generateKhachHangID();
-        }
-
         public string UpdateKhachHang(KhachHang kh)
         {
             try
