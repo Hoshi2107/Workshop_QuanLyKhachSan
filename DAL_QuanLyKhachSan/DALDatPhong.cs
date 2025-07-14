@@ -86,7 +86,18 @@ namespace DAL_QuanLyKhachSan
 
             return $"{prefix}001";
         }
+        public List<DatPhong> searchByKeyword(string keyword)
+        {
+            keyword = keyword.Trim().ToLower();
 
+            var dp = SelectAll();
+
+            return dp.Where(KH =>
+                (!string.IsNullOrEmpty(KH.HoaDonThueID) && KH.HoaDonThueID.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(KH.MaKhachHang) && KH.MaKhachHang.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(KH.MaNV) && KH.MaNV.ToLower().Contains(keyword))
+            ).ToList();
+        }
 
 
     }

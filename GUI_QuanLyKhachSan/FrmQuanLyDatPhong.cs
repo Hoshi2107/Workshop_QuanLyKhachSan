@@ -1,6 +1,7 @@
 ﻿using BLL_QuanLyKhachSan;
 using DTO_QuanLyKhachSan;
 using Guna.UI2.WinForms;
+using Microsoft.VisualBasic.Devices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,7 +72,7 @@ namespace GUI_QuanLyKhachSan
         private void guna2DgvDatPhong_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = guna2DgvDatPhong.Rows[e.RowIndex];
-            txtHoaDonTheoID.Text = row.Cells["MaHoaDonThue"].Value.ToString();
+            txtHoaDonTheoID.Text = row.Cells["HoaDonThueID"].Value.ToString();
             txtMaKhachHang.Text = row.Cells["MaKhachHang"].Value.ToString();
             cboIDPhong.Text = row.Cells["MaPhong"].Value.ToString();
             dtpNgayDen.Value = Convert.ToDateTime(row.Cells["NgayDen"].Value);
@@ -143,6 +144,25 @@ namespace GUI_QuanLyKhachSan
         private void guna2DgvDatPhong_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTimKiem.Text.Trim();
+            if (string.IsNullOrEmpty(keyword))
+            {
+                LoadDanhSachDatPhong();
+            }
+            else
+            {
+                TimKiemKhachHangID(keyword);
+            }
+        }
+        private void TimKiemKhachHangID(string keyword)
+        {
+            BusDatPhong bUSDP = new BusDatPhong();
+
+            guna2DgvDatPhong.DataSource = bUSDP.TimKiem(keyword);
         }
     }
 }

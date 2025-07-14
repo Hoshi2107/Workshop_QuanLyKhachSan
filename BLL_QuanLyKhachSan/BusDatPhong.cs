@@ -36,6 +36,21 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi khi thêm đặt phòng: " + ex.Message;
             }
         }
-
+        public List<DatPhong> TimKiem(string keyword)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(keyword))
+                {
+                    return dalDatPhong.SelectAll();
+                }
+                keyword = keyword.Trim().ToLower();
+                return dalDatPhong.searchByKeyword(keyword);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tìm kiếm nhân viên: " + ex.Message);
+            }
+        }
     }
 }
