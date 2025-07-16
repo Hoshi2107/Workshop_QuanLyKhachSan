@@ -154,7 +154,7 @@ namespace GUI_QuanLyKhachSan
                 GhiChu = ghiChu
             };
             BusDatPhong busDatPhong = new BusDatPhong();
-            string result = busDatPhong.UpdateDatPhong(datPhong);
+            string result = busDatPhong.updateDatPhong(datPhong);
 
             if (string.IsNullOrEmpty(result))
             {
@@ -171,6 +171,26 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
+            if (guna2DgvDatPhong.SelectedRows.Count > 0)
+            {
+                string hoaDonThueID = guna2DgvDatPhong.SelectedRows[0].Cells["HoaDonThueID"].Value.ToString();
+                BusDatPhong busDatPhong = new BusDatPhong();
+                string result = busDatPhong.deleteDatPhong(new DatPhong { HoaDonThueID = hoaDonThueID });
+
+                if (string.IsNullOrEmpty(result))
+                {
+                    MessageBox.Show("Xóa đặt phòng thành công!");
+                    LoadDanhSachDatPhong();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi xóa: " + result);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn dòng cần xóa!");
+            }
 
         }
 

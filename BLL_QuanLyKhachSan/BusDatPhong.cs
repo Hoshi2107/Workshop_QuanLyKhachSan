@@ -69,6 +69,21 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi: " + ex.Message;
             }
         }
-
+        public string deleteDatPhong(DatPhong dp)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(dp.HoaDonThueID))
+                {
+                    return "Chưa chọn dòng để xóa";
+                }
+                dalDatPhong.deleteDatPhong(dp);
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi: " + ex.Message;
+            }
+        }
     }
 }

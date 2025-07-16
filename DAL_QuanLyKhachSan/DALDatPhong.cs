@@ -129,7 +129,19 @@ namespace DAL_QuanLyKhachSan
                 throw;
             }
         }
-
+        public void deleteDatPhong(DatPhong HoaDonThueID)
+        {
+            try
+            {
+                string sql = "DELETE FROM DatPhong WHERE HoaDonThueID = @0";
+                List<object> thamSo = new List<object> { HoaDonThueID.HoaDonThueID };
+                DBUtil.Update(sql, thamSo);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
     }
 }
