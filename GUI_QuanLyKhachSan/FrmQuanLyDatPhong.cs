@@ -128,6 +128,44 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            string hoaDonThueID = txtHoaDonTheoID.Text.Trim();
+            string maKhachHang = txtMaKhachHang.Text.Trim();
+            string maPhong = txtMaKhachHang.Text.Trim();
+            string maNV = cboMaNv.SelectedValue?.ToString();
+            DateTime ngayDen = dtpNgayDen.Value;
+            DateTime ngayDi = dtpNgayDi.Value;
+            string ghiChu = txtGhiChu.Text.Trim();
+
+            if (string.IsNullOrEmpty(maKhachHang) || string.IsNullOrEmpty(maPhong) ||
+                string.IsNullOrEmpty(maNV))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin đặt phòng!");
+                return;
+            }
+
+            DatPhong datPhong = new DatPhong
+            {
+                HoaDonThueID = hoaDonThueID,
+                MaKhachHang = maKhachHang,
+                MaPhong = maPhong,
+                MaNV = maNV,
+                NgayDen = ngayDen,
+                NgayDi = ngayDi,
+                GhiChu = ghiChu
+            };
+            BusDatPhong busDatPhong = new BusDatPhong();
+            string result = busDatPhong.UpdateDatPhong(datPhong);
+
+            if (string.IsNullOrEmpty(result))
+            {
+                MessageBox.Show("Cập nhật đặt phòng thành công!");
+                LoadDanhSachDatPhong();
+                ClearForm();
+            }
+            else
+            {
+                MessageBox.Show(result);
+            }
 
         }
 

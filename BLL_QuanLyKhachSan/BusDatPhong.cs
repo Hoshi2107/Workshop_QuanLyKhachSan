@@ -52,5 +52,23 @@ namespace BLL_QuanLyKhachSan
                 throw new Exception("Lỗi khi tìm kiếm nhân viên: " + ex.Message);
             }
         }
+        public string updateDatPhong(DatPhong dp)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(dp.HoaDonThueID))
+                {
+                    return "Mã hóa đơn thuê không hợp lệ!";
+                }
+
+                dalDatPhong.updateDatPhong(dp);
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi: " + ex.Message;
+            }
+        }
+
     }
 }
