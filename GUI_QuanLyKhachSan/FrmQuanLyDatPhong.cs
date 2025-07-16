@@ -128,11 +128,69 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            string hoaDonThueID = txtHoaDonTheoID.Text.Trim();
+            string maKhachHang = txtMaKhachHang.Text.Trim();
+            string maPhong = txtMaKhachHang.Text.Trim();
+            string maNV = cboMaNv.SelectedValue?.ToString();
+            DateTime ngayDen = dtpNgayDen.Value;
+            DateTime ngayDi = dtpNgayDi.Value;
+            string ghiChu = txtGhiChu.Text.Trim();
+
+            if (string.IsNullOrEmpty(maKhachHang) || string.IsNullOrEmpty(maPhong) ||
+                string.IsNullOrEmpty(maNV))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin đặt phòng!");
+                return;
+            }
+
+            DatPhong datPhong = new DatPhong
+            {
+                HoaDonThueID = hoaDonThueID,
+                MaKhachHang = maKhachHang,
+                MaPhong = maPhong,
+                MaNV = maNV,
+                NgayDen = ngayDen,
+                NgayDi = ngayDi,
+                GhiChu = ghiChu
+            };
+            BusDatPhong busDatPhong = new BusDatPhong();
+            string result = busDatPhong.updateDatPhong(datPhong);
+
+            if (string.IsNullOrEmpty(result))
+            {
+                MessageBox.Show("Cập nhật đặt phòng thành công!");
+                LoadDanhSachDatPhong();
+                ClearForm();
+            }
+            else
+            {
+                MessageBox.Show(result);
+            }
 
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
+            if (guna2DgvDatPhong.SelectedRows.Count > 0)
+            {
+                string hoaDonThueID = guna2DgvDatPhong.SelectedRows[0].Cells["HoaDonThueID"].Value.ToString();
+                BusDatPhong busDatPhong = new BusDatPhong();
+                string result = busDatPhong.deleteDatPhong(new DatPhong { HoaDonThueID = hoaDonThueID });
+
+                if (string.IsNullOrEmpty(result))
+                {
+                    MessageBox.Show("Xóa đặt phòng thành công!");
+                    LoadDanhSachDatPhong();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi xóa: " + result);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn dòng cần xóa!");
+            }
 
         }
 
