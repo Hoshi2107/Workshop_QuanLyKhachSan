@@ -100,14 +100,14 @@
             txtGhiChu.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGhiChu.Font = new Font("Segoe UI", 9F);
             txtGhiChu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtGhiChu.Location = new Point(128, 178);
-            txtGhiChu.Margin = new Padding(3, 4, 3, 4);
+            txtGhiChu.Location = new Point(146, 237);
+            txtGhiChu.Margin = new Padding(3, 5, 3, 5);
             txtGhiChu.Name = "txtGhiChu";
             txtGhiChu.PasswordChar = '\0';
             txtGhiChu.PlaceholderText = "";
             txtGhiChu.SelectedText = "";
             txtGhiChu.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtGhiChu.Size = new Size(176, 27);
+            txtGhiChu.Size = new Size(201, 36);
             txtGhiChu.TabIndex = 75;
             // 
             // rdoKhongHoatDong
@@ -120,10 +120,9 @@
             rdoKhongHoatDong.CheckedState.InnerColor = Color.White;
             rdoKhongHoatDong.CheckedState.InnerOffset = -4;
             rdoKhongHoatDong.ForeColor = Color.Black;
-            rdoKhongHoatDong.Location = new Point(150, 42);
-            rdoKhongHoatDong.Margin = new Padding(3, 2, 3, 2);
+            rdoKhongHoatDong.Location = new Point(171, 56);
             rdoKhongHoatDong.Name = "rdoKhongHoatDong";
-            rdoKhongHoatDong.Size = new Size(118, 19);
+            rdoKhongHoatDong.Size = new Size(146, 24);
             rdoKhongHoatDong.TabIndex = 1;
             rdoKhongHoatDong.Text = "Không hoạt động";
             rdoKhongHoatDong.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
@@ -142,10 +141,9 @@
             rdoDangHoatDong.CheckedState.InnerColor = Color.White;
             rdoDangHoatDong.CheckedState.InnerOffset = -4;
             rdoDangHoatDong.ForeColor = Color.Black;
-            rdoDangHoatDong.Location = new Point(3, 42);
-            rdoDangHoatDong.Margin = new Padding(3, 2, 3, 2);
+            rdoDangHoatDong.Location = new Point(3, 56);
             rdoDangHoatDong.Name = "rdoDangHoatDong";
-            rdoDangHoatDong.Size = new Size(111, 19);
+            rdoDangHoatDong.Size = new Size(139, 24);
             rdoDangHoatDong.TabIndex = 0;
             rdoDangHoatDong.Text = "Đang hoạt động";
             rdoDangHoatDong.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
@@ -157,10 +155,9 @@
             // guna2HtmlLabel9
             // 
             guna2HtmlLabel9.BackColor = Color.Transparent;
-            guna2HtmlLabel9.Location = new Point(29, 188);
-            guna2HtmlLabel9.Margin = new Padding(3, 2, 3, 2);
+            guna2HtmlLabel9.Location = new Point(33, 251);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
-            guna2HtmlLabel9.Size = new Size(44, 17);
+            guna2HtmlLabel9.Size = new Size(52, 22);
             guna2HtmlLabel9.TabIndex = 74;
             guna2HtmlLabel9.Text = "Ghi chú";
             // 
@@ -181,11 +178,10 @@
             guna2GradientPanel1.Controls.Add(guna2HtmlLabel1);
             guna2GradientPanel1.Controls.Add(guna2HtmlLabel6);
             guna2GradientPanel1.CustomizableEdges = customizableEdges15;
-            guna2GradientPanel1.Location = new Point(10, 376);
-            guna2GradientPanel1.Margin = new Padding(3, 2, 3, 2);
+            guna2GradientPanel1.Location = new Point(11, 501);
             guna2GradientPanel1.Name = "guna2GradientPanel1";
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2GradientPanel1.Size = new Size(1059, 242);
+            guna2GradientPanel1.Size = new Size(1210, 323);
             guna2GradientPanel1.TabIndex = 89;
             // 
             // cboMaLoaiPhong
@@ -199,21 +195,19 @@
             cboMaLoaiPhong.Font = new Font("Segoe UI", 10F);
             cboMaLoaiPhong.ForeColor = Color.FromArgb(68, 88, 112);
             cboMaLoaiPhong.ItemHeight = 30;
-            cboMaLoaiPhong.Location = new Point(739, 23);
-            cboMaLoaiPhong.Margin = new Padding(3, 2, 3, 2);
+            cboMaLoaiPhong.Location = new Point(845, 31);
             cboMaLoaiPhong.Name = "cboMaLoaiPhong";
             cboMaLoaiPhong.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            cboMaLoaiPhong.Size = new Size(176, 36);
+            cboMaLoaiPhong.Size = new Size(201, 36);
             cboMaLoaiPhong.TabIndex = 77;
             // 
             // guna2HtmlLabel2
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.ForeColor = Color.Black;
-            guna2HtmlLabel2.Location = new Point(327, 23);
-            guna2HtmlLabel2.Margin = new Padding(3, 2, 3, 2);
+            guna2HtmlLabel2.Location = new Point(374, 31);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(60, 17);
+            guna2HtmlLabel2.Size = new Size(74, 22);
             guna2HtmlLabel2.TabIndex = 76;
             guna2HtmlLabel2.Text = "Tên phòng";
             // 
@@ -224,11 +218,10 @@
             gnGroupBox_TinhTrang.CustomizableEdges = customizableEdges5;
             gnGroupBox_TinhTrang.Font = new Font("Segoe UI", 9F);
             gnGroupBox_TinhTrang.ForeColor = Color.FromArgb(125, 137, 149);
-            gnGroupBox_TinhTrang.Location = new Point(647, 85);
-            gnGroupBox_TinhTrang.Margin = new Padding(3, 2, 3, 2);
+            gnGroupBox_TinhTrang.Location = new Point(739, 113);
             gnGroupBox_TinhTrang.Name = "gnGroupBox_TinhTrang";
             gnGroupBox_TinhTrang.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            gnGroupBox_TinhTrang.Size = new Size(278, 75);
+            gnGroupBox_TinhTrang.Size = new Size(318, 100);
             gnGroupBox_TinhTrang.TabIndex = 73;
             gnGroupBox_TinhTrang.Text = "Tình trạng";
             // 
@@ -238,23 +231,21 @@
             dtpNgayTao.CustomizableEdges = customizableEdges7;
             dtpNgayTao.Font = new Font("Segoe UI", 9F);
             dtpNgayTao.Format = DateTimePickerFormat.Long;
-            dtpNgayTao.Location = new Point(428, 106);
-            dtpNgayTao.Margin = new Padding(3, 2, 3, 2);
+            dtpNgayTao.Location = new Point(489, 141);
             dtpNgayTao.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpNgayTao.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             dtpNgayTao.Name = "dtpNgayTao";
             dtpNgayTao.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            dtpNgayTao.Size = new Size(176, 34);
+            dtpNgayTao.Size = new Size(201, 45);
             dtpNgayTao.TabIndex = 72;
             dtpNgayTao.Value = new DateTime(2025, 6, 5, 8, 44, 23, 52);
             // 
             // guna2HtmlLabel7
             // 
             guna2HtmlLabel7.BackColor = Color.Transparent;
-            guna2HtmlLabel7.Location = new Point(329, 112);
-            guna2HtmlLabel7.Margin = new Padding(3, 2, 3, 2);
+            guna2HtmlLabel7.Location = new Point(376, 149);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
-            guna2HtmlLabel7.Size = new Size(51, 17);
+            guna2HtmlLabel7.Size = new Size(64, 22);
             guna2HtmlLabel7.TabIndex = 71;
             guna2HtmlLabel7.Text = "Ngày tạo";
             // 
@@ -269,23 +260,22 @@
             txtGiaPhong.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGiaPhong.Font = new Font("Segoe UI", 9F);
             txtGiaPhong.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtGiaPhong.Location = new Point(128, 106);
-            txtGiaPhong.Margin = new Padding(3, 4, 3, 4);
+            txtGiaPhong.Location = new Point(146, 141);
+            txtGiaPhong.Margin = new Padding(3, 5, 3, 5);
             txtGiaPhong.Name = "txtGiaPhong";
             txtGiaPhong.PasswordChar = '\0';
             txtGiaPhong.PlaceholderText = "";
             txtGiaPhong.SelectedText = "";
             txtGiaPhong.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            txtGiaPhong.Size = new Size(176, 24);
+            txtGiaPhong.Size = new Size(201, 32);
             txtGiaPhong.TabIndex = 64;
             // 
             // guna2HtmlLabel4
             // 
             guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Location = new Point(29, 106);
-            guna2HtmlLabel4.Margin = new Padding(3, 2, 3, 2);
+            guna2HtmlLabel4.Location = new Point(33, 141);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(58, 17);
+            guna2HtmlLabel4.Size = new Size(72, 22);
             guna2HtmlLabel4.TabIndex = 65;
             guna2HtmlLabel4.Text = "Giá phòng";
             // 
@@ -300,14 +290,14 @@
             txtTenPhong.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTenPhong.Font = new Font("Segoe UI", 9F);
             txtTenPhong.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenPhong.Location = new Point(428, 23);
-            txtTenPhong.Margin = new Padding(3, 4, 3, 4);
+            txtTenPhong.Location = new Point(489, 31);
+            txtTenPhong.Margin = new Padding(3, 5, 3, 5);
             txtTenPhong.Name = "txtTenPhong";
             txtTenPhong.PasswordChar = '\0';
             txtTenPhong.PlaceholderText = "";
             txtTenPhong.SelectedText = "";
             txtTenPhong.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txtTenPhong.Size = new Size(176, 27);
+            txtTenPhong.Size = new Size(201, 36);
             txtTenPhong.TabIndex = 61;
             // 
             // txtIDPhong
@@ -321,42 +311,39 @@
             txtIDPhong.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtIDPhong.Font = new Font("Segoe UI", 9F);
             txtIDPhong.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtIDPhong.Location = new Point(128, 23);
-            txtIDPhong.Margin = new Padding(3, 4, 3, 4);
+            txtIDPhong.Location = new Point(146, 31);
+            txtIDPhong.Margin = new Padding(3, 5, 3, 5);
             txtIDPhong.Name = "txtIDPhong";
             txtIDPhong.PasswordChar = '\0';
             txtIDPhong.PlaceholderText = "";
             txtIDPhong.SelectedText = "";
             txtIDPhong.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            txtIDPhong.Size = new Size(176, 24);
+            txtIDPhong.Size = new Size(201, 32);
             txtIDPhong.TabIndex = 34;
             // 
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.ForeColor = Color.Black;
-            guna2HtmlLabel1.Location = new Point(29, 23);
-            guna2HtmlLabel1.Margin = new Padding(3, 2, 3, 2);
+            guna2HtmlLabel1.Location = new Point(33, 31);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(52, 17);
+            guna2HtmlLabel1.Size = new Size(64, 22);
             guna2HtmlLabel1.TabIndex = 35;
             guna2HtmlLabel1.Text = "Phòng ID";
             // 
             // guna2HtmlLabel6
             // 
             guna2HtmlLabel6.BackColor = Color.Transparent;
-            guna2HtmlLabel6.Location = new Point(647, 34);
-            guna2HtmlLabel6.Margin = new Padding(3, 2, 3, 2);
+            guna2HtmlLabel6.Location = new Point(739, 45);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
-            guna2HtmlLabel6.Size = new Size(80, 17);
+            guna2HtmlLabel6.Size = new Size(100, 22);
             guna2HtmlLabel6.TabIndex = 40;
             guna2HtmlLabel6.Text = "Mã loại phòng";
             // 
             // guna2HtmlLabel8
             // 
             guna2HtmlLabel8.BackColor = Color.Transparent;
-            guna2HtmlLabel8.Location = new Point(305, 390);
-            guna2HtmlLabel8.Margin = new Padding(3, 2, 3, 2);
+            guna2HtmlLabel8.Location = new Point(349, 520);
             guna2HtmlLabel8.Name = "guna2HtmlLabel8";
             guna2HtmlLabel8.Size = new Size(3, 2);
             guna2HtmlLabel8.TabIndex = 86;
@@ -385,13 +372,11 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             guna2DgvPhong.DefaultCellStyle = dataGridViewCellStyle3;
             guna2DgvPhong.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DgvPhong.Location = new Point(10, 50);
-            guna2DgvPhong.Margin = new Padding(3, 2, 3, 2);
+            guna2DgvPhong.Location = new Point(11, 67);
             guna2DgvPhong.Name = "guna2DgvPhong";
             guna2DgvPhong.RowHeadersVisible = false;
             guna2DgvPhong.RowHeadersWidth = 51;
-            guna2DgvPhong.RowTemplate.Height = 29;
-            guna2DgvPhong.Size = new Size(1059, 315);
+            guna2DgvPhong.Size = new Size(1210, 420);
             guna2DgvPhong.TabIndex = 92;
             guna2DgvPhong.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             guna2DgvPhong.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -428,20 +413,20 @@
             txtTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTimKiem.Font = new Font("Segoe UI", 9F);
             txtTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTimKiem.Location = new Point(52, 10);
-            txtTimKiem.Margin = new Padding(3, 4, 3, 4);
+            txtTimKiem.Location = new Point(59, 13);
+            txtTimKiem.Margin = new Padding(3, 5, 3, 5);
             txtTimKiem.Name = "txtTimKiem";
             txtTimKiem.PasswordChar = '\0';
             txtTimKiem.PlaceholderText = "";
             txtTimKiem.SelectedText = "";
             txtTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            txtTimKiem.Size = new Size(808, 33);
+            txtTimKiem.Size = new Size(923, 44);
             txtTimKiem.TabIndex = 91;
             // 
             // btnTimKiem
             // 
             btnTimKiem.AutoRoundedCorners = true;
-            btnTimKiem.BorderRadius = 15;
+            btnTimKiem.BorderRadius = 21;
             btnTimKiem.CustomizableEdges = customizableEdges19;
             btnTimKiem.DisabledState.BorderColor = Color.DarkGray;
             btnTimKiem.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -451,18 +436,18 @@
             btnTimKiem.Font = new Font("Segoe UI", 9F);
             btnTimKiem.ForeColor = Color.White;
             btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
-            btnTimKiem.Location = new Point(878, 10);
-            btnTimKiem.Margin = new Padding(3, 2, 3, 2);
+            btnTimKiem.Location = new Point(1003, 13);
             btnTimKiem.Name = "btnTimKiem";
             btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            btnTimKiem.Size = new Size(118, 33);
+            btnTimKiem.Size = new Size(135, 44);
             btnTimKiem.TabIndex = 90;
             btnTimKiem.Text = "Tìm kiếm";
+            btnTimKiem.Click += btnTimKiem_Click;
             // 
             // guna2Button5
             // 
             guna2Button5.AutoRoundedCorners = true;
-            guna2Button5.BorderRadius = 15;
+            guna2Button5.BorderRadius = 21;
             guna2Button5.CustomizableEdges = customizableEdges21;
             guna2Button5.DisabledState.BorderColor = Color.DarkGray;
             guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -472,18 +457,18 @@
             guna2Button5.Font = new Font("Segoe UI", 9F);
             guna2Button5.ForeColor = Color.Black;
             guna2Button5.Image = (Image)resources.GetObject("guna2Button5.Image");
-            guna2Button5.Location = new Point(560, 637);
-            guna2Button5.Margin = new Padding(3, 2, 3, 2);
+            guna2Button5.Location = new Point(640, 849);
             guna2Button5.Name = "guna2Button5";
             guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2Button5.Size = new Size(118, 33);
+            guna2Button5.Size = new Size(135, 44);
             guna2Button5.TabIndex = 96;
             guna2Button5.Text = "Làm mới";
+            guna2Button5.Click += guna2Button5_Click;
             // 
             // guna2Button3
             // 
             guna2Button3.AutoRoundedCorners = true;
-            guna2Button3.BorderRadius = 15;
+            guna2Button3.BorderRadius = 21;
             guna2Button3.CustomizableEdges = customizableEdges23;
             guna2Button3.DisabledState.BorderColor = Color.DarkGray;
             guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -493,18 +478,18 @@
             guna2Button3.Font = new Font("Segoe UI", 9F);
             guna2Button3.ForeColor = Color.Black;
             guna2Button3.Image = (Image)resources.GetObject("guna2Button3.Image");
-            guna2Button3.Location = new Point(402, 637);
-            guna2Button3.Margin = new Padding(3, 2, 3, 2);
+            guna2Button3.Location = new Point(459, 849);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            guna2Button3.Size = new Size(118, 33);
+            guna2Button3.Size = new Size(135, 44);
             guna2Button3.TabIndex = 95;
             guna2Button3.Text = "Xóa";
+            guna2Button3.Click += guna2Button3_Click;
             // 
             // guna2Button2
             // 
             guna2Button2.AutoRoundedCorners = true;
-            guna2Button2.BorderRadius = 15;
+            guna2Button2.BorderRadius = 21;
             guna2Button2.CustomizableEdges = customizableEdges25;
             guna2Button2.DisabledState.BorderColor = Color.DarkGray;
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -514,18 +499,18 @@
             guna2Button2.Font = new Font("Segoe UI", 9F);
             guna2Button2.ForeColor = Color.Black;
             guna2Button2.Image = (Image)resources.GetObject("guna2Button2.Image");
-            guna2Button2.Location = new Point(258, 637);
-            guna2Button2.Margin = new Padding(3, 2, 3, 2);
+            guna2Button2.Location = new Point(295, 849);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            guna2Button2.Size = new Size(118, 33);
+            guna2Button2.Size = new Size(135, 44);
             guna2Button2.TabIndex = 94;
             guna2Button2.Text = "Sửa";
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // guna2Button1
             // 
             guna2Button1.AutoRoundedCorners = true;
-            guna2Button1.BorderRadius = 15;
+            guna2Button1.BorderRadius = 21;
             guna2Button1.CustomizableEdges = customizableEdges27;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -535,20 +520,20 @@
             guna2Button1.Font = new Font("Segoe UI", 9F);
             guna2Button1.ForeColor = Color.Black;
             guna2Button1.Image = (Image)resources.GetObject("guna2Button1.Image");
-            guna2Button1.Location = new Point(106, 637);
-            guna2Button1.Margin = new Padding(3, 2, 3, 2);
+            guna2Button1.Location = new Point(121, 849);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            guna2Button1.Size = new Size(118, 33);
+            guna2Button1.Size = new Size(135, 44);
             guna2Button1.TabIndex = 93;
             guna2Button1.Text = "Thêm ";
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // FrmQuanLyPhong
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
-            ClientSize = new Size(1083, 727);
+            ClientSize = new Size(1238, 969);
             Controls.Add(guna2Button5);
             Controls.Add(guna2Button3);
             Controls.Add(guna2Button2);
@@ -559,7 +544,6 @@
             Controls.Add(guna2GradientPanel1);
             Controls.Add(guna2HtmlLabel8);
             ForeColor = Color.Black;
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmQuanLyPhong";
             Text = "FrmQuanLyPhong";
             Load += FrmQuanLyPhong_Load;

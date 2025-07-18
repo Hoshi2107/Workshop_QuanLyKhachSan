@@ -122,5 +122,18 @@ namespace DAL_QuanLyKhachSan
 
             return $"{prefix}001";
         }
+        public List<Phong> searchByKeyword(string keyword)
+        {
+            keyword = keyword.Trim().ToLower();
+
+            var dsPhong = selectAll();
+
+            return dsPhong.Where(P =>
+                (!string.IsNullOrEmpty(P.MaPhong) && P.MaPhong.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(P.TenPhong) && P.TenPhong.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(P.MaLoaiPhong) && P.MaLoaiPhong.ToLower().Contains(keyword))
+            ).ToList();
+        }
+
     }
 }

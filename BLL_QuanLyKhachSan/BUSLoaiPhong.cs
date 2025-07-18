@@ -11,7 +11,7 @@ namespace BLL_QuanLyKhachSan
     public class BUSLoaiPhong
     {
         DALLoaiPhong dalloaiPhong = new DALLoaiPhong();
-        public List<LoaiPhong> GateLoaiPhong()
+        public List<LoaiPhong> GetLoaiPhong()
         {
             return dalloaiPhong.selectAll();
         }
