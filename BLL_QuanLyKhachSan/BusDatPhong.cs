@@ -36,6 +36,54 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi khi thêm đặt phòng: " + ex.Message;
             }
         }
+        public List<DatPhong> TimKiem(string keyword)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(keyword))
+                {
+                    return dalDatPhong.SelectAll();
+                }
+                keyword = keyword.Trim().ToLower();
+                return dalDatPhong.searchByKeyword(keyword);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tìm kiếm nhân viên: " + ex.Message);
+            }
+        }
+        public string updateDatPhong(DatPhong dp)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(dp.HoaDonThueID))
+                {
+                    return "Mã hóa đơn thuê không hợp lệ!";
+                }
 
+                dalDatPhong.updateDatPhong(dp);
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi: " + ex.Message;
+            }
+        }
+        public string deleteDatPhong(DatPhong dp)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(dp.HoaDonThueID))
+                {
+                    return "Chưa chọn dòng để xóa";
+                }
+                dalDatPhong.deleteDatPhong(dp);
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi: " + ex.Message;
+            }
+        }
     }
 }

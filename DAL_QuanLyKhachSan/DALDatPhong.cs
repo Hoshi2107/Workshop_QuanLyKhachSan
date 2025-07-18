@@ -86,8 +86,62 @@ namespace DAL_QuanLyKhachSan
 
             return $"{prefix}001";
         }
+        public List<DatPhong> searchByKeyword(string keyword)
+        {
+            keyword = keyword.Trim().ToLower();
 
+            var dp = SelectAll();
 
+            return dp.Where(KH =>
+                (!string.IsNullOrEmpty(KH.HoaDonThueID) && KH.HoaDonThueID.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(KH.MaKhachHang) && KH.MaKhachHang.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(KH.MaNV) && KH.MaNV.ToLower().Contains(keyword))
+            ).ToList();
+        }
+        public void updateDatPhong(DatPhong dp)
+        {
+            try
+            {
+                string sql = @"UPDATE DatPhong
+                       SET KhachHangID = @1,
+                           PhongID = @2,
+                           MaNV = @3,
+                           NgayDen = @4,
+                           NgayDi = @5,
+                           GhiChu = @6
+                       WHERE HoaDonThueID = @0";
+
+                List<object> thamSo = new List<object>
+        {
+            dp.HoaDonThueID,
+            dp.MaKhachHang,
+            dp.MaPhong,
+            dp.MaNV,
+            dp.NgayDen,
+            dp.NgayDi,
+            dp.GhiChu
+        };
+
+                DBUtil.Update(sql, thamSo);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        public void deleteDatPhong(DatPhong HoaDonThueID)
+        {
+            try
+            {
+                string sql = "DELETE FROM DatPhong WHERE HoaDonThueID = @0";
+                List<object> thamSo = new List<object> { HoaDonThueID.HoaDonThueID };
+                DBUtil.Update(sql, thamSo);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
     }
 }

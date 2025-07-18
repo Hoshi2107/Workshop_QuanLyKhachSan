@@ -1,6 +1,7 @@
 ﻿using BLL_QuanLyKhachSan;
 using DTO_QuanLyKhachSan;
 using Guna.UI2.WinForms;
+using Microsoft.VisualBasic.Devices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -71,7 +72,7 @@ namespace GUI_QuanLyKhachSan
         private void guna2DgvDatPhong_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = guna2DgvDatPhong.Rows[e.RowIndex];
-            txtHoaDonTheoID.Text = row.Cells["MaHoaDonThue"].Value.ToString();
+            txtHoaDonTheoID.Text = row.Cells["HoaDonThueID"].Value.ToString();
             txtMaKhachHang.Text = row.Cells["MaKhachHang"].Value.ToString();
             cboIDPhong.Text = row.Cells["MaPhong"].Value.ToString();
             dtpNgayDen.Value = Convert.ToDateTime(row.Cells["NgayDen"].Value);
@@ -127,11 +128,69 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2Button2_Click(object sender, EventArgs e)
         {
+            string hoaDonThueID = txtHoaDonTheoID.Text.Trim();
+            string maKhachHang = txtMaKhachHang.Text.Trim();
+            string maPhong = txtMaKhachHang.Text.Trim();
+            string maNV = cboMaNv.SelectedValue?.ToString();
+            DateTime ngayDen = dtpNgayDen.Value;
+            DateTime ngayDi = dtpNgayDi.Value;
+            string ghiChu = txtGhiChu.Text.Trim();
+
+            if (string.IsNullOrEmpty(maKhachHang) || string.IsNullOrEmpty(maPhong) ||
+                string.IsNullOrEmpty(maNV))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin đặt phòng!");
+                return;
+            }
+
+            DatPhong datPhong = new DatPhong
+            {
+                HoaDonThueID = hoaDonThueID,
+                MaKhachHang = maKhachHang,
+                MaPhong = maPhong,
+                MaNV = maNV,
+                NgayDen = ngayDen,
+                NgayDi = ngayDi,
+                GhiChu = ghiChu
+            };
+            BusDatPhong busDatPhong = new BusDatPhong();
+            string result = busDatPhong.updateDatPhong(datPhong);
+
+            if (string.IsNullOrEmpty(result))
+            {
+                MessageBox.Show("Cập nhật đặt phòng thành công!");
+                LoadDanhSachDatPhong();
+                ClearForm();
+            }
+            else
+            {
+                MessageBox.Show(result);
+            }
 
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
+            if (guna2DgvDatPhong.SelectedRows.Count > 0)
+            {
+                string hoaDonThueID = guna2DgvDatPhong.SelectedRows[0].Cells["HoaDonThueID"].Value.ToString();
+                BusDatPhong busDatPhong = new BusDatPhong();
+                string result = busDatPhong.deleteDatPhong(new DatPhong { HoaDonThueID = hoaDonThueID });
+
+                if (string.IsNullOrEmpty(result))
+                {
+                    MessageBox.Show("Xóa đặt phòng thành công!");
+                    LoadDanhSachDatPhong();
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi khi xóa: " + result);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn dòng cần xóa!");
+            }
 
         }
 
@@ -143,6 +202,25 @@ namespace GUI_QuanLyKhachSan
         private void guna2DgvDatPhong_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string keyword = txtTimKiem.Text.Trim();
+            if (string.IsNullOrEmpty(keyword))
+            {
+                LoadDanhSachDatPhong();
+            }
+            else
+            {
+                TimKiemKhachHangID(keyword);
+            }
+        }
+        private void TimKiemKhachHangID(string keyword)
+        {
+            BusDatPhong bUSDP = new BusDatPhong();
+
+            guna2DgvDatPhong.DataSource = bUSDP.TimKiem(keyword);
         }
     }
 }

@@ -34,6 +34,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -58,8 +60,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dtpNgayDen = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -68,6 +68,7 @@
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            txtMaKhachHang = new Guna.UI2.WinForms.Guna2TextBox();
             cboMaNv = new Guna.UI2.WinForms.Guna2ComboBox();
             cboIDPhong = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -82,7 +83,6 @@
             btnXoa = new Guna.UI2.WinForms.Guna2Button();
             btnSua = new Guna.UI2.WinForms.Guna2Button();
             btnThem = new Guna.UI2.WinForms.Guna2Button();
-            txtMaKhachHang = new Guna.UI2.WinForms.Guna2TextBox();
             guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2DgvDatPhong).BeginInit();
             SuspendLayout();
@@ -193,6 +193,28 @@
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2GradientPanel1.Size = new Size(1210, 317);
             guna2GradientPanel1.TabIndex = 71;
+            // 
+            // txtMaKhachHang
+            // 
+            txtMaKhachHang.BorderRadius = 5;
+            txtMaKhachHang.CustomizableEdges = customizableEdges5;
+            txtMaKhachHang.DefaultText = "";
+            txtMaKhachHang.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtMaKhachHang.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtMaKhachHang.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtMaKhachHang.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtMaKhachHang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtMaKhachHang.Font = new Font("Segoe UI", 9F);
+            txtMaKhachHang.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtMaKhachHang.Location = new Point(474, 35);
+            txtMaKhachHang.Margin = new Padding(3, 5, 3, 5);
+            txtMaKhachHang.Name = "txtMaKhachHang";
+            txtMaKhachHang.PasswordChar = '\0';
+            txtMaKhachHang.PlaceholderText = "";
+            txtMaKhachHang.SelectedText = "";
+            txtMaKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtMaKhachHang.Size = new Size(201, 32);
+            txtMaKhachHang.TabIndex = 61;
             // 
             // cboMaNv
             // 
@@ -390,6 +412,7 @@
             btnTimKiem.Size = new Size(135, 44);
             btnTimKiem.TabIndex = 74;
             btnTimKiem.Text = "Tìm kiếm";
+            btnTimKiem.Click += btnTimKiem_Click;
             // 
             // btnLammoi
             // 
@@ -474,28 +497,6 @@
             btnThem.TabIndex = 88;
             btnThem.Text = "Thêm ";
             btnThem.Click += guna2Button1_Click;
-            // 
-            // txtMaKhachHang
-            // 
-            txtMaKhachHang.BorderRadius = 5;
-            txtMaKhachHang.CustomizableEdges = customizableEdges5;
-            txtMaKhachHang.DefaultText = "";
-            txtMaKhachHang.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtMaKhachHang.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtMaKhachHang.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtMaKhachHang.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtMaKhachHang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaKhachHang.Font = new Font("Segoe UI", 9F);
-            txtMaKhachHang.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaKhachHang.Location = new Point(474, 35);
-            txtMaKhachHang.Margin = new Padding(3, 5, 3, 5);
-            txtMaKhachHang.Name = "txtMaKhachHang";
-            txtMaKhachHang.PasswordChar = '\0';
-            txtMaKhachHang.PlaceholderText = "";
-            txtMaKhachHang.SelectedText = "";
-            txtMaKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtMaKhachHang.Size = new Size(201, 32);
-            txtMaKhachHang.TabIndex = 61;
             // 
             // FrmQuanLyDatPhong
             // 
