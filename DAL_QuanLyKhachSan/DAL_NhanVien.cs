@@ -79,7 +79,7 @@ namespace DAL_QuanLyKhachSan
             {
                 string sql = @"UPDATE NhanVien
                                    SET HoTen = @1, GioiTinh = @2, Email = @3, DiaChi = @4, MatKhau = @5, VaiTro = @6, TrangThai = @7
-                                    WHERE MaNhanVien = @0";
+                                    WHERE MaNV = @0";
                 List<object> thamSo = new List<object>();
                 thamSo.Add(nv.MaNV);
                 thamSo.Add(nv.HoTen);
@@ -102,17 +102,17 @@ namespace DAL_QuanLyKhachSan
             try
             {
                 string sql = @"INSERT INTO NhanVien (MaNV, HoTen,GioiTinh, Email,DiaChi, MatKhau, VaiTro, TinhTrang) 
-                   VALUES (@MaNV, @HoTen, @GioiTinh, @Email, @DiaChi, @MatKhau, @VaiTro, @TinhTrang)";
+                   VALUES (@0, @1, @2, @3, @4, @5, @6, @7)";
                 List<object> thamSo = new List<object>()
                 {
-                    new SqlParameter("@MaNV", nv.MaNV),
-                    new SqlParameter("@HoTen", nv.HoTen),
-                    new SqlParameter("@GioiTinh", nv.GioiTinh),
-                    new SqlParameter("@Email", nv.Email),
-                    new SqlParameter("@DiaChi", nv.DiaChi),
-                    new SqlParameter("@MatKhau", nv.MatKhau),
-                    new SqlParameter("@VaiTro", nv.VaiTro),
-                    new SqlParameter("@TinhTrang", nv.TinhTrang)
+                    nv.MaNV,
+                    nv.HoTen,
+                    nv.GioiTinh,
+                    nv.Email,
+                    nv.DiaChi,
+                    nv.MatKhau,
+                    nv.VaiTro,
+                    nv.TinhTrang
                 };
                 DBUtil.Update(sql, thamSo);
             }
@@ -142,7 +142,7 @@ namespace DAL_QuanLyKhachSan
         public string generateMaNhanVien()
         {
             string prefix = "NV";
-            string sql = "SELECT MAX(MaNhanVien) FROM NhanVien";
+            string sql = "SELECT MAX(MaNV) FROM NhanVien";
             List<object> thamSo = new List<object>();
             object result = DBUtil.ScalarQuery(sql, thamSo);
             if (result != null && result.ToString().StartsWith(prefix))
