@@ -34,8 +34,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -60,6 +58,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2HtmlLabel6 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             dtpNgayDen = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -68,7 +68,6 @@
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            txtMaKhachHang = new Guna.UI2.WinForms.Guna2TextBox();
             cboMaNv = new Guna.UI2.WinForms.Guna2ComboBox();
             cboIDPhong = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2HtmlLabel7 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -83,6 +82,7 @@
             btnXoa = new Guna.UI2.WinForms.Guna2Button();
             btnSua = new Guna.UI2.WinForms.Guna2Button();
             btnThem = new Guna.UI2.WinForms.Guna2Button();
+            cboMaKhachHang = new Guna.UI2.WinForms.Guna2ComboBox();
             guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2DgvDatPhong).BeginInit();
             SuspendLayout();
@@ -99,7 +99,7 @@
             // guna2HtmlLabel3
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Location = new Point(725, 141);
+            guna2HtmlLabel3.Location = new Point(712, 141);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(91, 22);
             guna2HtmlLabel3.TabIndex = 52;
@@ -173,7 +173,7 @@
             // guna2GradientPanel1
             // 
             guna2GradientPanel1.BackColor = Color.FromArgb(52, 185, 200);
-            guna2GradientPanel1.Controls.Add(txtMaKhachHang);
+            guna2GradientPanel1.Controls.Add(cboMaKhachHang);
             guna2GradientPanel1.Controls.Add(cboMaNv);
             guna2GradientPanel1.Controls.Add(cboIDPhong);
             guna2GradientPanel1.Controls.Add(guna2HtmlLabel7);
@@ -193,28 +193,6 @@
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2GradientPanel1.Size = new Size(1210, 317);
             guna2GradientPanel1.TabIndex = 71;
-            // 
-            // txtMaKhachHang
-            // 
-            txtMaKhachHang.BorderRadius = 5;
-            txtMaKhachHang.CustomizableEdges = customizableEdges5;
-            txtMaKhachHang.DefaultText = "";
-            txtMaKhachHang.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtMaKhachHang.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtMaKhachHang.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtMaKhachHang.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtMaKhachHang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaKhachHang.Font = new Font("Segoe UI", 9F);
-            txtMaKhachHang.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaKhachHang.Location = new Point(474, 35);
-            txtMaKhachHang.Margin = new Padding(3, 5, 3, 5);
-            txtMaKhachHang.Name = "txtMaKhachHang";
-            txtMaKhachHang.PasswordChar = '\0';
-            txtMaKhachHang.PlaceholderText = "";
-            txtMaKhachHang.SelectedText = "";
-            txtMaKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtMaKhachHang.Size = new Size(201, 32);
-            txtMaKhachHang.TabIndex = 61;
             // 
             // cboMaNv
             // 
@@ -498,6 +476,23 @@
             btnThem.Text = "Thêm ";
             btnThem.Click += guna2Button1_Click;
             // 
+            // cboMaKhachHang
+            // 
+            cboMaKhachHang.BackColor = Color.Transparent;
+            cboMaKhachHang.CustomizableEdges = customizableEdges5;
+            cboMaKhachHang.DrawMode = DrawMode.OwnerDrawFixed;
+            cboMaKhachHang.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboMaKhachHang.FocusedColor = Color.FromArgb(94, 148, 255);
+            cboMaKhachHang.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            cboMaKhachHang.Font = new Font("Segoe UI", 10F);
+            cboMaKhachHang.ForeColor = Color.FromArgb(68, 88, 112);
+            cboMaKhachHang.ItemHeight = 30;
+            cboMaKhachHang.Location = new Point(487, 31);
+            cboMaKhachHang.Name = "cboMaKhachHang";
+            cboMaKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            cboMaKhachHang.Size = new Size(201, 36);
+            cboMaKhachHang.TabIndex = 78;
+            // 
             // FrmQuanLyDatPhong
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -546,6 +541,6 @@
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2Button btnSua;
         private Guna.UI2.WinForms.Guna2Button btnThem;
-        private Guna.UI2.WinForms.Guna2TextBox txtMaKhachHang;
+        private Guna.UI2.WinForms.Guna2ComboBox cboMaKhachHang;
     }
 }
