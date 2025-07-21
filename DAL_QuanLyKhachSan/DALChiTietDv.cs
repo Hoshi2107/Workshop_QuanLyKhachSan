@@ -43,6 +43,81 @@ namespace DAL_QuanLyKhachSan
             string sql = "SELECT * FROM ChiTietDichVu";
             return SelectBySql(sql, new List<object>());
         }
+        public void Insert(ChiTietDichVu entity)
+        {
+            string sql = "INSERT INTO ChiTietDichVu (ChiTietDichVuID, HoaDonThueID, DichVuID, LoaiDichVuID, SoLuong, NgayBatDau, NgayKetThuc, GhiChu) " +
+                         "VALUES (@ChiTietDichVuID, @HoaDonThueID, @DichVuID, @LoaiDichVuID, @SoLuong, @NgayBatDau, @NgayKetThuc, @GhiChu)";
+            List<object> args = new List<object>
+            {
+                entity.ChiTietDichVuID,
+                entity.HoaDonThueID,
+                entity.DichVuID,
+                entity.LoaiDichVuID,
+                entity.SoLuong,
+                entity.NgayBatDau,
+                entity.NgayKetThuc,
+                entity.GhiChu
+            };
+            DBUtil.Update(sql, args);
+        }
+        public void delete(ChiTietDichVu CT)
+        {
+            string sql = "DELETE FROM ChiTietDichVu WHERE ChiTietDichVuID = @ChiTietDichVuID";
+            List<object> args = new List<object> { CT.ChiTietDichVuID };
+            DBUtil.Update(sql, args);
+        }
+        public void update(ChiTietDichVu entity)
+        {
+            string sql = "UPDATE ChiTietDichVu SET HoaDonThueID = @HoaDonThueID, DichVuID = @DichVuID, LoaiDichVuID = @LoaiDichVuID, " +
+                         "SoLuong = @SoLuong, NgayBatDau = @NgayBatDau, NgayKetThuc = @NgayKetThuc, GhiChu = @GhiChu " +
+                         "WHERE ChiTietDichVuID = @ChiTietDichVuID";
+            List<object> args = new List<object>
+            {
+                entity.HoaDonThueID,
+                entity.DichVuID,
+                entity.LoaiDichVuID,
+                entity.SoLuong,
+                entity.NgayBatDau,
+                entity.NgayKetThuc,
+                entity.GhiChu,
+                entity.ChiTietDichVuID
+            };
+            DBUtil.Update(sql, args);
+        }
+        public string generateChiTietDichVu()
+        {
+            string prefix = "CTDV";
+            string sql = "SELECT MAX(ChiTietDichVuID) FROM ChiTietDichVu";
+            List<object> thamSo = new List<object>();
+            object result = DBUtil.ScalarQuery(sql, thamSo);
+
+            if (result != null && result != DBNull.Value && result.ToString().StartsWith(prefix))
+            {
+                string maxCode = result.ToString().Substring(prefix.Length); 
+                if (int.TryParse(maxCode, out int number))
+                {
+                    number += 1;
+                    return $"{prefix}{number:D3}";
+                }
+            }
+
+            return $"{prefix}001";
+        }
+        public List<ChiTietDichVu> searchByKeyword(string keyword)
+        {
+            keyword = keyword.Trim().ToLower();
+
+            var dsCtDichVu = SelectAll();
+
+            return dsCtDichVu.Where(CT =>
+                (!string.IsNullOrEmpty(CT.ChiTietDichVuID) && CT.ChiTietDichVuID.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(CT.HoaDonThueID) && CT.HoaDonThueID.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(CT.DichVuID) && CT.DichVuID.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(CT.LoaiDichVuID) && CT.LoaiDichVuID.ToLower().Contains(keyword))
+            ).ToList();
+        }
+
+
     }
 }
 

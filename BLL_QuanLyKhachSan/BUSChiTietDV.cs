@@ -15,5 +15,60 @@ namespace BLL_QuanLyKhachSan
         {
             return dALchitietDichVu.SelectAll();
         }
+        public string UpdateKhachHang(ChiTietDichVu CT)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(CT.HoaDonThueID))
+                {
+                    return "Mã hóa đơn thuê không được để trống.";
+                }
+
+                dALchitietDichVu.update(CT);
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi: " + ex.Message;
+            }
+        }
+        public string insertCT(ChiTietDichVu CT)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(CT.ChiTietDichVuID))
+                {
+                    CT.ChiTietDichVuID = dALchitietDichVu.generateChiTietDichVu();
+                }
+                if (string.IsNullOrEmpty(CT.HoaDonThueID) || string.IsNullOrEmpty(CT.LoaiDichVuID))
+                {
+                    return "Mã hóa đơn thuê và loại dịch vụ không được để trống.";
+                }
+                dALchitietDichVu.Insert(CT);
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi: " + ex.Message;
+            }
+        }
+        public string deleteCT(ChiTietDichVu CT)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(CT.ChiTietDichVuID))
+                {
+                    return string.Empty;
+                }
+                dALchitietDichVu.delete(CT);
+                return string.Empty;
+            }
+            catch (Exception ex)
+            {
+                return "Lỗi: " + ex.Message;
+            }
+        }
+
+
     }
 }
