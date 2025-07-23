@@ -46,7 +46,7 @@ namespace GUI_QuanLyKhachSan
             btnXoa.Enabled = true;
             txtIDDichVu.Clear();
             txtGhiChu.Clear();
-            txtIDThueHoaDon.Clear();
+            cboHoaDonThueID.SelectedIndex = -1;
             textTimKiem.Clear();
             dtpNgayTao.Value = DateTime.Now;
             txtIDDichVu.Enabled = false;
@@ -54,7 +54,7 @@ namespace GUI_QuanLyKhachSan
         private void btnThem_Click(object sender, EventArgs e)
         {
             string DichVuID = txtIDDichVu.Text.Trim();
-            string HoaDonThueID = txtIDThueHoaDon.Text.Trim();
+            string HoaDonThueID = cboHoaDonThueID.Text.Trim();
             DateTime ngayTao = dtpNgayTao.Value;
             bool trangThai = rdoDaThanhToan.Checked;
 
@@ -122,7 +122,7 @@ namespace GUI_QuanLyKhachSan
         private void BtnSua_Click(object sender, EventArgs e)
         {
             string DichVuID = txtIDDichVu.Text.Trim();
-            string HoaDonThueID = txtIDThueHoaDon.Text.Trim();
+            string HoaDonThueID = cboHoaDonThueID.Text.Trim();
 
             DateTime ngayTao = dtpNgayTao.Value;
             bool trangThai = rdoDaThanhToan.Checked;
@@ -169,7 +169,7 @@ namespace GUI_QuanLyKhachSan
         {
             DataGridViewRow row = dgvDichVu.Rows[e.RowIndex];
             txtIDDichVu.Text = row.Cells["DichVuID"].Value.ToString();
-            txtIDThueHoaDon.Text = row.Cells["HoaDonThueID"].Value.ToString();
+            cboHoaDonThueID.Text = row.Cells["HoaDonThueID"].Value.ToString();
             txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();            
             dtpNgayTao.Text = row.Cells["NgayTao"].Value.ToString();
             bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
@@ -194,7 +194,7 @@ namespace GUI_QuanLyKhachSan
             {
                 DataGridViewRow row = dgvDichVu.Rows[e.RowIndex];
                 txtIDDichVu.Text = row.Cells["DichVuID"].Value.ToString();
-                txtIDThueHoaDon.Text = row.Cells["HoaDonThueID"].Value.ToString();
+                cboHoaDonThueID.Text = row.Cells["HoaDonThueID"].Value.ToString();
                 txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();
                 dtpNgayTao.Text = row.Cells["NgayTao"].Value.ToString();
 

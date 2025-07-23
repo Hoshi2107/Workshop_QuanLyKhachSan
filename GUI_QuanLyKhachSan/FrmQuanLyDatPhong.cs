@@ -58,7 +58,7 @@ namespace GUI_QuanLyKhachSan
         private void ClearForm()
         {
             txtHoaDonTheoID.Clear();
-            txtMaKhachHang.Clear();
+            cboMaKhachHang.SelectedIndex = -1;
             cboIDPhong.SelectedIndex = -1;
             cboMaNv.SelectedIndex = -1;
             dtpNgayDen.Value = DateTime.Now;
@@ -73,7 +73,7 @@ namespace GUI_QuanLyKhachSan
         {
             DataGridViewRow row = guna2DgvDatPhong.Rows[e.RowIndex];
             txtHoaDonTheoID.Text = row.Cells["HoaDonThueID"].Value.ToString();
-            txtMaKhachHang.Text = row.Cells["MaKhachHang"].Value.ToString();
+            cboMaKhachHang.Text = row.Cells["MaKhachHang"].Value.ToString();
             cboIDPhong.Text = row.Cells["MaPhong"].Value.ToString();
             dtpNgayDen.Value = Convert.ToDateTime(row.Cells["NgayDen"].Value);
             dtpNgayDi.Value = Convert.ToDateTime(row.Cells["NgayDi"].Value);
@@ -87,7 +87,7 @@ namespace GUI_QuanLyKhachSan
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             string hoaDonID = txtHoaDonTheoID.Text.Trim();
-            string khachHangID = txtMaKhachHang.Text.Trim();
+            string khachHangID = cboMaKhachHang.Text.Trim();
             string phongID = cboIDPhong.SelectedValue?.ToString();
             string nhanVienID = cboMaNv.SelectedValue?.ToString();
             DateTime ngayDen = dtpNgayDen.Value;
@@ -129,8 +129,8 @@ namespace GUI_QuanLyKhachSan
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             string hoaDonThueID = txtHoaDonTheoID.Text.Trim();
-            string maKhachHang = txtMaKhachHang.Text.Trim();
-            string maPhong = txtMaKhachHang.Text.Trim();
+            string maKhachHang = cboMaKhachHang.Text.Trim();
+            string maPhong = cboIDPhong.Text.Trim();
             string maNV = cboMaNv.SelectedValue?.ToString();
             DateTime ngayDen = dtpNgayDen.Value;
             DateTime ngayDi = dtpNgayDi.Value;
