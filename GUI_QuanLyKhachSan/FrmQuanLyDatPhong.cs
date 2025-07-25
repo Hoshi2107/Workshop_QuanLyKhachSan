@@ -175,7 +175,7 @@ namespace GUI_QuanLyKhachSan
             {
                 string hoaDonThueID = guna2DgvDatPhong.SelectedRows[0].Cells["HoaDonThueID"].Value.ToString();
                 BusDatPhong busDatPhong = new BusDatPhong();
-                string result = busDatPhong.deleteDatPhong(new DatPhong { HoaDonThueID = hoaDonThueID });
+                string result = busDatPhong.deleteDatPhong(hoaDonThueID);
 
                 if (string.IsNullOrEmpty(result))
                 {

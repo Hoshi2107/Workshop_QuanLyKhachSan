@@ -262,7 +262,7 @@ namespace GUI_QuanLyKhachSan
             {
                 string maNV = guna2DgvNhanVien.SelectedRows[0].Cells["MaNV"].Value.ToString();
                 BLL_NhanVien bllNhanVien = new BLL_NhanVien();
-                string result = bllNhanVien.DeleteNhanVien(new DTO_NhanVien { MaNV = maNV });
+                string result = bllNhanVien.DeleteNhanVien(maNV);
 
                 if (string.IsNullOrEmpty(result))
                 {
