@@ -183,6 +183,7 @@
             guna2GradientPanel1.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2GradientPanel1.Size = new Size(1210, 323);
             guna2GradientPanel1.TabIndex = 89;
+            guna2GradientPanel1.Paint += guna2GradientPanel1_Paint;
             // 
             // cboMaLoaiPhong
             // 

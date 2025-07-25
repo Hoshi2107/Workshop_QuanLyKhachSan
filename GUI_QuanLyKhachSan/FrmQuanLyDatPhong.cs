@@ -43,6 +43,12 @@ namespace GUI_QuanLyKhachSan
             cboIDPhong.DataSource = bllPhong.GetPhongList();
             cboIDPhong.DisplayMember = "TenPhong";
             cboIDPhong.ValueMember = "MaPhong";
+            BusKhachHang bllKhachHang = new BusKhachHang();
+            cboMaKhachHang.DataSource = bllKhachHang.GetKhachHangList();
+            cboMaKhachHang.DisplayMember = "TenKhachHang";
+            cboMaKhachHang.ValueMember = "MaKhachHang";
+
+
         }
 
 

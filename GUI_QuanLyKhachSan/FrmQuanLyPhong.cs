@@ -209,6 +209,9 @@ namespace GUI_QuanLyKhachSan
             guna2DgvPhong.DataSource = busPhong.SearchPhong(keyword);
         }
 
+        private void guna2GradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }
