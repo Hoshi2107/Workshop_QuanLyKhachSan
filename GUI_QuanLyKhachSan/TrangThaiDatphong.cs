@@ -45,8 +45,8 @@ namespace GUI_QuanLyKhachSan
 
             DataGridViewRow row = dgvTrangThaiDatPhong.Rows[e.RowIndex];
             gntxtTrangThaiID.Text = row.Cells["TrangThaiID"].Value.ToString();
-            gntxtHoaDonThueID.Text = row.Cells["HoaDonThueID"].Value.ToString();
-            gntxtLoaiTrangThaiID.Text = row.Cells["LoaiTrangThaiID"].Value.ToString();
+            gnCbo_HoaDonThueID.Text = row.Cells["HoaDonThueID"].Value.ToString();
+            gnCbo_LoaiTrangThaiID.Text = row.Cells["LoaiTrangThaiID"].Value.ToString();
             gnDtpNgayCapNhat.Value = Convert.ToDateTime(row.Cells["NgayCapNhat"].Value);
 
         }
@@ -54,6 +54,18 @@ namespace GUI_QuanLyKhachSan
         private void TrangThaiDatphong_Load_1(object sender, EventArgs e)
         {
             LoadTrangThaiDatPhong();
+            LoadCombobox();
+        }
+        private void LoadCombobox()
+        {
+            BUSLoaiTrangThaiDatPhong bllLoaiTrangThai = new BUSLoaiTrangThaiDatPhong();
+            gnCbo_LoaiTrangThaiID.DataSource = bllLoaiTrangThai.GetLoaiTrangThaiDatPhongList();
+            gnCbo_LoaiTrangThaiID.DisplayMember = "TenLoai";
+            gnCbo_LoaiTrangThaiID.ValueMember = "LoaiTrangThaiID";
+            BusDatPhong busDatPhong = new BusDatPhong();
+            gnCbo_HoaDonThueID.DataSource = busDatPhong.GetDatPhongList();
+            gnCbo_HoaDonThueID.DisplayMember = "HoaDonThueID";
+            gnCbo_HoaDonThueID.ValueMember = "HoaDonThueID";
         }
     }
 }

@@ -37,7 +37,16 @@ namespace GUI_QuanLyKhachSan
         private void DichVu_Load(object sender, EventArgs e)
         {
             LoaddichVu();
+            loadCombobox();
             ClearFrom();
+        }
+        private void loadCombobox()
+        {
+            BusDatPhong busDatPhong = new BusDatPhong();
+            cboHoaDonThueID.DataSource = busDatPhong.GetDatPhongList();
+            cboHoaDonThueID.DisplayMember = "HoaDonThueID"; 
+            cboHoaDonThueID.ValueMember = "HoaDonThueID"; 
+            cboHoaDonThueID.SelectedIndex = -1; 
         }
         private void ClearFrom()
         {
