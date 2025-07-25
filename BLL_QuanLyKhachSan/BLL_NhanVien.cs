@@ -9,7 +9,7 @@ using DTO_QuanLyKhachSan;
 namespace BLL_QuanLyKhachSan
 {
     
-    public class BLL_NhanVien
+public class BLL_NhanVien
     {
         public List<DTO_NhanVien> GetNhanViensList()
         {
@@ -29,12 +29,12 @@ namespace BLL_QuanLyKhachSan
         {
             try
             {
-                if (string.IsNullOrEmpty(nv.MaNV))
+                if (nv == null || string.IsNullOrEmpty(nv.MaNV))
                 {
                     return "Mã nhân viên không hợp lệ ! ! !";
                 }
 
-                dalNhanVien.updateNhanVien(nv);
+                dalNhanVien.updateNhanVien(nv); // Pass the correct DTO_NhanVien object
                 return string.Empty;
             }
             catch (Exception ex)
@@ -72,7 +72,7 @@ namespace BLL_QuanLyKhachSan
         {
             try
             {
-                if (string.IsNullOrEmpty(maNV))
+                if (string.IsNullOrWhiteSpace(maNV))
                 {
                     return "Mã nhân viên không hợp lệ.";
                 }

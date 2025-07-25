@@ -78,7 +78,7 @@ namespace DAL_QuanLyKhachSan
             try
             {
                 string sql = @"UPDATE NhanVien
-                                   SET HoTen = @1, GioiTinh = @2, Email = @3, DiaChi = @4, MatKhau = @5, VaiTro = @6, TrangThai = @7
+                                   SET HoTen = @1, GioiTinh = @2, Email = @3, DiaChi = @4, MatKhau = @5, VaiTro = @6, TinhTrang = @7
                                     WHERE MaNV = @0";
                 List<object> thamSo = new List<object>();
                 thamSo.Add(nv.MaNV);
@@ -89,7 +89,7 @@ namespace DAL_QuanLyKhachSan
                 thamSo.Add(nv.MatKhau);
                 thamSo.Add(nv.VaiTro);
                 thamSo.Add(nv.TinhTrang);
-                DBUtil.Update(sql, thamSo);
+                DBUtil.Query(sql, thamSo);
             }
             catch (Exception)
             {
@@ -127,7 +127,7 @@ namespace DAL_QuanLyKhachSan
         {
             try
             {
-                string sql = "DELETE FROM NhanVien WHERE MaNhanVien = @0";
+                string sql = "DELETE FROM NhanVien WHERE MaNV = @0";
                 List<object> thamSo = new List<object>();
                 thamSo.Add(maNv);
                 DBUtil.Update(sql, thamSo);

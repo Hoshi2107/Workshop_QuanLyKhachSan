@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -59,7 +60,7 @@ namespace GUI_QuanLyKhachSan
             guna2DgvNhanVien.Columns["DiaChi"].HeaderText = "Địa chỉ";
             guna2DgvNhanVien.Columns["MatKhau"].HeaderText = "Mật khẩu";
             guna2DgvNhanVien.Columns["VaiTroText"].HeaderText = "Vai Trò";
-            guna2DgvNhanVien.Columns["TinhTrangText"].HeaderText = "Tình Trạng";
+            guna2DgvNhanVien.Columns["TinhTrangText"].HeaderText = "Tình trạng";
             guna2DgvNhanVien.Columns["vaiTro"].Visible = false;
             guna2DgvNhanVien.Columns["TinhTrang"].Visible = false;
             guna2DgvNhanVien.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -143,6 +144,7 @@ namespace GUI_QuanLyKhachSan
 
         private void btnsua_Click(object sender, EventArgs e)
         {
+            string maNV = txtmanv.Text.Trim();
             string hoTen = txthoten.Text.Trim();
             string gioiTinh = txtgioitinh.Text.Trim();
             string email = txtemail.Text.Trim();
@@ -188,13 +190,14 @@ namespace GUI_QuanLyKhachSan
 
             DTO_NhanVien nv = new DTO_NhanVien
             {
+                MaNV = maNV,
                 HoTen = hoTen,
                 GioiTinh = gioiTinh,
                 Email = email,
                 DiaChi = diaChi,
                 MatKhau = matKhau,
                 VaiTro = vaiTro,
-                TinhTrang = tinhTrang
+                TinhTrang = tinhTrang,
             };
 
             BLL_NhanVien bUSNhanVien = new BLL_NhanVien();
@@ -266,7 +269,7 @@ namespace GUI_QuanLyKhachSan
 
                 if (string.IsNullOrEmpty(result))
                 {
-                    MessageBox.Show("Xóa đặt phòng thành công!");
+                    MessageBox.Show("Xóa nhân viên thành công!");
                     loadDanhSachNhanVien();
                 }
                 else

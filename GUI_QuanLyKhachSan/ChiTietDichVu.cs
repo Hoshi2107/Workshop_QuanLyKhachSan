@@ -42,7 +42,7 @@ namespace GUI_QuanLyKhachSan
             BUSDichVu bUSDichVu = new BUSDichVu();
             cbxDichVuID.DataSource = bUSDichVu.GetDichVuList();
             cbxDichVuID.DisplayMember = "TenDichVu";
-            cbxDichVuID.ValueMember = "IDDichVu";
+            cbxDichVuID.ValueMember = "DichVuID";
             BUSLoaiDV bUSLoaiDichVu = new BUSLoaiDV();
             cbx_LoaiDichVu.DataSource = bUSLoaiDichVu.GetLoaiDVList();
             cbx_LoaiDichVu.DisplayMember = "TenLoaiDichVu";

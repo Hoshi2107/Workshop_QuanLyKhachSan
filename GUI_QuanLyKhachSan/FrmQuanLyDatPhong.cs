@@ -45,8 +45,8 @@ namespace GUI_QuanLyKhachSan
             cboIDPhong.ValueMember = "MaPhong";
             BusKhachHang bllKhachHang = new BusKhachHang();
             cboMaKhachHang.DataSource = bllKhachHang.GetKhachHangList();
-            cboMaKhachHang.DisplayMember = "TenKhachHang";
-            cboMaKhachHang.ValueMember = "MaKhachHang";
+            cboMaKhachHang.DisplayMember = "HoTen";
+            cboMaKhachHang.ValueMember = "KhachHangID";
 
 
         }
@@ -73,6 +73,7 @@ namespace GUI_QuanLyKhachSan
             btnThem.Enabled = true;
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
+            txtHoaDonTheoID.Enabled = false;
         }
 
         private void guna2DgvDatPhong_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
