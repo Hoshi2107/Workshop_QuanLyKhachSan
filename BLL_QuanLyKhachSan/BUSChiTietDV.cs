@@ -11,11 +11,11 @@ namespace BLL_QuanLyKhachSan
     public class BUSChiTietDV
     {
         DALChiTietDv dALchitietDichVu = new DALChiTietDv();
-        public List<ChiTietDichVu> GetchitietDichVuList()
+        public List<DTO_ChiTietDichVu> GetchitietDichVuList()
         {
             return dALchitietDichVu.SelectAll();
         }
-        public string UpdateKhachHang(ChiTietDichVu CT)
+        public string UpdateCT(DTO_ChiTietDichVu CT)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi: " + ex.Message;
             }
         }
-        public string insertCT(ChiTietDichVu CT)
+        public string insertCT(DTO_ChiTietDichVu CT)
         {
             try
             {
@@ -52,20 +52,36 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi: " + ex.Message;
             }
         }
-        public string deleteCT(ChiTietDichVu CT)
+        public string deleteCT(string CTDV)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(CT.ChiTietDichVuID))
+                if (string.IsNullOrWhiteSpace(CTDV))
                 {
                     return string.Empty;
                 }
-                dALchitietDichVu.delete(CT);
+                dALchitietDichVu.delete(CTDV);
                 return string.Empty;
             }
             catch (Exception ex)
             {
                 return "Lỗi: " + ex.Message;
+            }
+        }
+        public List<DTO_ChiTietDichVu> TimKiem(string keyword)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(keyword))
+                {
+                    return dALchitietDichVu.SelectAll();
+                }
+                keyword = keyword.Trim().ToLower();
+                return dALchitietDichVu.searchByKeyword(keyword);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tìm kiếm nhân viên: " + ex.Message);
             }
         }
 

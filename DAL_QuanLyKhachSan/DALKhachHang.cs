@@ -68,13 +68,13 @@ namespace DAL_QuanLyKhachSan
                 throw;
             }
         }
-        public void deleteKhachHang(KhachHang khachHangID)
+        public void deleteKhachHang(string khachHangID)
         {
             try
             {
                 string sql = "DELETE FROM KhachHang WHERE KhachHangID = @0";
-                List<object> thamSo = new List<object> { khachHangID.KhachHangID };
-                DBUtil.Update(sql, thamSo);
+                List<object> thamSo = new List<object> { khachHangID};
+                DBUtil.Query(sql, thamSo);
             }
             catch (Exception)
             {

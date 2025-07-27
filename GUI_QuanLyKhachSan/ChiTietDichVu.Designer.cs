@@ -163,6 +163,7 @@
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             guna2DataGridView1.CellContentClick += guna2DataGridView1_CellContentClick;
+            guna2DataGridView1.CellContentDoubleClick += guna2DataGridView1_CellContentDoubleClick;
             // 
             // guna2HtmlLabel1
             // 
@@ -439,6 +440,7 @@
             btnlammoi.Size = new Size(135, 44);
             btnlammoi.TabIndex = 59;
             btnlammoi.Text = "Làm mới";
+            btnlammoi.Click += btnlammoi_Click;
             // 
             // btntimkiem
             // 
@@ -459,6 +461,7 @@
             btntimkiem.Size = new Size(135, 44);
             btntimkiem.TabIndex = 58;
             btntimkiem.Text = "Tìm kiếm";
+            btntimkiem.Click += btntimkiem_Click;
             // 
             // btnxoa
             // 
@@ -479,6 +482,7 @@
             btnxoa.Size = new Size(135, 44);
             btnxoa.TabIndex = 57;
             btnxoa.Text = "Xóa";
+            btnxoa.Click += btnxoa_Click;
             // 
             // btnsua
             // 
@@ -499,6 +503,7 @@
             btnsua.Size = new Size(135, 44);
             btnsua.TabIndex = 56;
             btnsua.Text = "Sửa";
+            btnsua.Click += btnsua_Click;
             // 
             // btnthem
             // 
@@ -519,6 +524,7 @@
             btnthem.Size = new Size(135, 44);
             btnthem.TabIndex = 55;
             btnthem.Text = "Thêm ";
+            btnthem.Click += btnthem_Click;
             // 
             // ChiTietDichVu
             // 

@@ -26,6 +26,7 @@ namespace GUI_QuanLyKhachSan
         {
             LoadDanhSachDatPhong();
             LoadComboBox();
+            ClearForm();
         }
         private void LoadDanhSachDatPhong()
         {
@@ -80,11 +81,11 @@ namespace GUI_QuanLyKhachSan
         {
             DataGridViewRow row = guna2DgvDatPhong.Rows[e.RowIndex];
             txtHoaDonTheoID.Text = row.Cells["HoaDonThueID"].Value.ToString();
-            cboMaKhachHang.Text = row.Cells["MaKhachHang"].Value.ToString();
-            cboIDPhong.Text = row.Cells["MaPhong"].Value.ToString();
+            cboMaKhachHang.SelectedValue = row.Cells["KhachHangID"].Value.ToString();
+            cboIDPhong.SelectedValue = row.Cells["MaPhong"].Value.ToString();
             dtpNgayDen.Value = Convert.ToDateTime(row.Cells["NgayDen"].Value);
             dtpNgayDi.Value = Convert.ToDateTime(row.Cells["NgayDi"].Value);
-            cboMaNv.Text = row.Cells["MaNV"].Value.ToString();
+            cboMaNv.SelectedValue = row.Cells["MaNV"].Value.ToString();
 
 
             txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();
@@ -107,10 +108,10 @@ namespace GUI_QuanLyKhachSan
                 return;
             }
 
-            DatPhong dp = new DatPhong
+            DTO_DatPhong dp = new DTO_DatPhong
             {
                 HoaDonThueID = hoaDonID,
-                MaKhachHang = khachHangID,
+                KhachHangID = khachHangID,
                 MaPhong = phongID,
                 MaNV = nhanVienID,
                 NgayDen = ngayDen,
@@ -136,8 +137,8 @@ namespace GUI_QuanLyKhachSan
         private void guna2Button2_Click(object sender, EventArgs e)
         {
             string hoaDonThueID = txtHoaDonTheoID.Text.Trim();
-            string maKhachHang = cboMaKhachHang.Text.Trim();
-            string maPhong = cboIDPhong.Text.Trim();
+            string maKhachHang = cboMaKhachHang.SelectedValue?.ToString();
+            string maPhong = cboIDPhong.SelectedValue?.ToString();
             string maNV = cboMaNv.SelectedValue?.ToString();
             DateTime ngayDen = dtpNgayDen.Value;
             DateTime ngayDi = dtpNgayDi.Value;
@@ -150,10 +151,10 @@ namespace GUI_QuanLyKhachSan
                 return;
             }
 
-            DatPhong datPhong = new DatPhong
+            DTO_DatPhong datPhong = new DTO_DatPhong
             {
                 HoaDonThueID = hoaDonThueID,
-                MaKhachHang = maKhachHang,
+                KhachHangID = maKhachHang,
                 MaPhong = maPhong,
                 MaNV = maNV,
                 NgayDen = ngayDen,

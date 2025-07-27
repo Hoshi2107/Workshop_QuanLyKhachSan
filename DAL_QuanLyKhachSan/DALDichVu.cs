@@ -11,15 +11,15 @@ namespace DAL_QuanLyKhachSan
 {
     public class DALDichVu
     {
-        public List<DichVu> SelectBySql(string sql, List<object> args)
+        public List<DTO_DichVU> SelectBySql(string sql, List<object> args)
         {
-            List<DichVu> list = new List<DichVu>();
+            List<DTO_DichVU> list = new List<DTO_DichVU>();
             try
             {
                 SqlDataReader reader = DBUtil.Query(sql, args);
                 while (reader.Read())
                 {
-                    DichVu entity = new DichVu();
+                    DTO_DichVU entity = new DTO_DichVU();
                     entity.DichVuID = reader.GetString("DichVuID");
                     entity.HoaDonThueID = reader.GetString("HoaDonThueID");
                     entity.NgayTao = reader.GetDateTime("NgayTao");
@@ -35,19 +35,19 @@ namespace DAL_QuanLyKhachSan
             return list;
         }
 
-        public List<DichVu> SelectAll()
+        public List<DTO_DichVU> SelectAll()
         {
             string sql = "SELECT * FROM DichVu";
             return SelectBySql(sql, new List<object>());
         }
 
-        public List<DichVu> GetByHoaDonThueID(string hoaDonThueID)
+        public List<DTO_DichVU> GetByHoaDonThueID(string hoaDonThueID)
         {
             string sql = "SELECT * FROM DichVu WHERE HoaDonThueID LIKE '%' + @0 + '%'";
             return SelectBySql(sql, new List<object> { hoaDonThueID });
         }
 
-        public void Add(DichVu dv)
+        public void Add(DTO_DichVU dv)
         {
             string sql = @"INSERT INTO DichVu (DichVuID, HoaDonThueID, NgayTao, TrangThai, GhiChu)
                            VALUES (@0, @1, @2, @3, @4)";
@@ -55,7 +55,7 @@ namespace DAL_QuanLyKhachSan
             DBUtil.Update(sql, args);
         }
 
-        public void Update(DichVu dv)
+        public void Update(DTO_DichVU dv)
         {
             string sql = @"UPDATE DichVu 
                            SET HoaDonThueID = @1, NgayTao = @2, TrangThai = @3, GhiChu = @4 
@@ -67,7 +67,7 @@ namespace DAL_QuanLyKhachSan
         public void Delete(string dichVuID)
         {
             string sql = "DELETE FROM DichVu WHERE DichVuID = @0";
-            DBUtil.Update(sql, new List<object> { dichVuID });
+            DBUtil.Query(sql, new List<object> { dichVuID });
         }
 
         public string GenerateNewDichVuID()

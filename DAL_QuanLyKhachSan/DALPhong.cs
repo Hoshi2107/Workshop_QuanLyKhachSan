@@ -10,20 +10,20 @@ namespace DAL_QuanLyKhachSan
 {
     public class DALPhong
     {
-        public List<Phong> SelectAll()
+        public List<DTO_Phong> SelectAll()
         {
             string sql = "SELECT * FROM Phong";
             return SelectBySql(sql, new List<object>());
         }
-        public List<Phong> SelectBySql(string sql, List<object> args)
+        public List<DTO_Phong> SelectBySql(string sql, List<object> args)
         {
-            List<Phong> list = new List<Phong>();
+            List<DTO_Phong> list = new List<DTO_Phong>();
             try
             {
                 SqlDataReader reader = DBUtil.Query(sql, args);
                 while (reader.Read())
                 {
-                    Phong entity = new Phong();
+                    DTO_Phong entity = new DTO_Phong();
                     entity.MaPhong = reader["PhongID"].ToString();
                     entity.TenPhong = reader["TenPhong"].ToString();
                     entity.MaLoaiPhong = reader["MaLoaiPhong"].ToString();
@@ -42,12 +42,12 @@ namespace DAL_QuanLyKhachSan
             }
             return list;
         }
-        public List<Phong> selectAll()
+        public List<DTO_Phong> selectAll()
         {
             string sql = "SELECT * FROM Phong";
             return SelectBySql(sql, new List<object>());
         }
-        public void insertPhong(Phong phong)
+        public void insertPhong(DTO_Phong phong)
         {
             try
             {
@@ -70,7 +70,7 @@ namespace DAL_QuanLyKhachSan
                 throw new Exception("Lỗi khi thêm Phòng: " + ex.Message);
             }
         }
-        public void updatePhong(Phong phong)
+        public void updatePhong(DTO_Phong phong)
         {
             try
             {
@@ -94,13 +94,13 @@ namespace DAL_QuanLyKhachSan
                 throw new Exception("Lỗi khi cập nhật Phòng: " + ex.Message);
             }
         }
-        public void deletephong(Phong phong)
+        public void deletephong(string phong)
         {
             try
             {
                 string sql = "DELETE FROM Phong WHERE PhongID = @0";
-                List<object> thamSo = new List<object> { phong.MaPhong };
-                DBUtil.Update(sql, thamSo);
+                List<object> thamSo = new List<object> { phong };
+                DBUtil.Query(sql, thamSo);
             }
             catch (Exception ex)
             {
@@ -122,7 +122,7 @@ namespace DAL_QuanLyKhachSan
 
             return $"{prefix}001";
         }
-        public List<Phong> searchByKeyword(string keyword)
+        public List<DTO_Phong> searchByKeyword(string keyword)
         {
             keyword = keyword.Trim().ToLower();
 

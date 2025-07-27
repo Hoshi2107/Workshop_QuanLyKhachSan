@@ -12,11 +12,11 @@ namespace BLL_QuanLyKhachSan
     public class BusPhong
     {
         DALPhong dalPhong = new DALPhong();
-        public List<Phong> GetPhongList()
+        public List<DTO_Phong> GetPhongList()
         {
             return dalPhong.SelectAll();
         }
-        public string UpdatePhong(Phong phong)
+        public string UpdatePhong(DTO_Phong phong)
         {
             try
             {
@@ -32,7 +32,7 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi: " + ex.Message;
             }
         }
-        public string InsertPhong(Phong phong)
+        public string InsertPhong(DTO_Phong phong)
         {
             try
             {
@@ -52,11 +52,11 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi: " + ex.Message;
             }
         }
-        public string deletePhong(Phong phong)
+        public string deletePhong(string phong)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(phong.MaPhong))
+                if (string.IsNullOrWhiteSpace(phong))
                 {
                     return "Mã phòng không hợp lệ ! ! !";
                 }
@@ -68,7 +68,7 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi: " + ex.Message;
             }
         }
-        public List<Phong> SearchPhong(string keyword)
+        public List<DTO_Phong> SearchPhong(string keyword)
         {
             try
             {

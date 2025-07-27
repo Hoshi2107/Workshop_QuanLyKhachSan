@@ -85,5 +85,22 @@ public class BLL_NhanVien
                 return "Lỗi: " + ex.Message;
             }
         }
+        public List<DTO_NhanVien> TimKiem(string keyword)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(keyword))
+                {
+                    return dalNhanVien.selectAll();
+                }
+                keyword = keyword.Trim().ToLower();
+                return dalNhanVien.searchByKeyword(keyword);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tìm kiếm nhân viên: " + ex.Message);
+            }
+        }
+
     }
 }

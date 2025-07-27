@@ -11,15 +11,15 @@ namespace DAL_QuanLyKhachSan
 {
     public class DALLoaiTrangThaiDatPhong
     {
-        public List<LoaiTrangThaiDatPhong> SelectBySql(string sql, List<object> args, CommandType cmdType = CommandType.Text)
+        public List<DTO_LoaiTrangThaiDatPhong> SelectBySql(string sql, List<object> args, CommandType cmdType = CommandType.Text)
         {
-            List<LoaiTrangThaiDatPhong> list = new List<LoaiTrangThaiDatPhong>();
+            List<DTO_LoaiTrangThaiDatPhong> list = new List<DTO_LoaiTrangThaiDatPhong>();
             try
             {
                 SqlDataReader reader = DBUtil.Query(sql, args);
                 while (reader.Read())
                 {
-                    LoaiTrangThaiDatPhong entity = new LoaiTrangThaiDatPhong();
+                    DTO_LoaiTrangThaiDatPhong entity = new DTO_LoaiTrangThaiDatPhong();
                     entity.LoaiTrangThaiID = reader.GetString("LoaiTrangThaiID");
                     entity.TenTrangThai = reader.GetString("TenTrangThai");
                     list.Add(entity);
@@ -32,12 +32,12 @@ namespace DAL_QuanLyKhachSan
             }
             return list;
         }
-        public List<LoaiTrangThaiDatPhong> selectAll()
+        public List<DTO_LoaiTrangThaiDatPhong> selectAll()
         {
             String sql = "SELECT * FROM LoaiTrangThaiDatPhong";
             return SelectBySql(sql, new List<object>());
         }
-        public void insertLoaiTrangThaiDatPhong(LoaiTrangThaiDatPhong loaiTrangThai)
+        public void insertLoaiTrangThaiDatPhong(DTO_LoaiTrangThaiDatPhong loaiTrangThai)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace DAL_QuanLyKhachSan
                 throw new Exception("Lỗi khi thêm loại trạng thái đặt phòng: " + ex.Message);
             }
         }
-        public void updateLoaiTrangThaiDatPhong(LoaiTrangThaiDatPhong loaiTrangThai)
+        public void updateLoaiTrangThaiDatPhong(DTO_LoaiTrangThaiDatPhong loaiTrangThai)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace DAL_QuanLyKhachSan
                 throw new Exception("Lỗi khi cập nhật loại trạng thái đặt phòng: " + ex.Message);
             }
         }
-        public void deleteLoaiTrangThaiDatPhong(LoaiTrangThaiDatPhong loaiTrangThai)
+        public void deleteLoaiTrangThaiDatPhong(DTO_LoaiTrangThaiDatPhong loaiTrangThai)
         {
             try
             {
@@ -84,7 +84,7 @@ namespace DAL_QuanLyKhachSan
                 {
                     loaiTrangThai.LoaiTrangThaiID
                 };
-                DBUtil.Update(sql, thamSo);
+                DBUtil.Query(sql, thamSo);
             }
             catch (Exception ex)
             {
@@ -106,7 +106,7 @@ namespace DAL_QuanLyKhachSan
 
             return $"{prefix}001";
         }
-        public List<LoaiTrangThaiDatPhong> searchByKeyword(string keyword)
+        public List<DTO_LoaiTrangThaiDatPhong> searchByKeyword(string keyword)
         {
             keyword = keyword.Trim().ToLower();
 

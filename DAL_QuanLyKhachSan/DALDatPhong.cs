@@ -11,17 +11,17 @@ namespace DAL_QuanLyKhachSan
 {
     public class DALDatPhong
     {
-        public List<DatPhong> SelectBySql(string sql, List<object> args)
+        public List<DTO_DatPhong> SelectBySql(string sql, List<object> args)
         {
-            List<DatPhong> list = new List< DatPhong>();
+            List<DTO_DatPhong> list = new List< DTO_DatPhong>();
             try
             {
                 SqlDataReader reader = DBUtil.Query(sql, args);
                 while (reader.Read())
                 {
-                    DatPhong entity = new DatPhong();
+                    DTO_DatPhong entity = new DTO_DatPhong();
                     entity.HoaDonThueID = reader.GetString("HoaDonThueID");
-                    entity.MaKhachHang = reader.GetString("KhachHangID");
+                    entity.KhachHangID = reader.GetString("KhachHangID");
                     entity.MaPhong = reader.GetString("PhongID");
                     entity.NgayDen = reader.GetDateTime("NgayDen");
                     entity.NgayDi = reader.GetDateTime("NgayDi");
@@ -37,12 +37,12 @@ namespace DAL_QuanLyKhachSan
             return list;
         }
 
-        public List<DatPhong> SelectAll()
+        public List<DTO_DatPhong> SelectAll()
         {
             string sql = "SELECT * FROM DatPhong";
             return SelectBySql(sql, new List<object>());
         }
-        public void insertDatPhong(DatPhong dp)
+        public void insertDatPhong(DTO_DatPhong dp)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace DAL_QuanLyKhachSan
                 List<object> parameters = new List<object>
         {
             dp.HoaDonThueID,
-            dp.MaKhachHang,
+            dp.KhachHangID,
             dp.MaPhong,
             dp.MaNV,
             dp.NgayDen,
@@ -86,7 +86,7 @@ namespace DAL_QuanLyKhachSan
 
             return $"{prefix}001";
         }
-        public List<DatPhong> searchByKeyword(string keyword)
+        public List<DTO_DatPhong> searchByKeyword(string keyword)
         {
             keyword = keyword.Trim().ToLower();
 
@@ -94,11 +94,11 @@ namespace DAL_QuanLyKhachSan
 
             return dp.Where(KH =>
                 (!string.IsNullOrEmpty(KH.HoaDonThueID) && KH.HoaDonThueID.ToLower().Contains(keyword)) ||
-                (!string.IsNullOrEmpty(KH.MaKhachHang) && KH.MaKhachHang.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(KH.KhachHangID) && KH.KhachHangID.ToLower().Contains(keyword)) ||
                 (!string.IsNullOrEmpty(KH.MaNV) && KH.MaNV.ToLower().Contains(keyword))
             ).ToList();
         }
-        public void updateDatPhong(DatPhong dp)
+        public void updateDatPhong(DTO_DatPhong dp)
         {
             try
             {
@@ -114,7 +114,7 @@ namespace DAL_QuanLyKhachSan
                 List<object> thamSo = new List<object>
         {
             dp.HoaDonThueID,
-            dp.MaKhachHang,
+            dp.KhachHangID,
             dp.MaPhong,
             dp.MaNV,
             dp.NgayDen,

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTO_QuanLyKhachSan
 {
-    public class Phong
+    public class DTO_Phong
     {
         public string MaPhong {  get; set; }
         public string TenPhong { get; set; }

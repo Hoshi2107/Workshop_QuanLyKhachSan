@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace DTO_QuanLyKhachSan
 {
-    public class LoaiPhong
+    public class DTO_LoaiPhong
     {
         public string MaLoaiPhong {  get; set; }
         public string TenLoaiPhong {  get; set; }
         public DateTime NgayTao {  get; set; }
         public bool TrangThai {  get; set; }
         public string GhiChu {  get; set; }
-        public string TrangThaiText => TrangThai ? "Còn phòng" : "Không Còn Phòng";
+        
     }
 }

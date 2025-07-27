@@ -10,11 +10,11 @@ namespace BLL_QuanLyKhachSan
     public class BUSDichVu
     {
         DALDichVu dALDichVu = new DALDichVu();
-        public List<DichVu> GetDichVuList()
+        public List<DTO_DichVU> GetDichVuList()
         {
             return dALDichVu.SelectAll();
         }
-        public string AddDichVu(DichVu dichvu)
+        public string AddDichVu(DTO_DichVU dichvu)
         {
             try
             {
@@ -34,7 +34,7 @@ namespace BLL_QuanLyKhachSan
                 return "Có lỗi xảy ra! Vui lòng kiểm tra lại.";
             }
         }
-        public string UpdateDichVu(DichVu dichvu)
+        public string UpdateDichVu(DTO_DichVU dichvu)
         {
             try
             {

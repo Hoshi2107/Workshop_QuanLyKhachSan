@@ -92,7 +92,7 @@ namespace GUI_QuanLyKhachSan
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
                 return;
             }
-            Phong phong = new Phong
+            DTO_Phong phong = new DTO_Phong
             {
                 MaPhong = maPhong,
                 TenPhong = tenPhong,
@@ -131,7 +131,7 @@ namespace GUI_QuanLyKhachSan
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
                 return;
             }
-            Phong phong = new Phong
+            DTO_Phong phong = new DTO_Phong
             {
                 MaPhong = maPhong,
                 TenPhong = tenPhong,
@@ -170,7 +170,7 @@ namespace GUI_QuanLyKhachSan
 
                 // Gọi hàm xóa trong BUS
                 BusPhong busPhong = new BusPhong();
-                string result = busPhong.deletePhong(new Phong { MaPhong = maPhong });
+                string result = busPhong.deletePhong(maPhong);
 
                 if (string.IsNullOrEmpty(result))
                 {

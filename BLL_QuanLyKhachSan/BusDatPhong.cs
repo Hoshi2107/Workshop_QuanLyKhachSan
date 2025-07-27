@@ -12,11 +12,11 @@ namespace BLL_QuanLyKhachSan
     public class BusDatPhong
     {
         DALDatPhong dalDatPhong = new DALDatPhong();
-        public List<DatPhong> GetDatPhongList()
+        public List<DTO_DatPhong> GetDatPhongList()
         {
             return dalDatPhong.SelectAll();
         }
-        public string insertDatPhong(DatPhong dp)
+        public string insertDatPhong(DTO_DatPhong dp)
         {
             try
             {
@@ -24,7 +24,7 @@ namespace BLL_QuanLyKhachSan
                 {
                     dp.HoaDonThueID = dalDatPhong.generateDatPhongID();
                 }
-                if (string.IsNullOrEmpty(dp.MaKhachHang) || string.IsNullOrEmpty(dp.MaPhong) || string.IsNullOrEmpty(dp.MaNV))
+                if (string.IsNullOrEmpty(dp.KhachHangID) || string.IsNullOrEmpty(dp.MaPhong) || string.IsNullOrEmpty(dp.MaNV))
                 {
                     return "Vui lòng nhập đầy đủ thông tin bắt buộc (Khách hàng, Phòng, Nhân viên)!";
                 }
@@ -36,7 +36,7 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi khi thêm đặt phòng: " + ex.Message;
             }
         }
-        public List<DatPhong> TimKiem(string keyword)
+        public List<DTO_DatPhong> TimKiem(string keyword)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace BLL_QuanLyKhachSan
                 throw new Exception("Lỗi khi tìm kiếm nhân viên: " + ex.Message);
             }
         }
-        public string updateDatPhong(DatPhong dp)
+        public string updateDatPhong(DTO_DatPhong dp)
         {
             try
             {

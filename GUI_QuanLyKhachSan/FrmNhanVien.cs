@@ -216,11 +216,6 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2DgvNhanVien_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void guna2DgvNhanVien_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
             DataGridViewRow row = guna2DgvNhanVien.Rows[e.RowIndex];
             //Đổ dữ liệu vào các ô nhập liệu trên form
             txtmanv.Text = row.Cells["MaNV"].Value.ToString();
@@ -250,13 +245,12 @@ namespace GUI_QuanLyKhachSan
                 rdoconhoatdong.Checked = true;
             }
 
-            //Bật nút sửa
-            btnthem.Enabled = true;
-            btnsua.Enabled = true;
-            btnxoa.Enabled = true;
+        }
 
-            //Tắt
-            txtmanv.Enabled = false;
+        private void guna2DgvNhanVien_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+           
         }
 
         private void btnxoa_Click(object sender, EventArgs e)
@@ -285,6 +279,22 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
+            string keyword = txttimkiem.Text.Trim();
+            if (string.IsNullOrEmpty(keyword))
+            {
+                loadDanhSachNhanVien();
+            }
+            else
+            {
+                TimKiemNhanVien(keyword);
+            }
+
+        }
+        private void TimKiemNhanVien(string keyword)
+        {
+            BLL_NhanVien bUSNhanVien = new BLL_NhanVien();
+            guna2DgvNhanVien.DataSource = bUSNhanVien.TimKiem(keyword);
+
 
         }
     }

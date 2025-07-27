@@ -54,11 +54,11 @@ namespace BLL_QuanLyKhachSan
             }
         }
 
-        public string deletekhachhang(KhachHang QlKH)
+        public string deletekhachhang(string QlKH)
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(QlKH.KhachHangID))
+                if (string.IsNullOrWhiteSpace(QlKH))
                 {
                     return "Chưa chọn dòng để xóa";
                 }

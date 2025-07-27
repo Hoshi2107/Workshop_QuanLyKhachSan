@@ -11,11 +11,11 @@ namespace BLL_QuanLyKhachSan
     public class BUSLoaiTrangThaiDatPhong
     {
         DALLoaiTrangThaiDatPhong dalloaiTrangThaiDatPhong = new DALLoaiTrangThaiDatPhong();
-        public List<LoaiTrangThaiDatPhong> GetLoaiTrangThaiDatPhongList()
+        public List<DTO_LoaiTrangThaiDatPhong> GetLoaiTrangThaiDatPhongList()
         {
             return dalloaiTrangThaiDatPhong.selectAll();
         }
-        public string insertLoaiTrangThaiDatPhong(LoaiTrangThaiDatPhong loaiTrangThai)
+        public string insertLoaiTrangThaiDatPhong(DTO_LoaiTrangThaiDatPhong loaiTrangThai)
         {
             try
             {
@@ -35,7 +35,7 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi: " + ex.Message;
             }
         }
-        public string updateLoaiTrangThaiDatPhong(LoaiTrangThaiDatPhong loaiTrangThai)
+        public string updateLoaiTrangThaiDatPhong(DTO_LoaiTrangThaiDatPhong loaiTrangThai)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi: " + ex.Message;
             }
         }
-        public string deleteLoaiTrangThaiDatPhong(LoaiTrangThaiDatPhong loaiTrangThai)
+        public string deleteLoaiTrangThaiDatPhong(DTO_LoaiTrangThaiDatPhong loaiTrangThai)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi: " + ex.Message;
             }
         }
-        public List<LoaiTrangThaiDatPhong> SearchLoaiTrangThaiDatPhong(string keyword)
+        public List<DTO_LoaiTrangThaiDatPhong> SearchLoaiTrangThaiDatPhong(string keyword)
         {
             try
             {

@@ -130,7 +130,7 @@ namespace DAL_QuanLyKhachSan
                 string sql = "DELETE FROM NhanVien WHERE MaNV = @0";
                 List<object> thamSo = new List<object>();
                 thamSo.Add(maNv);
-                DBUtil.Update(sql, thamSo);
+                DBUtil.Query(sql, thamSo);
             }
             catch (Exception e)
             {
@@ -154,5 +154,18 @@ namespace DAL_QuanLyKhachSan
 
             return $"{prefix}001";
         }
+        public List<DTO_NhanVien> searchByKeyword(string keyword)
+        {
+            keyword = keyword.Trim().ToLower();
+
+            var dp = selectAll();
+
+            return dp.Where(KH =>
+                (!string.IsNullOrEmpty(KH.MaNV) && KH.MaNV.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(KH.HoTen) && KH.HoTen.ToLower().Contains(keyword)) ||
+                (!string.IsNullOrEmpty(KH.Email) && KH.Email.ToLower().Contains(keyword))
+            ).ToList();
+        }
+
     }
 }

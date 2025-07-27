@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DTO_QuanLyKhachSan
 {
-    public class DatPhong
+    public class DTO_DatPhong
     {
         public string HoaDonThueID {  get; set; }
-        public string MaKhachHang {  get; set; }
+        public string KhachHangID {  get; set; }
         public string MaPhong {  get; set; }
         public DateTime NgayDen {  get; set; }
         public DateTime NgayDi {  get; set; }

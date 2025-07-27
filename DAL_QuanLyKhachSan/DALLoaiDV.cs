@@ -115,7 +115,7 @@ namespace DAL_QuanLyKhachSan
                 string sql = @"DELETE FROM LoaiDichVu WHERE LoaiDichVuID = @0";
                 List<object> thamso = new List<object> { loaiDichVuID };
 
-                DBUtil.Update(sql, thamso);
+                DBUtil.Query(sql, thamso);
             }
             catch (Exception ex)
             {

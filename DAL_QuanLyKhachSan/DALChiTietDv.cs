@@ -11,15 +11,15 @@ namespace DAL_QuanLyKhachSan
 {
     public class DALChiTietDv
     {
-        public List<ChiTietDichVu> SelectBySql(string sql, List<object> args)
+        public List<DTO_ChiTietDichVu> SelectBySql(string sql, List<object> args)
         {
-            List<ChiTietDichVu> list = new List<ChiTietDichVu>();
+            List<DTO_ChiTietDichVu> list = new List<DTO_ChiTietDichVu>();
             try
             {
                 SqlDataReader reader = DBUtil.Query(sql, args);
                 while (reader.Read())
                 {
-                    ChiTietDichVu entity = new ChiTietDichVu();
+                    DTO_ChiTietDichVu entity = new DTO_ChiTietDichVu();
                     entity.ChiTietDichVuID = reader.GetString("ChiTietDichVuID");
                     entity.HoaDonThueID = reader.GetString("HoaDonThueID");
                     entity.DichVuID = reader.GetString("DichVuID");
@@ -38,15 +38,15 @@ namespace DAL_QuanLyKhachSan
             return list;
         }
 
-        public List<ChiTietDichVu> SelectAll()
+        public List<DTO_ChiTietDichVu> SelectAll()
         {
             string sql = "SELECT * FROM ChiTietDichVu";
             return SelectBySql(sql, new List<object>());
         }
-        public void Insert(ChiTietDichVu entity)
+        public void Insert(DTO_ChiTietDichVu entity)
         {
             string sql = "INSERT INTO ChiTietDichVu (ChiTietDichVuID, HoaDonThueID, DichVuID, LoaiDichVuID, SoLuong, NgayBatDau, NgayKetThuc, GhiChu) " +
-                         "VALUES (@ChiTietDichVuID, @HoaDonThueID, @DichVuID, @LoaiDichVuID, @SoLuong, @NgayBatDau, @NgayKetThuc, @GhiChu)";
+                         "VALUES (@0, @1, @2, @3, @4, @5, @6, @7)";
             List<object> args = new List<object>
             {
                 entity.ChiTietDichVuID,
@@ -60,27 +60,28 @@ namespace DAL_QuanLyKhachSan
             };
             DBUtil.Update(sql, args);
         }
-        public void delete(ChiTietDichVu CT)
+        public void delete(string ChiTietDichVu)
         {
-            string sql = "DELETE FROM ChiTietDichVu WHERE ChiTietDichVuID = @ChiTietDichVuID";
-            List<object> args = new List<object> { CT.ChiTietDichVuID };
-            DBUtil.Update(sql, args);
+            string sql = "DELETE FROM ChiTietDichVu WHERE ChiTietDichVuID = @0";
+            List<object> args = new List<object> { ChiTietDichVu };
+            DBUtil.Query(sql, args);
         }
-        public void update(ChiTietDichVu entity)
+        public void update(DTO_ChiTietDichVu entity)
         {
-            string sql = "UPDATE ChiTietDichVu SET HoaDonThueID = @HoaDonThueID, DichVuID = @DichVuID, LoaiDichVuID = @LoaiDichVuID, " +
-                         "SoLuong = @SoLuong, NgayBatDau = @NgayBatDau, NgayKetThuc = @NgayKetThuc, GhiChu = @GhiChu " +
-                         "WHERE ChiTietDichVuID = @ChiTietDichVuID";
+            string sql = "UPDATE ChiTietDichVu SET HoaDonThueID = @1, DichVuID = @2, LoaiDichVuID = @3, " +
+                         "SoLuong = @4, NgayBatDau = @5, NgayKetThuc = @6, GhiChu = @7 " +
+                         "WHERE ChiTietDichVuID = @0";
             List<object> args = new List<object>
             {
+                entity.ChiTietDichVuID,
                 entity.HoaDonThueID,
                 entity.DichVuID,
                 entity.LoaiDichVuID,
                 entity.SoLuong,
                 entity.NgayBatDau,
                 entity.NgayKetThuc,
-                entity.GhiChu,
-                entity.ChiTietDichVuID
+                entity.GhiChu
+                
             };
             DBUtil.Update(sql, args);
         }
@@ -103,7 +104,7 @@ namespace DAL_QuanLyKhachSan
 
             return $"{prefix}001";
         }
-        public List<ChiTietDichVu> searchByKeyword(string keyword)
+        public List<DTO_ChiTietDichVu> searchByKeyword(string keyword)
         {
             keyword = keyword.Trim().ToLower();
 

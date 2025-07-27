@@ -66,7 +66,7 @@ namespace GUI_QuanLyKhachSan
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            LoaiTrangThaiDatPhong loaitrangThaiDatPhong = new LoaiTrangThaiDatPhong
+            DTO_LoaiTrangThaiDatPhong loaitrangThaiDatPhong = new DTO_LoaiTrangThaiDatPhong
             {
                 LoaiTrangThaiID = maLoaiTrangThai,
                 TenTrangThai = tenLoaiTrangThai
@@ -95,7 +95,7 @@ namespace GUI_QuanLyKhachSan
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            LoaiTrangThaiDatPhong loaitrangThaiDatPhong = new LoaiTrangThaiDatPhong
+            DTO_LoaiTrangThaiDatPhong loaitrangThaiDatPhong = new DTO_LoaiTrangThaiDatPhong
             {
                 LoaiTrangThaiID = maLoaiTrangThai,
                 TenTrangThai = tenLoaiTrangThai
@@ -129,7 +129,7 @@ namespace GUI_QuanLyKhachSan
 
                 // Gọi hàm xóa trong BUS
                 BUSLoaiTrangThaiDatPhong busLoai = new BUSLoaiTrangThaiDatPhong();
-                string result = busLoai.deleteLoaiTrangThaiDatPhong(new LoaiTrangThaiDatPhong { LoaiTrangThaiID = maLoai });
+                string result = busLoai.deleteLoaiTrangThaiDatPhong(new DTO_LoaiTrangThaiDatPhong { LoaiTrangThaiID = maLoai });
 
                 if (string.IsNullOrEmpty(result))
                 {

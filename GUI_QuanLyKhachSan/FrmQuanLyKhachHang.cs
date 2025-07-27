@@ -179,7 +179,7 @@ namespace GUI_QuanLyKhachSan
 
                 // Gọi hàm xóa trong BUS
                 BusKhachHang busKh = new BusKhachHang();
-                string result = busKh.deletekhachhang(new KhachHang { KhachHangID = maKhachHang });
+                string result = busKh.deletekhachhang(maKhachHang);
 
                 if (string.IsNullOrEmpty(result))
                 {

@@ -46,7 +46,7 @@ namespace GUI_QuanLyKhachSan
             cboHoaDonThueID.DataSource = busDatPhong.GetDatPhongList();
             cboHoaDonThueID.DisplayMember = "HoaDonThueID"; 
             cboHoaDonThueID.ValueMember = "HoaDonThueID"; 
-            cboHoaDonThueID.SelectedIndex = -1; 
+           
         }
         private void ClearFrom()
         {
@@ -75,7 +75,7 @@ namespace GUI_QuanLyKhachSan
 
             string ghiChu = txtGhiChu.Text.Trim();
 
-            DichVu dichvu = new DichVu
+            DTO_DichVU dichvu = new DTO_DichVU
             {
                 DichVuID = DichVuID,
                 HoaDonThueID = HoaDonThueID,
@@ -87,45 +87,45 @@ namespace GUI_QuanLyKhachSan
             BUSDichVu busDichVu = new BUSDichVu(); // đổi tên biến
             string result = busDichVu.AddDichVu(dichvu); // gọi đúng tên biến DTO
 
-            if (!string.IsNullOrEmpty(result))
+            if (string.IsNullOrEmpty(result))
             {
-                MessageBox.Show(result);
-                return;
+                MessageBox.Show("Thêm dịch vụ thành công!");
+                LoaddichVu();
+                ClearFrom();
+            }
+            else
+            {
+                MessageBox.Show("Lỗi: " + result);
             }
 
-            MessageBox.Show("Thêm mới dịch vụ thành công!");
-            LoaddichVu();
-            ClearFrom();
+
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
 
-            string DichVuID = txtIDDichVu.Text.Trim();
-
-            if (string.IsNullOrEmpty(DichVuID))
+            if (dgvDichVu.SelectedRows.Count > 0)
             {
-                MessageBox.Show("Vui lòng chọn loại dịch vụ cần xóa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+                string dichvu = dgvDichVu.SelectedRows[0].Cells["DichVuID"].Value.ToString();
+                BUSDichVu busDv = new BUSDichVu(); // đổi tên biến
+                string result = busDv.DeleteDichVu(dichvu);
 
-            DialogResult confirm = MessageBox.Show("Bạn có chắc muốn xóa loại dịch vụ này?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (confirm == DialogResult.Yes)
-            {
-                BUSDichVu dichVu = new BUSDichVu();
-                string result = dichVu.DeleteDichVu(DichVuID);
-
-                if (!string.IsNullOrEmpty(result))
+                if (string.IsNullOrEmpty(result))
                 {
-                    MessageBox.Show("Có lỗi xảy ra: " + result, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    MessageBox.Show("Xóa dịch vụ thành công!");
+                    LoaddichVu();
                 }
-
-                MessageBox.Show("Xóa loại dịch vụ thành công!");
-                LoaddichVu();
-                ClearFrom();
+                else
+                {
+                    MessageBox.Show("Lỗi khi xóa: " + result);
+                }
             }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn dòng cần xóa!");
+            }
+
+
         }
 
         private void BtnSua_Click(object sender, EventArgs e)
@@ -142,7 +142,7 @@ namespace GUI_QuanLyKhachSan
                 return;
             }
             string ghiChu = txtGhiChu.Text.Trim();
-            DichVu dichvu = new DichVu
+            DTO_DichVU dichvu = new DTO_DichVU
             {
                 DichVuID = DichVuID,
                 HoaDonThueID = HoaDonThueID,
@@ -154,18 +154,17 @@ namespace GUI_QuanLyKhachSan
 
             BUSDichVu service = new BUSDichVu();
             string result = service.UpdateDichVu(dichvu);
-            if (result == "Vui lòng nhập đủ thông tin hợp lệ!")
+            if (string.IsNullOrEmpty(result))
             {
-                MessageBox.Show(result);
-                return;
-            }
-
-            if (string.IsNullOrEmpty(result) || result == "")
-            {
-                MessageBox.Show("Cập nhật loại dịch vụ thành công");
+                MessageBox.Show("Sửa dịch vụ thành công!");
                 LoaddichVu();
                 ClearFrom();
             }
+            else
+            {
+                MessageBox.Show("Lỗi: " + result);
+            }
+
         }
 
         private void btnReset_Click(object sender, EventArgs e)
