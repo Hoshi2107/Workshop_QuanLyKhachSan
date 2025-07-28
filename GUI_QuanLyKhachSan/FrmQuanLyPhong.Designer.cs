@@ -221,8 +221,12 @@
             // 
             // gnGroupBox_TinhTrang
             // 
+            gnGroupBox_TinhTrang.BackColor = Color.FromArgb(52, 185, 200);
+            gnGroupBox_TinhTrang.BorderColor = Color.Yellow;
+            gnGroupBox_TinhTrang.BorderRadius = 5;
             gnGroupBox_TinhTrang.Controls.Add(rdoKhongHoatDong);
             gnGroupBox_TinhTrang.Controls.Add(rdoDangHoatDong);
+            gnGroupBox_TinhTrang.CustomBorderColor = Color.Cyan;
             gnGroupBox_TinhTrang.CustomizableEdges = customizableEdges5;
             gnGroupBox_TinhTrang.Font = new Font("Segoe UI", 9F);
             gnGroupBox_TinhTrang.ForeColor = Color.FromArgb(125, 137, 149);
