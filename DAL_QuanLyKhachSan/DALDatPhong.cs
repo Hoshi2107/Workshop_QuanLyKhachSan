@@ -69,7 +69,7 @@ namespace DAL_QuanLyKhachSan
         }
         public string generateDatPhongID()
         {
-            string prefix = "DP";
+            string prefix = "HD";
             string sql = "SELECT MAX(HoaDonThueID) FROM DatPhong";
             List<object> thamSo = new List<object>();
 

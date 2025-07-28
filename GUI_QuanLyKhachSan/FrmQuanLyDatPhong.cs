@@ -38,15 +38,15 @@ namespace GUI_QuanLyKhachSan
         {
             BLL_NhanVien bllNhanVien = new BLL_NhanVien();
             cboMaNv.DataSource = bllNhanVien.GetNhanVienList();
-            cboMaNv.DisplayMember = "HoTen";
+            cboMaNv.DisplayMember = "MaNV";
             cboMaNv.ValueMember = "MaNV";
             BusPhong bllPhong = new BusPhong();
             cboIDPhong.DataSource = bllPhong.GetPhongList();
-            cboIDPhong.DisplayMember = "TenPhong";
+            cboIDPhong.DisplayMember = "MaPhong";
             cboIDPhong.ValueMember = "MaPhong";
             BusKhachHang bllKhachHang = new BusKhachHang();
             cboMaKhachHang.DataSource = bllKhachHang.GetKhachHangList();
-            cboMaKhachHang.DisplayMember = "HoTen";
+            cboMaKhachHang.DisplayMember = "KhachHangID";
             cboMaKhachHang.ValueMember = "KhachHangID";
 
 
@@ -72,8 +72,8 @@ namespace GUI_QuanLyKhachSan
             dtpNgayDi.Value = DateTime.Now;
             txtGhiChu.Clear();
             btnThem.Enabled = true;
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
             txtHoaDonTheoID.Enabled = false;
         }
 

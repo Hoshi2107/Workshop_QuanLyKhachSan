@@ -36,6 +36,7 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi khi thêm đặt phòng: " + ex.Message;
             }
         }
+
         public List<DTO_DatPhong> TimKiem(string keyword)
         {
             try
