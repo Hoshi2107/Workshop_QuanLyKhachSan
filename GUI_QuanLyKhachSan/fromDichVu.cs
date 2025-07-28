@@ -51,7 +51,7 @@ namespace GUI_QuanLyKhachSan
         private void ClearFrom()
         {
             btnThem.Enabled = true;
-            btnSua.Enabled = false;
+            btnSua.Enabled = true;
             btnXoa.Enabled = true;
             txtIDDichVu.Clear();
             txtGhiChu.Clear();
@@ -97,8 +97,6 @@ namespace GUI_QuanLyKhachSan
             {
                 MessageBox.Show("Lỗi: " + result);
             }
-
-
         }
 
         private void btnXoa_Click(object sender, EventArgs e)

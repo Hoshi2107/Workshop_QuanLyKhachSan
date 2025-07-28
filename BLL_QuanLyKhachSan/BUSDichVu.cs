@@ -18,56 +18,54 @@ namespace BLL_QuanLyKhachSan
         {
             try
             {
-                dichvu.DichVuID = dALDichVu.GenerateNewDichVuID(); 
-
-                if (string.IsNullOrEmpty(dichvu.DichVuID))
+                if (string.IsNullOrWhiteSpace(dichvu.DichVuID))
                 {
-                    return "Mã Loại không hợp lệ!";
+                    dichvu.DichVuID = dALDichVu.GenerateNewDichVuID();
                 }
-
-                dALDichVu.Add(dichvu); 
-                return "Thêm loại dịch vụ thành công!";
+                if (string.IsNullOrEmpty(dichvu.HoaDonThueID))
+                {
+                    return "Hóa đơn thuê không được để trống.";
+                }
+                dALDichVu.Add(dichvu);
+                return string.Empty;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Lỗi khi thêm loại dịch vụ: " + ex.Message);
-                return "Có lỗi xảy ra! Vui lòng kiểm tra lại.";
+                return "Lỗi: " + ex.Message;
             }
         }
+
         public string UpdateDichVu(DTO_DichVU dichvu)
         {
             try
             {
-                if (string.IsNullOrEmpty(dichvu.DichVuID)) 
+                if (string.IsNullOrEmpty(dichvu.DichVuID))
                 {
-                    return "Mã loại dịch vụ không hợp lệ!";
+                    return "Mã nhân viên không hợp lệ ! ! !";
                 }
 
-                dALDichVu.Update(dichvu); 
-                return "Cập nhật loại dịch vụ thành công!";
+                dALDichVu.Update(dichvu);
+                return string.Empty;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Lỗi khi cập nhật loại dịch vụ: " + ex.Message);
-                return "Có lỗi xảy ra! Vui lòng kiểm tra lại.";
+                return "Lỗi: " + ex.Message;
             }
         }
         public string DeleteDichVu(string DichVuID)
         {
             try
             {
-                if (string.IsNullOrEmpty(DichVuID))
+                if (string.IsNullOrWhiteSpace(DichVuID))
                 {
-                    return "Mã loại dịch vụ không hợp lệ.";
+                    return "Chưa chọn dòng để xóa";
                 }
-
                 dALDichVu.Delete(DichVuID);
-                return "Xóa loại dịch vụ thành công!";
+                return string.Empty;
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Lỗi khi xóa loại dịch vụ: " + ex.Message);
-                return "Có lỗi xảy ra! Vui lòng kiểm tra lại.";
+                return "Lỗi: " + ex.Message;
             }
         }
     }

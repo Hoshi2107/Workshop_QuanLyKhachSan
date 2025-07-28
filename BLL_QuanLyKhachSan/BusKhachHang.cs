@@ -22,7 +22,7 @@ namespace BLL_QuanLyKhachSan
             {
                 if (string.IsNullOrEmpty(kh.KhachHangID))
                 {
-                    return "Mã nhân viên không hợp lệ ! ! !";
+                    return "Mã khách hàng không hợp lệ ! ! !";
                 }
 
                 dalKhachHang.updateKhachHang(kh);
