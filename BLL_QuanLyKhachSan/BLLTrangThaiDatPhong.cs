@@ -18,15 +18,32 @@ namespace BLL_QuanLyKhachSan
         }
         public string insertTrangThai(DTO_TrangThaiDatPhong trangThai)
         {
+            //try
+            //{
+            //    if (string.IsNullOrWhiteSpace(trangThai.TrangThaiID))
+            //    {
+            //        trangThai.TrangThaiID = dalTrangThaiDatPhong.GenerateNewTrangThaiDatPhong();
+            //    }
+            //    if (string.IsNullOrEmpty(trangThai.LoaiTrangThaiID) || string.IsNullOrEmpty(trangThai.HoaDonThueID))
+            //    {
+            //        return "Mã hóa đơn thuê và loại trạng thái không được để trống.";
+            //    }
+            //    dalTrangThaiDatPhong.insertTrangThaiDatPhong(trangThai);
+            //    return string.Empty;
+            //}
+            //catch (Exception ex)
+            //{
+            //    return "Lỗi: " + ex.Message;
+            //}
             try
             {
                 if (string.IsNullOrWhiteSpace(trangThai.TrangThaiID))
                 {
                     trangThai.TrangThaiID = dalTrangThaiDatPhong.GenerateNewTrangThaiDatPhong();
                 }
-                if (string.IsNullOrEmpty(trangThai.LoaiTrangThaiID) || string.IsNullOrEmpty(trangThai.HoaDonThueID))
+                if (string.IsNullOrEmpty(trangThai.HoaDonThueID))
                 {
-                    return "Mã hóa đơn thuê và loại trạng thái không được để trống.";
+                    return "Họ tên không được để trống.";
                 }
                 dalTrangThaiDatPhong.insertTrangThaiDatPhong(trangThai);
                 return string.Empty;
@@ -36,6 +53,7 @@ namespace BLL_QuanLyKhachSan
                 return "Lỗi: " + ex.Message;
             }
         }
+
         public string updateTrangThai(DTO_TrangThaiDatPhong trangThai)
         {
             try

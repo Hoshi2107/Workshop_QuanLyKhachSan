@@ -104,12 +104,16 @@ namespace GUI_QuanLyKhachSan
             };
             BLLTrangThaiDatPhong bllTrangThai = new BLLTrangThaiDatPhong();
             string result = bllTrangThai.insertTrangThai(trangThaiDatPhong);
-            if (!string.IsNullOrEmpty(result))
+            if (string.IsNullOrEmpty(result))
             {
                 MessageBox.Show("Thêm trạng thái đặt phòng thành công");
-                return;
+                LoadTrangThaiDatPhong();
+                ClearForm();
             }
-
+            else
+            {
+                MessageBox.Show(result);
+            }
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
@@ -132,9 +136,11 @@ namespace GUI_QuanLyKhachSan
             };
             BLLTrangThaiDatPhong bllTrangThai = new BLLTrangThaiDatPhong();
             string result = bllTrangThai.updateTrangThai(trangThaiDatPhong);
-            if (!string.IsNullOrEmpty(result))
+            if (string.IsNullOrEmpty(result))
             {
                 MessageBox.Show("Cập nhật trạng thái đặt phòng thành công");
+                LoadTrangThaiDatPhong();
+                ClearForm();
                 return;
             }
         }
