@@ -93,7 +93,7 @@
             btnThem.Font = new Font("Segoe UI", 9F);
             btnThem.ForeColor = Color.White;
             btnThem.Image = Properties.Resources.add;
-            btnThem.Location = new Point(154, 638);
+            btnThem.Location = new Point(195, 648);
             btnThem.Margin = new Padding(3, 2, 3, 2);
             btnThem.Name = "btnThem";
             btnThem.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -115,7 +115,7 @@
             btnSua.Font = new Font("Segoe UI", 9F);
             btnSua.ForeColor = Color.White;
             btnSua.Image = (Image)resources.GetObject("btnSua.Image");
-            btnSua.Location = new Point(358, 638);
+            btnSua.Location = new Point(399, 648);
             btnSua.Margin = new Padding(3, 2, 3, 2);
             btnSua.Name = "btnSua";
             btnSua.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -137,7 +137,7 @@
             btnTimKiem.Font = new Font("Segoe UI", 9F);
             btnTimKiem.ForeColor = Color.White;
             btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
-            btnTimKiem.Location = new Point(878, 10);
+            btnTimKiem.Location = new Point(951, 11);
             btnTimKiem.Margin = new Padding(3, 2, 3, 2);
             btnTimKiem.Name = "btnTimKiem";
             btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -156,7 +156,7 @@
             textTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             textTimKiem.Font = new Font("Segoe UI", 9F);
             textTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            textTimKiem.Location = new Point(52, 10);
+            textTimKiem.Location = new Point(125, 11);
             textTimKiem.Margin = new Padding(3, 4, 3, 4);
             textTimKiem.Name = "textTimKiem";
             textTimKiem.PasswordChar = '\0';
@@ -179,7 +179,7 @@
             btnXoa.Font = new Font("Segoe UI", 9F);
             btnXoa.ForeColor = Color.White;
             btnXoa.Image = (Image)resources.GetObject("btnXoa.Image");
-            btnXoa.Location = new Point(557, 638);
+            btnXoa.Location = new Point(598, 648);
             btnXoa.Margin = new Padding(3, 2, 3, 2);
             btnXoa.Name = "btnXoa";
             btnXoa.ShadowDecoration.CustomizableEdges = customizableEdges10;
@@ -298,7 +298,7 @@
             guna2GroupBox1.BorderRadius = 5;
             guna2GroupBox1.Controls.Add(rdoChuaThanhToan);
             guna2GroupBox1.Controls.Add(rdoDaThanhToan);
-            guna2GroupBox1.CustomBorderColor = Color.Teal;
+            guna2GroupBox1.CustomBorderColor = Color.Cyan;
             guna2GroupBox1.CustomizableEdges = customizableEdges17;
             guna2GroupBox1.Font = new Font("Segoe UI", 9F);
             guna2GroupBox1.ForeColor = Color.Black;
@@ -365,7 +365,7 @@
             btnReset.Font = new Font("Segoe UI", 9F);
             btnReset.ForeColor = Color.White;
             btnReset.Image = (Image)resources.GetObject("btnReset.Image");
-            btnReset.Location = new Point(753, 638);
+            btnReset.Location = new Point(794, 648);
             btnReset.Margin = new Padding(3, 2, 3, 2);
             btnReset.Name = "btnReset";
             btnReset.ShadowDecoration.CustomizableEdges = customizableEdges20;
@@ -473,7 +473,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
-            ClientSize = new Size(1083, 676);
+            ClientSize = new Size(1083, 692);
             Controls.Add(dgvDichVu);
             Controls.Add(btnReset);
             Controls.Add(btnXoa);

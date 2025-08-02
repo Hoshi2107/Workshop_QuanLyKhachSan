@@ -201,7 +201,7 @@
             cboMaLoaiPhong.Font = new Font("Segoe UI", 10F);
             cboMaLoaiPhong.ForeColor = Color.FromArgb(68, 88, 112);
             cboMaLoaiPhong.ItemHeight = 30;
-            cboMaLoaiPhong.Location = new Point(739, 23);
+            cboMaLoaiPhong.Location = new Point(788, 22);
             cboMaLoaiPhong.Margin = new Padding(3, 2, 3, 2);
             cboMaLoaiPhong.Name = "cboMaLoaiPhong";
             cboMaLoaiPhong.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -212,7 +212,7 @@
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.ForeColor = Color.Black;
-            guna2HtmlLabel2.Location = new Point(327, 23);
+            guna2HtmlLabel2.Location = new Point(348, 41);
             guna2HtmlLabel2.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(60, 17);
@@ -229,8 +229,8 @@
             gnGroupBox_TinhTrang.CustomBorderColor = Color.Cyan;
             gnGroupBox_TinhTrang.CustomizableEdges = customizableEdges5;
             gnGroupBox_TinhTrang.Font = new Font("Segoe UI", 9F);
-            gnGroupBox_TinhTrang.ForeColor = Color.FromArgb(125, 137, 149);
-            gnGroupBox_TinhTrang.Location = new Point(647, 85);
+            gnGroupBox_TinhTrang.ForeColor = Color.Black;
+            gnGroupBox_TinhTrang.Location = new Point(696, 96);
             gnGroupBox_TinhTrang.Margin = new Padding(3, 2, 3, 2);
             gnGroupBox_TinhTrang.Name = "gnGroupBox_TinhTrang";
             gnGroupBox_TinhTrang.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -244,7 +244,7 @@
             dtpNgayTao.CustomizableEdges = customizableEdges7;
             dtpNgayTao.Font = new Font("Segoe UI", 9F);
             dtpNgayTao.Format = DateTimePickerFormat.Long;
-            dtpNgayTao.Location = new Point(428, 106);
+            dtpNgayTao.Location = new Point(449, 96);
             dtpNgayTao.Margin = new Padding(3, 2, 3, 2);
             dtpNgayTao.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             dtpNgayTao.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
@@ -257,7 +257,7 @@
             // guna2HtmlLabel7
             // 
             guna2HtmlLabel7.BackColor = Color.Transparent;
-            guna2HtmlLabel7.Location = new Point(329, 112);
+            guna2HtmlLabel7.Location = new Point(350, 112);
             guna2HtmlLabel7.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             guna2HtmlLabel7.Size = new Size(51, 17);
@@ -289,7 +289,7 @@
             // guna2HtmlLabel4
             // 
             guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Location = new Point(29, 106);
+            guna2HtmlLabel4.Location = new Point(29, 113);
             guna2HtmlLabel4.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
             guna2HtmlLabel4.Size = new Size(58, 17);
@@ -308,7 +308,7 @@
             txtTenPhong.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTenPhong.Font = new Font("Segoe UI", 9F);
             txtTenPhong.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenPhong.Location = new Point(428, 23);
+            txtTenPhong.Location = new Point(449, 31);
             txtTenPhong.Margin = new Padding(3, 4, 3, 4);
             txtTenPhong.Name = "txtTenPhong";
             txtTenPhong.PasswordChar = '\0';
@@ -330,7 +330,7 @@
             txtIDPhong.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtIDPhong.Font = new Font("Segoe UI", 9F);
             txtIDPhong.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtIDPhong.Location = new Point(128, 23);
+            txtIDPhong.Location = new Point(128, 34);
             txtIDPhong.Margin = new Padding(3, 4, 3, 4);
             txtIDPhong.Name = "txtIDPhong";
             txtIDPhong.PasswordChar = '\0';
@@ -344,7 +344,7 @@
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.ForeColor = Color.Black;
-            guna2HtmlLabel1.Location = new Point(29, 23);
+            guna2HtmlLabel1.Location = new Point(29, 41);
             guna2HtmlLabel1.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(52, 17);
@@ -354,7 +354,7 @@
             // guna2HtmlLabel6
             // 
             guna2HtmlLabel6.BackColor = Color.Transparent;
-            guna2HtmlLabel6.Location = new Point(647, 34);
+            guna2HtmlLabel6.Location = new Point(696, 41);
             guna2HtmlLabel6.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             guna2HtmlLabel6.Size = new Size(80, 17);
@@ -438,7 +438,7 @@
             txtTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTimKiem.Font = new Font("Segoe UI", 9F);
             txtTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTimKiem.Location = new Point(52, 10);
+            txtTimKiem.Location = new Point(125, 11);
             txtTimKiem.Margin = new Padding(3, 4, 3, 4);
             txtTimKiem.Name = "txtTimKiem";
             txtTimKiem.PasswordChar = '\0';
@@ -461,7 +461,7 @@
             btnTimKiem.Font = new Font("Segoe UI", 9F);
             btnTimKiem.ForeColor = Color.White;
             btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
-            btnTimKiem.Location = new Point(878, 10);
+            btnTimKiem.Location = new Point(951, 11);
             btnTimKiem.Margin = new Padding(3, 2, 3, 2);
             btnTimKiem.Name = "btnTimKiem";
             btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges20;
@@ -483,7 +483,7 @@
             guna2Button5.Font = new Font("Segoe UI", 9F);
             guna2Button5.ForeColor = Color.Black;
             guna2Button5.Image = (Image)resources.GetObject("guna2Button5.Image");
-            guna2Button5.Location = new Point(560, 637);
+            guna2Button5.Location = new Point(717, 648);
             guna2Button5.Margin = new Padding(3, 2, 3, 2);
             guna2Button5.Name = "guna2Button5";
             guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges22;
@@ -505,7 +505,7 @@
             guna2Button3.Font = new Font("Segoe UI", 9F);
             guna2Button3.ForeColor = Color.Black;
             guna2Button3.Image = (Image)resources.GetObject("guna2Button3.Image");
-            guna2Button3.Location = new Point(402, 637);
+            guna2Button3.Location = new Point(559, 648);
             guna2Button3.Margin = new Padding(3, 2, 3, 2);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges24;
@@ -527,7 +527,7 @@
             guna2Button2.Font = new Font("Segoe UI", 9F);
             guna2Button2.ForeColor = Color.Black;
             guna2Button2.Image = (Image)resources.GetObject("guna2Button2.Image");
-            guna2Button2.Location = new Point(258, 637);
+            guna2Button2.Location = new Point(415, 648);
             guna2Button2.Margin = new Padding(3, 2, 3, 2);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges26;
@@ -549,7 +549,7 @@
             guna2Button1.Font = new Font("Segoe UI", 9F);
             guna2Button1.ForeColor = Color.Black;
             guna2Button1.Image = (Image)resources.GetObject("guna2Button1.Image");
-            guna2Button1.Location = new Point(106, 637);
+            guna2Button1.Location = new Point(263, 648);
             guna2Button1.Margin = new Padding(3, 2, 3, 2);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges28;
@@ -563,7 +563,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
-            ClientSize = new Size(1083, 706);
+            ClientSize = new Size(1083, 692);
             Controls.Add(guna2Button5);
             Controls.Add(guna2Button3);
             Controls.Add(guna2Button2);
