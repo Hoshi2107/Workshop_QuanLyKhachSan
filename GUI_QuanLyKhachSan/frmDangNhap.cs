@@ -39,7 +39,7 @@ namespace GUI_QuanLyKhachSan
             if (nhanVien != null)
             {
                 frmMainForm main = new frmMainForm(nhanVien);
-                this.Close();
+                this.Hide();
                 main.ShowDialog();
                 this.Show();
             }
