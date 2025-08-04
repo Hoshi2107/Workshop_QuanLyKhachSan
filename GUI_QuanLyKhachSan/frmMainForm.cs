@@ -1,10 +1,12 @@
-﻿using System;
+﻿using DTO_QuanLyKhachSan;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +23,32 @@ namespace GUI_QuanLyKhachSan
         private void Principal_Load(object sender, EventArgs e)
         {
             ;
+        }
+        //Phan quyen cho cac user
+        private DTO_NhanVien currentUser;
+
+        public frmMainForm(DTO_NhanVien user)
+        {
+            InitializeComponent();
+            currentUser = user;
+            PhanQuyen();
+        }
+
+        private void PhanQuyen()
+        {
+            if (currentUser.VaiTro == true)
+            {
+                // full quyền, không cần disable gì cả
+            }
+            else if (currentUser.VaiTro == false)
+            {
+                // Tắt các chức năng quản lý không dành cho nhân viên
+                guna2Button1.Enabled = false; //Quản lý nhân viên
+                guna2Button4.Enabled = false; //Loại dịch vụ
+                guna2Button5.Enabled = false; //Phòng
+                guna2Button10.Enabled = false; //Loại phòng
+                guna2Button6.Enabled = false; //Loại trạng thái đặt phòng
+            }
         }
 
         private void guna2Button1_Click(object sender, EventArgs e)

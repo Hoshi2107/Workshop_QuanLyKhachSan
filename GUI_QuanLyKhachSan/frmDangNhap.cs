@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DAL_QuanLyKhachSan;
+using DTO_QuanLyKhachSan;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,9 +26,27 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2Button1_Click(object sender, EventArgs e)
         {
-            this.Close();
-            frmMainForm _load = new frmMainForm();
-            _load.Show();
+            //this.Close();
+            //frmMainForm _load = new frmMainForm();
+            //_load.Show();
+            string user = txttennguoidung.Text.Trim();
+            string pass = txtmatkhau.Text.Trim();
+
+            //DTO_NhanVien nhanVien = DAL_NhanVien.CheckLogin(user, pass);
+            DAL_NhanVien dal = new DAL_NhanVien();
+            DTO_NhanVien nhanVien = dal.GetNhanVien1(user, pass);
+
+            if (nhanVien != null)
+            {
+                frmMainForm main = new frmMainForm(nhanVien);
+                this.Close();
+                main.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
+            }
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)

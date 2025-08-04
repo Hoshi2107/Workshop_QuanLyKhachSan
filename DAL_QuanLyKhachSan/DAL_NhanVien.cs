@@ -34,6 +34,8 @@ namespace DAL_QuanLyKhachSan
             }
             return null;
         }
+
+
         public List<DTO_NhanVien> seletAll()
         {
             string sql = "SELECT * FROM NhanVien";
