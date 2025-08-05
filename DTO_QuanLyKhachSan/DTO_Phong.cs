@@ -15,6 +15,6 @@ namespace DTO_QuanLyKhachSan
         public DateTime NgayTao { get; set; }
         public bool TinhTrang { get; set; }
         public string GhiChu { get; set; }
-        public string TingTrangTex => TinhTrang ? "Đang Hoat Động " : "không Hoạt Động";
+       
     }
 }

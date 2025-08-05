@@ -62,7 +62,7 @@ namespace GUI_QuanLyKhachSan
         {
             BUSLoaiPhong bllLoaiPhong = new BUSLoaiPhong();
             cboMaLoaiPhong.DataSource = bllLoaiPhong.GetLoaiPhong();
-            cboMaLoaiPhong.DisplayMember = "MaLoaiPhong";
+            cboMaLoaiPhong.DisplayMember = "TenLoaiPhong";
             cboMaLoaiPhong.ValueMember = "MaLoaiPhong";
 
 
