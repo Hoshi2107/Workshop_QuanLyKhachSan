@@ -95,7 +95,7 @@ namespace GUI_QuanLyKhachSan
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             string hoaDonID = txtHoaDonTheoID.Text.Trim();
-            string khachHangID = cboMaKhachHang.Text.Trim();
+            string khachHangID = cboMaKhachHang.SelectedValue?.ToString();
             string phongID = cboIDPhong.SelectedValue?.ToString();
             string nhanVienID = cboMaNv.SelectedValue?.ToString();
             DateTime ngayDen = dtpNgayDen.Value;
