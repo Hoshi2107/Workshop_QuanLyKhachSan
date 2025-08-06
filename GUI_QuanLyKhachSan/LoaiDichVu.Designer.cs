@@ -327,9 +327,9 @@
             guna2HtmlLabel1.Location = new Point(18, 38);
             guna2HtmlLabel1.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(81, 17);
+            guna2HtmlLabel1.Size = new Size(84, 17);
             guna2HtmlLabel1.TabIndex = 30;
-            guna2HtmlLabel1.Text = "Loại dịch vụ ID";
+            guna2HtmlLabel1.Text = "Mã loại dịch vụ";
             guna2HtmlLabel1.Click += guna2HtmlLabel1_Click;
             // 
             // txtLoaiDichVuID

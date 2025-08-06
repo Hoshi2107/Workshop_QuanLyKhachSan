@@ -226,5 +226,10 @@ namespace GUI_QuanLyKhachSan
             DateTime ngayKetThuc = Convert.ToDateTime(row.Cells["NgayKetThuc"].Value);
             txtghichu.Text = row.Cells["GhiChu"].Value.ToString();
         }
+
+        private void cbx_LoaiDichVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
