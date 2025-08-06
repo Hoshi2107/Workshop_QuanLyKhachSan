@@ -110,7 +110,7 @@
             // guna2HtmlLabel7
             // 
             guna2HtmlLabel7.BackColor = Color.Transparent;
-            guna2HtmlLabel7.Location = new Point(746, 194);
+            guna2HtmlLabel7.Location = new Point(746, 161);
             guna2HtmlLabel7.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel7.Name = "guna2HtmlLabel7";
             guna2HtmlLabel7.Size = new Size(44, 17);
@@ -129,14 +129,14 @@
             txtGhiChu.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGhiChu.Font = new Font("Segoe UI", 9F);
             txtGhiChu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtGhiChu.Location = new Point(838, 187);
+            txtGhiChu.Location = new Point(838, 154);
             txtGhiChu.Margin = new Padding(3, 4, 3, 4);
             txtGhiChu.Name = "txtGhiChu";
             txtGhiChu.PasswordChar = '\0';
             txtGhiChu.PlaceholderText = "";
             txtGhiChu.SelectedText = "";
             txtGhiChu.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtGhiChu.Size = new Size(176, 24);
+            txtGhiChu.Size = new Size(176, 74);
             txtGhiChu.TabIndex = 57;
             txtGhiChu.TextChanged += guna2TextBox4_TextChanged;
             // 
@@ -173,6 +173,7 @@
             gnGroupBox_TrangThai.BorderRadius = 5;
             gnGroupBox_TrangThai.Controls.Add(rdoFalse);
             gnGroupBox_TrangThai.Controls.Add(rdoTrue);
+            gnGroupBox_TrangThai.CustomBorderColor = Color.Cyan;
             gnGroupBox_TrangThai.CustomizableEdges = customizableEdges3;
             gnGroupBox_TrangThai.Font = new Font("Segoe UI", 9F);
             gnGroupBox_TrangThai.ForeColor = Color.Black;
@@ -337,9 +338,9 @@
             guna2HtmlLabel4.Location = new Point(394, 116);
             guna2HtmlLabel4.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(23, 17);
+            guna2HtmlLabel4.Size = new Size(60, 17);
             guna2HtmlLabel4.TabIndex = 65;
-            guna2HtmlLabel4.Text = "SĐT";
+            guna2HtmlLabel4.Text = "Số di động";
             // 
             // guna2HtmlLabel5
             // 
@@ -423,9 +424,9 @@
             guna2HtmlLabel1.Location = new Point(29, 23);
             guna2HtmlLabel1.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(80, 17);
+            guna2HtmlLabel1.Size = new Size(85, 17);
             guna2HtmlLabel1.TabIndex = 35;
-            guna2HtmlLabel1.Text = "Khách hàng ID";
+            guna2HtmlLabel1.Text = "Mã khách hàng";
             // 
             // guna2HtmlLabel2
             // 
@@ -456,9 +457,10 @@
             guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.FillColor = Color.FromArgb(0, 192, 192);
+            guna2Button4.FillColor = Color.Cyan;
             guna2Button4.Font = new Font("Segoe UI", 9F);
             guna2Button4.ForeColor = Color.Black;
+            guna2Button4.Image = Properties.Resources.search;
             guna2Button4.Location = new Point(949, 11);
             guna2Button4.Margin = new Padding(3, 2, 3, 2);
             guna2Button4.Name = "guna2Button4";
@@ -480,14 +482,14 @@
             txtTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTimKiem.Font = new Font("Segoe UI", 9F);
             txtTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTimKiem.Location = new Point(133, 11);
+            txtTimKiem.Location = new Point(8, 11);
             txtTimKiem.Margin = new Padding(3, 4, 3, 4);
             txtTimKiem.Name = "txtTimKiem";
             txtTimKiem.PasswordChar = '\0';
             txtTimKiem.PlaceholderText = "";
             txtTimKiem.SelectedText = "";
             txtTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            txtTimKiem.Size = new Size(810, 33);
+            txtTimKiem.Size = new Size(935, 33);
             txtTimKiem.TabIndex = 82;
             // 
             // gnDgv_KhachHang
@@ -554,7 +556,7 @@
             btnLamMoi.DisabledState.CustomBorderColor = Color.DarkGray;
             btnLamMoi.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnLamMoi.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnLamMoi.FillColor = Color.FromArgb(0, 192, 192);
+            btnLamMoi.FillColor = Color.Cyan;
             btnLamMoi.Font = new Font("Segoe UI", 9F);
             btnLamMoi.ForeColor = Color.Black;
             btnLamMoi.Image = (Image)resources.GetObject("btnLamMoi.Image");
@@ -576,7 +578,7 @@
             btnXoa.DisabledState.CustomBorderColor = Color.DarkGray;
             btnXoa.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnXoa.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnXoa.FillColor = Color.FromArgb(0, 192, 192);
+            btnXoa.FillColor = Color.Cyan;
             btnXoa.Font = new Font("Segoe UI", 9F);
             btnXoa.ForeColor = Color.Black;
             btnXoa.Image = (Image)resources.GetObject("btnXoa.Image");
@@ -598,10 +600,10 @@
             btnSua.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSua.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnSua.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnSua.FillColor = Color.FromArgb(0, 192, 192);
+            btnSua.FillColor = Color.Cyan;
             btnSua.Font = new Font("Segoe UI", 9F);
             btnSua.ForeColor = Color.Black;
-            btnSua.Image = (Image)resources.GetObject("btnSua.Image");
+            btnSua.Image = Properties.Resources.updated3;
             btnSua.Location = new Point(402, 633);
             btnSua.Margin = new Padding(3, 2, 3, 2);
             btnSua.Name = "btnSua";
@@ -620,7 +622,7 @@
             btnThem.DisabledState.CustomBorderColor = Color.DarkGray;
             btnThem.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnThem.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnThem.FillColor = Color.FromArgb(0, 192, 192);
+            btnThem.FillColor = Color.Cyan;
             btnThem.Font = new Font("Segoe UI", 9F);
             btnThem.ForeColor = Color.Black;
             btnThem.Image = (Image)resources.GetObject("btnThem.Image");

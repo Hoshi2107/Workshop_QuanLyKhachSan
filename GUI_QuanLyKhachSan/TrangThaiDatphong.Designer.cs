@@ -154,14 +154,14 @@ namespace GUI_QuanLyKhachSan
             guna2TextBox9.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox9.Font = new Font("Segoe UI", 9F);
             guna2TextBox9.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox9.Location = new Point(137, 11);
+            guna2TextBox9.Location = new Point(12, 11);
             guna2TextBox9.Margin = new Padding(3, 4, 3, 4);
             guna2TextBox9.Name = "guna2TextBox9";
             guna2TextBox9.PasswordChar = '\0';
             guna2TextBox9.PlaceholderText = "";
             guna2TextBox9.SelectedText = "";
             guna2TextBox9.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2TextBox9.Size = new Size(810, 33);
+            guna2TextBox9.Size = new Size(935, 33);
             guna2TextBox9.TabIndex = 26;
             // 
             // gnDtpNgayCapNhat
@@ -245,27 +245,27 @@ namespace GUI_QuanLyKhachSan
             guna2HtmlLabel4.BackColor = Color.Transparent;
             guna2HtmlLabel4.Location = new Point(754, 73);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(88, 17);
+            guna2HtmlLabel4.Size = new Size(96, 17);
             guna2HtmlLabel4.TabIndex = 36;
-            guna2HtmlLabel4.Text = "LoaiTrangThaiID";
+            guna2HtmlLabel4.Text = "Mã loại trạng thái";
             // 
             // guna2HtmlLabel2
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Location = new Point(396, 73);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(84, 17);
+            guna2HtmlLabel2.Size = new Size(94, 17);
             guna2HtmlLabel2.TabIndex = 33;
-            guna2HtmlLabel2.Text = "HoaDonThueID";
+            guna2HtmlLabel2.Text = "Mã hóa đơn thuế";
             // 
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Location = new Point(19, 73);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(66, 17);
+            guna2HtmlLabel1.Size = new Size(74, 17);
             guna2HtmlLabel1.TabIndex = 32;
-            guna2HtmlLabel1.Text = "TrangThaiID";
+            guna2HtmlLabel1.Text = "Mã trạng thái";
             // 
             // gntxtTrangThaiID
             // 
@@ -279,7 +279,7 @@ namespace GUI_QuanLyKhachSan
             gntxtTrangThaiID.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             gntxtTrangThaiID.Font = new Font("Segoe UI", 9F);
             gntxtTrangThaiID.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            gntxtTrangThaiID.Location = new Point(93, 64);
+            gntxtTrangThaiID.Location = new Point(99, 64);
             gntxtTrangThaiID.Margin = new Padding(3, 4, 3, 4);
             gntxtTrangThaiID.Name = "gntxtTrangThaiID";
             gntxtTrangThaiID.PasswordChar = '\0';
@@ -321,7 +321,7 @@ namespace GUI_QuanLyKhachSan
             guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.FillColor = Color.FromArgb(0, 192, 192);
+            guna2Button4.FillColor = Color.Cyan;
             guna2Button4.Font = new Font("Segoe UI", 9F);
             guna2Button4.ForeColor = Color.Black;
             guna2Button4.Image = (Image)resources.GetObject("guna2Button4.Image");

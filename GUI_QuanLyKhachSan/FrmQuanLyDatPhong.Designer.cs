@@ -90,7 +90,7 @@
             // guna2HtmlLabel6
             // 
             guna2HtmlLabel6.BackColor = Color.Transparent;
-            guna2HtmlLabel6.Location = new Point(634, 30);
+            guna2HtmlLabel6.Location = new Point(623, 30);
             guna2HtmlLabel6.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel6.Name = "guna2HtmlLabel6";
             guna2HtmlLabel6.Size = new Size(38, 17);
@@ -162,9 +162,9 @@
             guna2HtmlLabel1.Location = new Point(29, 30);
             guna2HtmlLabel1.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(90, 17);
+            guna2HtmlLabel1.Size = new Size(67, 17);
             guna2HtmlLabel1.TabIndex = 35;
-            guna2HtmlLabel1.Text = "Hóa đơn theo ID";
+            guna2HtmlLabel1.Text = "Mã hóa đơn";
             // 
             // guna2HtmlLabel2
             // 
@@ -218,6 +218,7 @@
             cboMaKhachHang.ShadowDecoration.CustomizableEdges = customizableEdges6;
             cboMaKhachHang.Size = new Size(176, 36);
             cboMaKhachHang.TabIndex = 78;
+            cboMaKhachHang.SelectedIndexChanged += cboMaKhachHang_SelectedIndexChanged;
             // 
             // cboMaNv
             // 
@@ -394,14 +395,14 @@
             txtTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTimKiem.Font = new Font("Segoe UI", 9F);
             txtTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTimKiem.Location = new Point(49, 2);
+            txtTimKiem.Location = new Point(8, 2);
             txtTimKiem.Margin = new Padding(3, 4, 3, 4);
             txtTimKiem.Name = "txtTimKiem";
             txtTimKiem.PasswordChar = '\0';
             txtTimKiem.PlaceholderText = "";
             txtTimKiem.SelectedText = "";
             txtTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            txtTimKiem.Size = new Size(808, 33);
+            txtTimKiem.Size = new Size(849, 33);
             txtTimKiem.TabIndex = 75;
             // 
             // btnTimKiem
@@ -439,7 +440,7 @@
             btnLammoi.Font = new Font("Segoe UI", 9F);
             btnLammoi.ForeColor = Color.Black;
             btnLammoi.Image = (Image)resources.GetObject("btnLammoi.Image");
-            btnLammoi.Location = new Point(592, 634);
+            btnLammoi.Location = new Point(631, 635);
             btnLammoi.Margin = new Padding(3, 2, 3, 2);
             btnLammoi.Name = "btnLammoi";
             btnLammoi.ShadowDecoration.CustomizableEdges = customizableEdges22;
@@ -461,7 +462,7 @@
             btnXoa.Font = new Font("Segoe UI", 9F);
             btnXoa.ForeColor = Color.Black;
             btnXoa.Image = (Image)resources.GetObject("btnXoa.Image");
-            btnXoa.Location = new Point(434, 634);
+            btnXoa.Location = new Point(473, 635);
             btnXoa.Margin = new Padding(3, 2, 3, 2);
             btnXoa.Name = "btnXoa";
             btnXoa.ShadowDecoration.CustomizableEdges = customizableEdges24;
@@ -482,8 +483,8 @@
             btnSua.FillColor = Color.Cyan;
             btnSua.Font = new Font("Segoe UI", 9F);
             btnSua.ForeColor = Color.Black;
-            btnSua.Image = (Image)resources.GetObject("btnSua.Image");
-            btnSua.Location = new Point(290, 634);
+            btnSua.Image = Properties.Resources.updated;
+            btnSua.Location = new Point(329, 635);
             btnSua.Margin = new Padding(3, 2, 3, 2);
             btnSua.Name = "btnSua";
             btnSua.ShadowDecoration.CustomizableEdges = customizableEdges26;
@@ -505,7 +506,7 @@
             btnThem.Font = new Font("Segoe UI", 9F);
             btnThem.ForeColor = Color.Black;
             btnThem.Image = (Image)resources.GetObject("btnThem.Image");
-            btnThem.Location = new Point(138, 634);
+            btnThem.Location = new Point(177, 635);
             btnThem.Margin = new Padding(3, 2, 3, 2);
             btnThem.Name = "btnThem";
             btnThem.ShadowDecoration.CustomizableEdges = customizableEdges28;

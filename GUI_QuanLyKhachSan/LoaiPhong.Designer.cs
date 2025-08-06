@@ -254,14 +254,14 @@
             guna2TextBox9.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             guna2TextBox9.Font = new Font("Segoe UI", 9F);
             guna2TextBox9.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox9.Location = new Point(137, 11);
+            guna2TextBox9.Location = new Point(12, 11);
             guna2TextBox9.Margin = new Padding(3, 4, 3, 4);
             guna2TextBox9.Name = "guna2TextBox9";
             guna2TextBox9.PasswordChar = '\0';
             guna2TextBox9.PlaceholderText = "";
             guna2TextBox9.SelectedText = "";
             guna2TextBox9.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2TextBox9.Size = new Size(810, 33);
+            guna2TextBox9.Size = new Size(935, 33);
             guna2TextBox9.TabIndex = 26;
             // 
             // dtpNgayTao
@@ -305,6 +305,7 @@
             // 
             // guna2GroupBox1
             // 
+            guna2GroupBox1.BorderRadius = 5;
             guna2GroupBox1.Controls.Add(gnRdo_HetPhong);
             guna2GroupBox1.Controls.Add(gn2rdo_ConPhong);
             guna2GroupBox1.CustomBorderColor = Color.Cyan;
@@ -390,7 +391,7 @@
             guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.FillColor = Color.FromArgb(0, 192, 192);
+            guna2Button4.FillColor = Color.Cyan;
             guna2Button4.Font = new Font("Segoe UI", 9F);
             guna2Button4.ForeColor = Color.Black;
             guna2Button4.Image = (Image)resources.GetObject("guna2Button4.Image");

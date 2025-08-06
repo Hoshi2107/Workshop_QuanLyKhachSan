@@ -83,6 +83,16 @@ namespace GUI_QuanLyKhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap updated {
             get {
                 object obj = ResourceManager.GetObject("updated", resourceCulture);
@@ -106,6 +116,26 @@ namespace GUI_QuanLyKhachSan.Properties {
         internal static System.Drawing.Bitmap updated2 {
             get {
                 object obj = ResourceManager.GetObject("updated2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap updated3 {
+            get {
+                object obj = ResourceManager.GetObject("updated3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap updated4 {
+            get {
+                object obj = ResourceManager.GetObject("updated4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

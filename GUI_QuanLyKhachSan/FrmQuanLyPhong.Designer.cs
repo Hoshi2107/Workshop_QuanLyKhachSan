@@ -101,14 +101,14 @@
             txtGhiChu.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGhiChu.Font = new Font("Segoe UI", 9F);
             txtGhiChu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtGhiChu.Location = new Point(128, 178);
+            txtGhiChu.Location = new Point(795, 102);
             txtGhiChu.Margin = new Padding(3, 4, 3, 4);
             txtGhiChu.Name = "txtGhiChu";
             txtGhiChu.PasswordChar = '\0';
             txtGhiChu.PlaceholderText = "";
             txtGhiChu.SelectedText = "";
             txtGhiChu.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtGhiChu.Size = new Size(176, 27);
+            txtGhiChu.Size = new Size(176, 124);
             txtGhiChu.TabIndex = 75;
             // 
             // rdoKhongHoatDong
@@ -158,7 +158,7 @@
             // guna2HtmlLabel9
             // 
             guna2HtmlLabel9.BackColor = Color.Transparent;
-            guna2HtmlLabel9.Location = new Point(29, 188);
+            guna2HtmlLabel9.Location = new Point(696, 112);
             guna2HtmlLabel9.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel9.Name = "guna2HtmlLabel9";
             guna2HtmlLabel9.Size = new Size(44, 17);
@@ -230,7 +230,7 @@
             gnGroupBox_TinhTrang.CustomizableEdges = customizableEdges5;
             gnGroupBox_TinhTrang.Font = new Font("Segoe UI", 9F);
             gnGroupBox_TinhTrang.ForeColor = Color.Black;
-            gnGroupBox_TinhTrang.Location = new Point(696, 96);
+            gnGroupBox_TinhTrang.Location = new Point(29, 151);
             gnGroupBox_TinhTrang.Margin = new Padding(3, 2, 3, 2);
             gnGroupBox_TinhTrang.Name = "gnGroupBox_TinhTrang";
             gnGroupBox_TinhTrang.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -438,14 +438,14 @@
             txtTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTimKiem.Font = new Font("Segoe UI", 9F);
             txtTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTimKiem.Location = new Point(125, 11);
+            txtTimKiem.Location = new Point(10, 11);
             txtTimKiem.Margin = new Padding(3, 4, 3, 4);
             txtTimKiem.Name = "txtTimKiem";
             txtTimKiem.PasswordChar = '\0';
             txtTimKiem.PlaceholderText = "";
             txtTimKiem.SelectedText = "";
             txtTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            txtTimKiem.Size = new Size(808, 33);
+            txtTimKiem.Size = new Size(923, 33);
             txtTimKiem.TabIndex = 91;
             // 
             // btnTimKiem
@@ -457,9 +457,9 @@
             btnTimKiem.DisabledState.CustomBorderColor = Color.DarkGray;
             btnTimKiem.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnTimKiem.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnTimKiem.FillColor = Color.FromArgb(0, 192, 192);
+            btnTimKiem.FillColor = Color.Cyan;
             btnTimKiem.Font = new Font("Segoe UI", 9F);
-            btnTimKiem.ForeColor = Color.White;
+            btnTimKiem.ForeColor = Color.Black;
             btnTimKiem.Image = (Image)resources.GetObject("btnTimKiem.Image");
             btnTimKiem.Location = new Point(951, 11);
             btnTimKiem.Margin = new Padding(3, 2, 3, 2);
@@ -479,7 +479,7 @@
             guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button5.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button5.FillColor = Color.FromArgb(0, 192, 192);
+            guna2Button5.FillColor = Color.Cyan;
             guna2Button5.Font = new Font("Segoe UI", 9F);
             guna2Button5.ForeColor = Color.Black;
             guna2Button5.Image = (Image)resources.GetObject("guna2Button5.Image");
@@ -501,7 +501,7 @@
             guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.FillColor = Color.FromArgb(0, 192, 192);
+            guna2Button3.FillColor = Color.Cyan;
             guna2Button3.Font = new Font("Segoe UI", 9F);
             guna2Button3.ForeColor = Color.Black;
             guna2Button3.Image = (Image)resources.GetObject("guna2Button3.Image");
@@ -523,10 +523,10 @@
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button2.FillColor = Color.FromArgb(0, 192, 192);
+            guna2Button2.FillColor = Color.Cyan;
             guna2Button2.Font = new Font("Segoe UI", 9F);
             guna2Button2.ForeColor = Color.Black;
-            guna2Button2.Image = (Image)resources.GetObject("guna2Button2.Image");
+            guna2Button2.Image = Properties.Resources.updated4;
             guna2Button2.Location = new Point(415, 648);
             guna2Button2.Margin = new Padding(3, 2, 3, 2);
             guna2Button2.Name = "guna2Button2";
@@ -545,7 +545,7 @@
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(0, 192, 192);
+            guna2Button1.FillColor = Color.Cyan;
             guna2Button1.Font = new Font("Segoe UI", 9F);
             guna2Button1.ForeColor = Color.Black;
             guna2Button1.Image = (Image)resources.GetObject("guna2Button1.Image");

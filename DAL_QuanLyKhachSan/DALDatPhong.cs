@@ -72,16 +72,12 @@ namespace DAL_QuanLyKhachSan
             string prefix = "HD";
             string sql = "SELECT MAX(HoaDonThueID) FROM DatPhong";
             List<object> thamSo = new List<object>();
-
             object result = DBUtil.ScalarQuery(sql, thamSo);
             if (result != null && result.ToString().StartsWith(prefix))
             {
-                string maxCode = result.ToString().Substring(prefix.Length); // bỏ tiền tố "DP"
-                if (int.TryParse(maxCode, out int number))
-                {
-                    int newNumber = number + 1;
-                    return $"{prefix}{newNumber:D3}";
-                }
+                string maxCode = result.ToString().Substring(2);
+                int newNumber = int.Parse(maxCode) + 1;
+                return $"{prefix}{newNumber:D3}";
             }
 
             return $"{prefix}001";

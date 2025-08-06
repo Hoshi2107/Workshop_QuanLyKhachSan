@@ -38,7 +38,7 @@ namespace GUI_QuanLyKhachSan
         {
             BLL_NhanVien bllNhanVien = new BLL_NhanVien();
             cboMaNv.DataSource = bllNhanVien.GetNhanVienList();
-            cboMaNv.DisplayMember = "MaNV";
+            cboMaNv.DisplayMember = "HoTen";
             cboMaNv.ValueMember = "MaNV";
             BusPhong bllPhong = new BusPhong();
             cboIDPhong.DataSource = bllPhong.GetPhongList();
@@ -46,7 +46,7 @@ namespace GUI_QuanLyKhachSan
             cboIDPhong.ValueMember = "MaPhong";
             BusKhachHang bllKhachHang = new BusKhachHang();
             cboMaKhachHang.DataSource = bllKhachHang.GetKhachHangList();
-            cboMaKhachHang.DisplayMember = "KhachHangID";
+            cboMaKhachHang.DisplayMember = "HoTen";
             cboMaKhachHang.ValueMember = "KhachHangID";
 
 
@@ -229,6 +229,11 @@ namespace GUI_QuanLyKhachSan
             BusDatPhong bUSDP = new BusDatPhong();
 
             guna2DgvDatPhong.DataSource = bUSDP.TimKiem(keyword);
+        }
+
+        private void cboMaKhachHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

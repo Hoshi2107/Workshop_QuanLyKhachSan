@@ -139,5 +139,19 @@ namespace DAL_QuanLyKhachSan
                 (!string.IsNullOrEmpty(KH.DiaChi) && KH.DiaChi.ToLower().Contains(keyword))
             ).ToList();
         }
+        public bool KiemTraKhachHangTonTai(string khachHangID)
+        {
+            string sql = "SELECT COUNT(*) FROM KhachHang WHERE KhachHangID = @0";
+            List<object> param = new List<object> { khachHangID };
+            object result = DBUtil.ScalarQuery(sql, param);
+
+            if (result != null && int.TryParse(result.ToString(), out int count))
+            {
+                return count > 0;
+            }
+
+            return false;
+        }
     }
 }
+    
