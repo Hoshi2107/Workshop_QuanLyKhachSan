@@ -196,36 +196,9 @@ namespace GUI_QuanLyKhachSan
 
         private void dgvTrangThaiDatPhong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                string columnName = dgvTrangThaiDatPhong.Columns[e.ColumnIndex].Name;
 
-
-                if (columnName == "LoaiTrangThaiID")
-                {
-                    string loaiTrangThaiId = dgvTrangThaiDatPhong.Rows[e.RowIndex].Cells["LoaiTrangThaiID"].Value.ToString();
-
-                    LoaiTrangThaiDatphong frm = new LoaiTrangThaiDatphong();
-                    frm.ShowDialog();
-                }
-
-                // Click vào cột AnCoHoaDonThue → Mở form FrmDatPhong
-                else if (columnName == "HoaDonThueID")
-                {
-                    string hoaDonThueId = dgvTrangThaiDatPhong.Rows[e.RowIndex].Cells["HoaDonThueID"].Value.ToString();
-
-                    
-
-                        FrmQuanLyDatPhong frm = new FrmQuanLyDatPhong();
-                        frm.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Chưa có hóa đơn thuê!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-            }
         }
 
     }
+}
 

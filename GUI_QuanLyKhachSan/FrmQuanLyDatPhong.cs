@@ -1,4 +1,5 @@
 ﻿using BLL_QuanLyKhachSan;
+using DAL_QuanLyKhachSan;
 using DTO_QuanLyKhachSan;
 using Guna.UI2.WinForms;
 using Microsoft.VisualBasic.Devices;
@@ -235,5 +236,29 @@ namespace GUI_QuanLyKhachSan
         {
 
         }
+
+        private void guna2DgvDatPhong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                string columnName = guna2DgvDatPhong.Columns[e.ColumnIndex].Name;
+
+
+                if (columnName == "GhiChu")
+                {
+                    string loaiTrangThaiId = guna2DgvDatPhong.Rows[e.RowIndex].Cells["GhiChu"].Value.ToString();
+
+                    TrangThaiDatphong frm = new TrangThaiDatphong();
+                    frm.ShowDialog();
+                }
+
+               
+                else
+                {
+                    MessageBox.Show("Chưa có hóa đơn thuê!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
     }
+    
 }
