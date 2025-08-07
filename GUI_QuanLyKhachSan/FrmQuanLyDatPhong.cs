@@ -49,8 +49,6 @@ namespace GUI_QuanLyKhachSan
             cboMaKhachHang.DataSource = bllKhachHang.GetKhachHangList();
             cboMaKhachHang.DisplayMember = "HoTen";
             cboMaKhachHang.ValueMember = "KhachHangID";
-
-
         }
 
 
@@ -251,11 +249,10 @@ namespace GUI_QuanLyKhachSan
                     TrangThaiDatphong frm = new TrangThaiDatphong();
                     frm.ShowDialog();
                 }
-
-               
                 else
                 {
-                    MessageBox.Show("Chưa có hóa đơn thuê!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Chưa có hóa đơn thuê!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
             }
         }
