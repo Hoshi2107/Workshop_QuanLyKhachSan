@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DTO_QuanLyKhachSan
+{
+    public class DTO_ThongKePhong
+    {
+        public string MaPhong { get; set; }
+        public string TenPhong { get; set; }
+        public string MaLoaiPhong { get; set; }
+        public int GiaPhong { get; set; }
+        public DateTime NgayBatDau { get; set; }
+        public DateTime NgayKetThuc { get; set; }
+        public string TinhTrang { get; set; }
+        public string GhiChu { get; set; }
+
+    }
+}

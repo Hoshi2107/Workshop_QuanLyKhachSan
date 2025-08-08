@@ -150,7 +150,7 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2Button8_Click(object sender, EventArgs e)
         {
-            openChildForm(new TrangThaiDatphong());
+            openChildForm(new FrmThongKeTheoPhong());
         }
 
 
