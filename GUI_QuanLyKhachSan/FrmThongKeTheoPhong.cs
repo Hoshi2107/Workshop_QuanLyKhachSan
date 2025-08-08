@@ -1,5 +1,6 @@
 ﻿using BLL_QuanLyKhachSan;
 using DTO_QuanLyKhachSan;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace GUI_QuanLyKhachSan
     public partial class FrmThongKeTheoPhong : Form
     {
         private BLL_ThongKePhong bllThongKePhong = new BLL_ThongKePhong();
+        private BusPhong busPhong = new BusPhong();
         public FrmThongKeTheoPhong()
         {
             InitializeComponent();
@@ -27,13 +29,34 @@ namespace GUI_QuanLyKhachSan
 
         private void gnBtn_ThongKe_Click(object sender, EventArgs e)
         {
-            
+            if (cbo_MaPhong.DataSource == null)
+            {
+                MessageBox.Show("Vui lòng chọn phòng cần thống kê");
+                return;
+            }
+            string phongID = cbo_MaPhong.SelectedValue?.ToString();
+            DateTime fromDate = gnDtp_NgayBD.Value;
+            DateTime toDate = gnDtp_NgayKT.Value;
+            var thongKeList = bllThongKePhong.LayThongKePhong(phongID, fromDate, toDate);
+            if (thongKeList == null || thongKeList.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu thống kê cho phòng này trong khoảng thời gian đã chọn.");
+                return;
+            }
+            dgvThongKe_phong.DataSource = thongKeList;
         }
-
+        private void loadComboBoxPhong()
+        {
+            var phongList = busPhong.GetPhongList();
+            cbo_MaPhong.DataSource = phongList;
+            cbo_MaPhong.DisplayMember = "TenPhong";
+            cbo_MaPhong.ValueMember = "MaPhong";
+            cbo_MaPhong.SelectedIndex = -1;
+        }
         private void FrmThongKeTheoPhong_Load(object sender, EventArgs e)
         {
-           
+            loadComboBoxPhong();
         }
-        
+
     }
 }
