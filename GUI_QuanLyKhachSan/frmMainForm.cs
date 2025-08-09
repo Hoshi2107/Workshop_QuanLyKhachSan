@@ -18,7 +18,6 @@ namespace GUI_QuanLyKhachSan
         public frmMainForm()
         {
             InitializeComponent();
-            this.Icon = new Icon("hotel icon.ico");
         }
 
         private void Principal_Load(object sender, EventArgs e)
