@@ -55,15 +55,17 @@
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel1.Location = new Point(30, 43);
+            guna2HtmlLabel1.Location = new Point(61, 113);
+            guna2HtmlLabel1.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(74, 33);
+            guna2HtmlLabel1.Size = new Size(59, 27);
             guna2HtmlLabel1.TabIndex = 0;
             guna2HtmlLabel1.Text = "Phòng:";
             // 
             // cbo_MaPhong
             // 
             cbo_MaPhong.BackColor = Color.Transparent;
+            cbo_MaPhong.BorderRadius = 5;
             cbo_MaPhong.CustomizableEdges = customizableEdges1;
             cbo_MaPhong.DrawMode = DrawMode.OwnerDrawFixed;
             cbo_MaPhong.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -72,31 +74,33 @@
             cbo_MaPhong.Font = new Font("Segoe UI", 10F);
             cbo_MaPhong.ForeColor = Color.FromArgb(68, 88, 112);
             cbo_MaPhong.ItemHeight = 30;
-            cbo_MaPhong.Location = new Point(167, 43);
+            cbo_MaPhong.Location = new Point(200, 104);
+            cbo_MaPhong.Margin = new Padding(3, 2, 3, 2);
             cbo_MaPhong.Name = "cbo_MaPhong";
             cbo_MaPhong.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            cbo_MaPhong.Size = new Size(1008, 36);
+            cbo_MaPhong.Size = new Size(298, 36);
             cbo_MaPhong.TabIndex = 1;
             cbo_MaPhong.SelectedIndexChanged += guna2ComboBox1_SelectedIndexChanged;
             // 
             // gnBtn_ThongKe
             // 
             gnBtn_ThongKe.AutoRoundedCorners = true;
-            gnBtn_ThongKe.BorderRadius = 21;
+            gnBtn_ThongKe.BorderRadius = 22;
             gnBtn_ThongKe.CustomizableEdges = customizableEdges3;
             gnBtn_ThongKe.DisabledState.BorderColor = Color.DarkGray;
             gnBtn_ThongKe.DisabledState.CustomBorderColor = Color.DarkGray;
             gnBtn_ThongKe.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             gnBtn_ThongKe.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             gnBtn_ThongKe.FillColor = Color.Cyan;
-            gnBtn_ThongKe.Font = new Font("Segoe UI", 9F);
+            gnBtn_ThongKe.Font = new Font("Segoe UI", 15F);
             gnBtn_ThongKe.ForeColor = Color.Black;
             gnBtn_ThongKe.Image = (Image)resources.GetObject("gnBtn_ThongKe.Image");
             gnBtn_ThongKe.ImageAlign = HorizontalAlignment.Left;
-            gnBtn_ThongKe.Location = new Point(1046, 234);
+            gnBtn_ThongKe.Location = new Point(587, 93);
+            gnBtn_ThongKe.Margin = new Padding(3, 2, 3, 2);
             gnBtn_ThongKe.Name = "gnBtn_ThongKe";
             gnBtn_ThongKe.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            gnBtn_ThongKe.Size = new Size(135, 44);
+            gnBtn_ThongKe.Size = new Size(159, 47);
             gnBtn_ThongKe.TabIndex = 59;
             gnBtn_ThongKe.Text = "Thống kê";
             gnBtn_ThongKe.Click += gnBtn_ThongKe_Click;
@@ -124,11 +128,13 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvThongKe_phong.DefaultCellStyle = dataGridViewCellStyle3;
             dgvThongKe_phong.GridColor = Color.FromArgb(231, 229, 255);
-            dgvThongKe_phong.Location = new Point(30, 298);
+            dgvThongKe_phong.Location = new Point(12, 161);
+            dgvThongKe_phong.Margin = new Padding(3, 2, 3, 2);
             dgvThongKe_phong.Name = "dgvThongKe_phong";
             dgvThongKe_phong.RowHeadersVisible = false;
             dgvThongKe_phong.RowHeadersWidth = 51;
-            dgvThongKe_phong.Size = new Size(1151, 590);
+            dgvThongKe_phong.RowTemplate.Height = 29;
+            dgvThongKe_phong.Size = new Size(1059, 507);
             dgvThongKe_phong.TabIndex = 60;
             dgvThongKe_phong.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvThongKe_phong.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -158,12 +164,13 @@
             gnDtp_NgayKT.CustomizableEdges = customizableEdges5;
             gnDtp_NgayKT.Font = new Font("Segoe UI", 9F);
             gnDtp_NgayKT.Format = DateTimePickerFormat.Long;
-            gnDtp_NgayKT.Location = new Point(841, 147);
+            gnDtp_NgayKT.Location = new Point(676, 33);
+            gnDtp_NgayKT.Margin = new Padding(3, 2, 3, 2);
             gnDtp_NgayKT.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             gnDtp_NgayKT.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             gnDtp_NgayKT.Name = "gnDtp_NgayKT";
             gnDtp_NgayKT.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            gnDtp_NgayKT.Size = new Size(340, 45);
+            gnDtp_NgayKT.Size = new Size(298, 34);
             gnDtp_NgayKT.TabIndex = 5;
             gnDtp_NgayKT.Value = new DateTime(2025, 8, 8, 15, 15, 9, 84);
             // 
@@ -171,9 +178,10 @@
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel3.Location = new Point(705, 147);
+            guna2HtmlLabel3.Location = new Point(587, 40);
+            guna2HtmlLabel3.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(105, 33);
+            guna2HtmlLabel3.Size = new Size(83, 27);
             guna2HtmlLabel3.TabIndex = 4;
             guna2HtmlLabel3.Text = "Đến ngày:";
             // 
@@ -183,12 +191,13 @@
             gnDtp_NgayBD.CustomizableEdges = customizableEdges7;
             gnDtp_NgayBD.Font = new Font("Segoe UI", 9F);
             gnDtp_NgayBD.Format = DateTimePickerFormat.Long;
-            gnDtp_NgayBD.Location = new Point(242, 147);
+            gnDtp_NgayBD.Location = new Point(200, 33);
+            gnDtp_NgayBD.Margin = new Padding(3, 2, 3, 2);
             gnDtp_NgayBD.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             gnDtp_NgayBD.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             gnDtp_NgayBD.Name = "gnDtp_NgayBD";
             gnDtp_NgayBD.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            gnDtp_NgayBD.Size = new Size(340, 45);
+            gnDtp_NgayBD.Size = new Size(298, 34);
             gnDtp_NgayBD.TabIndex = 3;
             gnDtp_NgayBD.Value = new DateTime(2025, 8, 8, 15, 15, 9, 84);
             // 
@@ -196,17 +205,18 @@
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            guna2HtmlLabel2.Location = new Point(30, 147);
+            guna2HtmlLabel2.Location = new Point(61, 40);
+            guna2HtmlLabel2.Margin = new Padding(3, 2, 3, 2);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(170, 33);
+            guna2HtmlLabel2.Size = new Size(133, 27);
             guna2HtmlLabel2.TabIndex = 2;
             guna2HtmlLabel2.Text = "Bắt đầu từ ngày:";
             // 
             // FrmThongKeTheoPhong
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1238, 923);
+            ClientSize = new Size(1083, 692);
             Controls.Add(dgvThongKe_phong);
             Controls.Add(gnBtn_ThongKe);
             Controls.Add(gnDtp_NgayKT);
@@ -215,6 +225,7 @@
             Controls.Add(guna2HtmlLabel2);
             Controls.Add(cbo_MaPhong);
             Controls.Add(guna2HtmlLabel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmThongKeTheoPhong";
             Text = "FrmThongKeTheoPhong";
             Load += FrmThongKeTheoPhong_Load;

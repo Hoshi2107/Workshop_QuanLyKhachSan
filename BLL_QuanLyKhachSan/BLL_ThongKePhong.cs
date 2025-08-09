@@ -11,9 +11,18 @@ namespace BLL_QuanLyKhachSan
     public class BLL_ThongKePhong
     {
         DAL_ThongKePhong dalThongKePhong = new DAL_ThongKePhong();
-        public List<DTO_ThongKePhong> LayThongKePhong(string phongID, DateTime ngayBatDau, DateTime ngayKetThuc)
+        //public List<DTO_ThongKePhong> LayThongKePhong(DateTime ngayBatDau, DateTime ngayKetThuc)
+        //{
+        //    return dalThongKePhong.LayThongKePhong(ngayBatDau, ngayKetThuc);
+        //}
+        //public List<DTO_ThongKePhong> LayThongKeTheoLoaiPhong(DateTime ngayBD, DateTime ngayKT)
+        //{
+        //    return dalThongKePhong.LayThongKeTheoLoaiPhong(ngayBD, ngayKT);
+        //}
+        public List<DTO_ThongKePhong> LayThongKeTheoLoaiPhong(DateTime ngayBD, DateTime ngayKT, string maLoaiPhong)
         {
-            return dalThongKePhong.LayThongKePhong(phongID, ngayBatDau, ngayKetThuc);
+            return dalThongKePhong.LayThongKeTheoLoaiPhong(ngayBD, ngayKT, maLoaiPhong);
         }
+
     }
 }

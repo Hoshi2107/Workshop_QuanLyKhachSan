@@ -31,21 +31,14 @@
             components = new System.ComponentModel.Container();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainForm));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -59,6 +52,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainForm));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -106,10 +106,13 @@
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.White;
+            guna2Panel1.Controls.Add(guna2Button1);
+            guna2Panel1.Controls.Add(guna2Button2);
+            guna2Panel1.Controls.Add(guna2Button9);
+            guna2Panel1.Controls.Add(guna2Button3);
             guna2Panel1.Controls.Add(guna2PictureBox1);
             guna2Panel1.Controls.Add(guna2Button7);
             guna2Panel1.Controls.Add(guna2Button10);
-            guna2Panel1.Controls.Add(guna2Button9);
             guna2Panel1.Controls.Add(guna2Button8);
             guna2Panel1.Controls.Add(label2);
             guna2Panel1.Controls.Add(label1);
@@ -119,9 +122,6 @@
             guna2Panel1.Controls.Add(guna2Button6);
             guna2Panel1.Controls.Add(guna2Button5);
             guna2Panel1.Controls.Add(guna2Button4);
-            guna2Panel1.Controls.Add(guna2Button3);
-            guna2Panel1.Controls.Add(guna2Button2);
-            guna2Panel1.Controls.Add(guna2Button1);
             guna2Panel1.CustomizableEdges = customizableEdges28;
             guna2Panel1.Dock = DockStyle.Left;
             guna2Panel1.FillColor = Color.White;
@@ -135,13 +135,13 @@
             // guna2PictureBox1
             // 
             guna2PictureBox1.BackColor = Color.Transparent;
-            guna2PictureBox1.CustomizableEdges = customizableEdges1;
+            guna2PictureBox1.CustomizableEdges = customizableEdges9;
             guna2PictureBox1.Image = (Image)resources.GetObject("guna2PictureBox1.Image");
             guna2PictureBox1.ImageRotate = 0F;
             guna2PictureBox1.Location = new Point(68, 4);
             guna2PictureBox1.Margin = new Padding(4);
             guna2PictureBox1.Name = "guna2PictureBox1";
-            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2PictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2PictureBox1.Size = new Size(91, 90);
             guna2PictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             guna2PictureBox1.TabIndex = 0;
@@ -150,14 +150,14 @@
             // guna2Button7
             // 
             guna2Button7.CustomBorderThickness = new Padding(0, 0, 0, 8);
-            guna2Button7.CustomizableEdges = customizableEdges3;
+            guna2Button7.CustomizableEdges = customizableEdges11;
             guna2Button7.FillColor = Color.Transparent;
             guna2Button7.Font = new Font("Bahnschrift", 9F, FontStyle.Bold);
             guna2Button7.ForeColor = Color.Black;
             guna2Button7.HoverState.BorderColor = Color.Navy;
             guna2Button7.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             guna2Button7.HoverState.ForeColor = Color.White;
-            guna2Button7.HoverState.Image = (Image)resources.GetObject("resource.Image");
+            guna2Button7.HoverState.Image = (Image)resources.GetObject("resource.Image4");
             guna2Button7.Image = (Image)resources.GetObject("guna2Button7.Image");
             guna2Button7.ImageAlign = HorizontalAlignment.Left;
             guna2Button7.ImageOffset = new Point(8, 0);
@@ -165,7 +165,7 @@
             guna2Button7.Location = new Point(0, 260);
             guna2Button7.Margin = new Padding(4);
             guna2Button7.Name = "guna2Button7";
-            guna2Button7.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Button7.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2Button7.Size = new Size(239, 46);
             guna2Button7.TabIndex = 16;
             guna2Button7.Text = "Chi tiết dịch vụ";
@@ -175,14 +175,14 @@
             // guna2Button10
             // 
             guna2Button10.CustomBorderThickness = new Padding(0, 0, 0, 8);
-            guna2Button10.CustomizableEdges = customizableEdges5;
+            guna2Button10.CustomizableEdges = customizableEdges13;
             guna2Button10.FillColor = Color.Transparent;
             guna2Button10.Font = new Font("Bahnschrift", 9F, FontStyle.Bold);
             guna2Button10.ForeColor = Color.Black;
             guna2Button10.HoverState.BorderColor = Color.Navy;
             guna2Button10.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             guna2Button10.HoverState.ForeColor = Color.White;
-            guna2Button10.HoverState.Image = (Image)resources.GetObject("resource.Image1");
+            guna2Button10.HoverState.Image = (Image)resources.GetObject("resource.Image5");
             guna2Button10.Image = (Image)resources.GetObject("guna2Button10.Image");
             guna2Button10.ImageAlign = HorizontalAlignment.Left;
             guna2Button10.ImageOffset = new Point(8, 0);
@@ -190,7 +190,7 @@
             guna2Button10.Location = new Point(0, 485);
             guna2Button10.Margin = new Padding(4);
             guna2Button10.Name = "guna2Button10";
-            guna2Button10.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2Button10.ShadowDecoration.CustomizableEdges = customizableEdges14;
             guna2Button10.Size = new Size(239, 46);
             guna2Button10.TabIndex = 14;
             guna2Button10.Text = "Loại phòng";
@@ -200,7 +200,7 @@
             // guna2Button9
             // 
             guna2Button9.CustomBorderThickness = new Padding(0, 0, 0, 8);
-            guna2Button9.CustomizableEdges = customizableEdges7;
+            guna2Button9.CustomizableEdges = customizableEdges5;
             guna2Button9.FillColor = Color.Transparent;
             guna2Button9.Font = new Font("Bahnschrift", 9F, FontStyle.Bold);
             guna2Button9.ForeColor = Color.Black;
@@ -212,10 +212,10 @@
             guna2Button9.ImageAlign = HorizontalAlignment.Left;
             guna2Button9.ImageOffset = new Point(8, 0);
             guna2Button9.ImageSize = new Size(30, 30);
-            guna2Button9.Location = new Point(0, 314);
+            guna2Button9.Location = new Point(0, 152);
             guna2Button9.Margin = new Padding(4);
             guna2Button9.Name = "guna2Button9";
-            guna2Button9.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Button9.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button9.Size = new Size(239, 46);
             guna2Button9.TabIndex = 13;
             guna2Button9.Text = "Khách hàng";
@@ -225,14 +225,14 @@
             // guna2Button8
             // 
             guna2Button8.CustomBorderThickness = new Padding(0, 0, 0, 8);
-            guna2Button8.CustomizableEdges = customizableEdges9;
+            guna2Button8.CustomizableEdges = customizableEdges15;
             guna2Button8.FillColor = Color.Transparent;
             guna2Button8.Font = new Font("Bahnschrift", 9F, FontStyle.Bold);
             guna2Button8.ForeColor = Color.Black;
             guna2Button8.HoverState.BorderColor = Color.Navy;
             guna2Button8.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             guna2Button8.HoverState.ForeColor = Color.White;
-            guna2Button8.HoverState.Image = (Image)resources.GetObject("resource.Image3");
+            guna2Button8.HoverState.Image = (Image)resources.GetObject("resource.Image6");
             guna2Button8.Image = (Image)resources.GetObject("guna2Button8.Image");
             guna2Button8.ImageAlign = HorizontalAlignment.Left;
             guna2Button8.ImageOffset = new Point(8, 0);
@@ -240,10 +240,10 @@
             guna2Button8.Location = new Point(0, 539);
             guna2Button8.Margin = new Padding(4);
             guna2Button8.Name = "guna2Button8";
-            guna2Button8.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2Button8.ShadowDecoration.CustomizableEdges = customizableEdges16;
             guna2Button8.Size = new Size(239, 46);
             guna2Button8.TabIndex = 12;
-            guna2Button8.Text = "Trạng thái đặt phòng";
+            guna2Button8.Text = "Thống kê theo loại phòng";
             guna2Button8.TextOffset = new Point(8, 0);
             guna2Button8.Click += guna2Button8_Click;
             // 
@@ -276,7 +276,7 @@
             guna2CirclePictureBox1.Location = new Point(22, 814);
             guna2CirclePictureBox1.Margin = new Padding(4);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges17;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox1.Size = new Size(41, 40);
             guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -286,14 +286,14 @@
             // btnExit
             // 
             btnExit.CustomBorderThickness = new Padding(0, 0, 0, 8);
-            btnExit.CustomizableEdges = customizableEdges12;
+            btnExit.CustomizableEdges = customizableEdges18;
             btnExit.FillColor = Color.Transparent;
             btnExit.Font = new Font("Bahnschrift", 9F, FontStyle.Bold);
             btnExit.ForeColor = Color.Black;
             btnExit.HoverState.BorderColor = Color.Navy;
             btnExit.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             btnExit.HoverState.ForeColor = Color.White;
-            btnExit.HoverState.Image = (Image)resources.GetObject("resource.Image4");
+            btnExit.HoverState.Image = (Image)resources.GetObject("resource.Image7");
             btnExit.Image = (Image)resources.GetObject("btnExit.Image");
             btnExit.ImageAlign = HorizontalAlignment.Left;
             btnExit.ImageOffset = new Point(8, 0);
@@ -301,7 +301,7 @@
             btnExit.Location = new Point(0, 700);
             btnExit.Margin = new Padding(4);
             btnExit.Name = "btnExit";
-            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            btnExit.ShadowDecoration.CustomizableEdges = customizableEdges19;
             btnExit.Size = new Size(239, 46);
             btnExit.TabIndex = 6;
             btnExit.Text = "Thoát";
@@ -311,14 +311,14 @@
             // btnLogOut
             // 
             btnLogOut.CustomBorderThickness = new Padding(0, 0, 0, 8);
-            btnLogOut.CustomizableEdges = customizableEdges14;
+            btnLogOut.CustomizableEdges = customizableEdges20;
             btnLogOut.FillColor = Color.Transparent;
             btnLogOut.Font = new Font("Bahnschrift", 9F, FontStyle.Bold);
             btnLogOut.ForeColor = Color.Black;
             btnLogOut.HoverState.BorderColor = Color.Navy;
             btnLogOut.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             btnLogOut.HoverState.ForeColor = Color.White;
-            btnLogOut.HoverState.Image = (Image)resources.GetObject("resource.Image5");
+            btnLogOut.HoverState.Image = (Image)resources.GetObject("resource.Image8");
             btnLogOut.Image = (Image)resources.GetObject("btnLogOut.Image");
             btnLogOut.ImageAlign = HorizontalAlignment.Left;
             btnLogOut.ImageOffset = new Point(8, 0);
@@ -326,7 +326,7 @@
             btnLogOut.Location = new Point(0, 646);
             btnLogOut.Margin = new Padding(4);
             btnLogOut.Name = "btnLogOut";
-            btnLogOut.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            btnLogOut.ShadowDecoration.CustomizableEdges = customizableEdges21;
             btnLogOut.Size = new Size(239, 46);
             btnLogOut.TabIndex = 6;
             btnLogOut.Text = "Đăng Xuất";
@@ -336,14 +336,14 @@
             // guna2Button6
             // 
             guna2Button6.CustomBorderThickness = new Padding(0, 0, 0, 8);
-            guna2Button6.CustomizableEdges = customizableEdges16;
+            guna2Button6.CustomizableEdges = customizableEdges22;
             guna2Button6.FillColor = Color.Transparent;
             guna2Button6.Font = new Font("Bahnschrift", 9F, FontStyle.Bold);
             guna2Button6.ForeColor = Color.Black;
             guna2Button6.HoverState.BorderColor = Color.Navy;
             guna2Button6.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             guna2Button6.HoverState.ForeColor = Color.White;
-            guna2Button6.HoverState.Image = (Image)resources.GetObject("resource.Image6");
+            guna2Button6.HoverState.Image = (Image)resources.GetObject("resource.Image9");
             guna2Button6.Image = (Image)resources.GetObject("guna2Button6.Image");
             guna2Button6.ImageAlign = HorizontalAlignment.Left;
             guna2Button6.ImageOffset = new Point(8, 0);
@@ -351,7 +351,7 @@
             guna2Button6.Location = new Point(0, 593);
             guna2Button6.Margin = new Padding(4);
             guna2Button6.Name = "guna2Button6";
-            guna2Button6.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            guna2Button6.ShadowDecoration.CustomizableEdges = customizableEdges23;
             guna2Button6.Size = new Size(239, 46);
             guna2Button6.TabIndex = 6;
             guna2Button6.Text = "Loại trạng thái đặt phòng";
@@ -361,22 +361,22 @@
             // guna2Button5
             // 
             guna2Button5.CustomBorderThickness = new Padding(0, 0, 0, 8);
-            guna2Button5.CustomizableEdges = customizableEdges18;
+            guna2Button5.CustomizableEdges = customizableEdges24;
             guna2Button5.FillColor = Color.Transparent;
             guna2Button5.Font = new Font("Bahnschrift", 9F, FontStyle.Bold);
             guna2Button5.ForeColor = Color.Black;
             guna2Button5.HoverState.BorderColor = Color.Navy;
             guna2Button5.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             guna2Button5.HoverState.ForeColor = Color.White;
-            guna2Button5.HoverState.Image = (Image)resources.GetObject("resource.Image7");
+            guna2Button5.HoverState.Image = (Image)resources.GetObject("resource.Image10");
             guna2Button5.Image = (Image)resources.GetObject("guna2Button5.Image");
             guna2Button5.ImageAlign = HorizontalAlignment.Left;
             guna2Button5.ImageOffset = new Point(8, 0);
             guna2Button5.ImageSize = new Size(30, 30);
-            guna2Button5.Location = new Point(0, 368);
+            guna2Button5.Location = new Point(0, 431);
             guna2Button5.Margin = new Padding(4);
             guna2Button5.Name = "guna2Button5";
-            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges25;
             guna2Button5.Size = new Size(239, 46);
             guna2Button5.TabIndex = 5;
             guna2Button5.Text = "Phòng";
@@ -386,22 +386,22 @@
             // guna2Button4
             // 
             guna2Button4.CustomBorderThickness = new Padding(0, 0, 0, 8);
-            guna2Button4.CustomizableEdges = customizableEdges20;
+            guna2Button4.CustomizableEdges = customizableEdges26;
             guna2Button4.FillColor = Color.Transparent;
             guna2Button4.Font = new Font("Bahnschrift", 9F, FontStyle.Bold);
             guna2Button4.ForeColor = Color.Black;
             guna2Button4.HoverState.BorderColor = Color.Navy;
             guna2Button4.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             guna2Button4.HoverState.ForeColor = Color.White;
-            guna2Button4.HoverState.Image = (Image)resources.GetObject("resource.Image8");
+            guna2Button4.HoverState.Image = (Image)resources.GetObject("resource.Image11");
             guna2Button4.Image = (Image)resources.GetObject("guna2Button4.Image");
             guna2Button4.ImageAlign = HorizontalAlignment.Left;
             guna2Button4.ImageOffset = new Point(8, 0);
             guna2Button4.ImageSize = new Size(30, 30);
-            guna2Button4.Location = new Point(0, 206);
+            guna2Button4.Location = new Point(0, 314);
             guna2Button4.Margin = new Padding(4);
             guna2Button4.Name = "guna2Button4";
-            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges21;
+            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges27;
             guna2Button4.Size = new Size(239, 46);
             guna2Button4.TabIndex = 4;
             guna2Button4.Text = "Loại dịch vụ";
@@ -411,22 +411,22 @@
             // guna2Button3
             // 
             guna2Button3.CustomBorderThickness = new Padding(0, 0, 0, 8);
-            guna2Button3.CustomizableEdges = customizableEdges22;
+            guna2Button3.CustomizableEdges = customizableEdges7;
             guna2Button3.FillColor = Color.Transparent;
             guna2Button3.Font = new Font("Bahnschrift", 9F, FontStyle.Bold);
             guna2Button3.ForeColor = Color.Black;
             guna2Button3.HoverState.BorderColor = Color.Navy;
             guna2Button3.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             guna2Button3.HoverState.ForeColor = Color.White;
-            guna2Button3.HoverState.Image = (Image)resources.GetObject("resource.Image9");
+            guna2Button3.HoverState.Image = (Image)resources.GetObject("resource.Image3");
             guna2Button3.Image = (Image)resources.GetObject("guna2Button3.Image");
             guna2Button3.ImageAlign = HorizontalAlignment.Left;
             guna2Button3.ImageOffset = new Point(8, 0);
             guna2Button3.ImageSize = new Size(30, 30);
-            guna2Button3.Location = new Point(0, 431);
+            guna2Button3.Location = new Point(0, 98);
             guna2Button3.Margin = new Padding(4);
             guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Button3.Size = new Size(239, 46);
             guna2Button3.TabIndex = 3;
             guna2Button3.Text = "Đặt phòng";
@@ -436,22 +436,22 @@
             // guna2Button2
             // 
             guna2Button2.CustomBorderThickness = new Padding(0, 0, 0, 8);
-            guna2Button2.CustomizableEdges = customizableEdges24;
+            guna2Button2.CustomizableEdges = customizableEdges3;
             guna2Button2.FillColor = Color.Transparent;
             guna2Button2.Font = new Font("Bahnschrift", 9F, FontStyle.Bold);
             guna2Button2.ForeColor = Color.Black;
             guna2Button2.HoverState.BorderColor = Color.Navy;
             guna2Button2.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             guna2Button2.HoverState.ForeColor = Color.White;
-            guna2Button2.HoverState.Image = (Image)resources.GetObject("resource.Image10");
+            guna2Button2.HoverState.Image = (Image)resources.GetObject("resource.Image1");
             guna2Button2.Image = (Image)resources.GetObject("guna2Button2.Image");
             guna2Button2.ImageAlign = HorizontalAlignment.Left;
             guna2Button2.ImageOffset = new Point(8, 0);
             guna2Button2.ImageSize = new Size(30, 30);
-            guna2Button2.Location = new Point(0, 152);
+            guna2Button2.Location = new Point(0, 206);
             guna2Button2.Margin = new Padding(4);
             guna2Button2.Name = "guna2Button2";
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button2.Size = new Size(239, 46);
             guna2Button2.TabIndex = 2;
             guna2Button2.Text = "Dịch Vụ";
@@ -462,22 +462,22 @@
             // 
             guna2Button1.BorderColor = SystemColors.MenuHighlight;
             guna2Button1.CustomBorderThickness = new Padding(0, 0, 0, 8);
-            guna2Button1.CustomizableEdges = customizableEdges26;
+            guna2Button1.CustomizableEdges = customizableEdges1;
             guna2Button1.FillColor = Color.Transparent;
             guna2Button1.Font = new Font("Bahnschrift", 9F, FontStyle.Bold);
             guna2Button1.ForeColor = Color.Black;
             guna2Button1.HoverState.BorderColor = Color.Navy;
             guna2Button1.HoverState.FillColor = Color.FromArgb(12, 83, 251);
             guna2Button1.HoverState.ForeColor = Color.White;
-            guna2Button1.HoverState.Image = (Image)resources.GetObject("resource.Image11");
+            guna2Button1.HoverState.Image = (Image)resources.GetObject("resource.Image");
             guna2Button1.Image = (Image)resources.GetObject("guna2Button1.Image");
             guna2Button1.ImageAlign = HorizontalAlignment.Left;
             guna2Button1.ImageOffset = new Point(8, 0);
             guna2Button1.ImageSize = new Size(30, 30);
-            guna2Button1.Location = new Point(0, 98);
+            guna2Button1.Location = new Point(0, 368);
             guna2Button1.Margin = new Padding(4);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button1.Size = new Size(239, 46);
             guna2Button1.TabIndex = 1;
             guna2Button1.Text = "Nhân viên ";

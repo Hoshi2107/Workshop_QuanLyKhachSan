@@ -18,6 +18,7 @@ namespace GUI_QuanLyKhachSan
         public frmMainForm()
         {
             InitializeComponent();
+            this.Icon = new Icon("hotel icon.ico");
         }
 
         private void Principal_Load(object sender, EventArgs e)
@@ -43,11 +44,12 @@ namespace GUI_QuanLyKhachSan
             else if (currentUser.VaiTro == false)
             {
                 // Tắt các chức năng quản lý không dành cho nhân viên
-                guna2Button1.Enabled = false; //Quản lý nhân viên
-                guna2Button4.Enabled = false; //Loại dịch vụ
-                guna2Button5.Enabled = false; //Phòng
-                guna2Button10.Enabled = false; //Loại phòng
-                guna2Button6.Enabled = false; //Loại trạng thái đặt phòng
+                guna2Button1.Visible = false; //Quản lý nhân viên
+                guna2Button4.Visible = false; //Loại dịch vụ
+                guna2Button5.Visible = false; //Phòng
+                guna2Button10.Visible = false; //Loại phòng
+                guna2Button6.Visible = false; //Loại trạng thái đặt phòng
+                guna2Button8.Visible = false; //Thống kê theo phòng
             }
         }
 
@@ -78,8 +80,6 @@ namespace GUI_QuanLyKhachSan
         private void container(object _form)
         {
 
-
-
         }
 
         private void guna2Button3_Click(object sender, EventArgs e)
@@ -109,28 +109,12 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2PictureBox2_Click(object sender, EventArgs e)
         {
-            //DialogResult result = MessageBox.Show("Xác nhận thoát chương trình?",
-            //                                     "Thoát",
-            //                                     MessageBoxButtons.YesNo,
-            //                                     MessageBoxIcon.Question);
-            //if (result == DialogResult.Yes)
-            //{
-            //    Application.Exit();
-            //}
+
         }
 
         private void guna2PictureBox3_Click(object sender, EventArgs e)
         {
-            //    DialogResult result = MessageBox.Show("Xác nhận đăng xuất tài khoản?",
-            //                                         "Đăng xuất",
-            //                                         MessageBoxButtons.YesNo,
-            //                                         MessageBoxIcon.Question);
-            //    if (result == DialogResult.Yes)
-            //    {
-            //        this.Close();
-            //        frmDangNhap form1 = new frmDangNhap();
-            //        form1.Show();
-            //    }
+
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)
