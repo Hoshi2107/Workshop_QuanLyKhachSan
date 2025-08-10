@@ -45,7 +45,7 @@ namespace GUI_QuanLyKhachSan
                 // Tắt các chức năng quản lý không dành cho nhân viên
                 guna2Button1.Visible = false; //Quản lý nhân viên
                 guna2Button4.Visible = false; //Loại dịch vụ
-                guna2Button5.Visible = false; //Phòng
+                
                 guna2Button10.Visible = false; //Loại phòng
                 guna2Button6.Visible = false; //Loại trạng thái đặt phòng
                 guna2Button8.Visible = false; //Thống kê theo phòng
@@ -103,7 +103,7 @@ namespace GUI_QuanLyKhachSan
 
         private void guna2Button5_Click(object sender, EventArgs e)
         {
-            openChildForm(new FrmQuanLyPhong());
+            openChildForm(new FrmQuanLyPhong(currentUser));
         }
 
         private void guna2PictureBox2_Click(object sender, EventArgs e)

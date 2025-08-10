@@ -1,5 +1,6 @@
 ﻿using BLL_QuanLyKhachSan;
 using DTO_QuanLyKhachSan;
+using Guna.UI2.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +18,31 @@ namespace GUI_QuanLyKhachSan
         public FrmQuanLyPhong()
         {
             InitializeComponent();
+
         }
+
+        private DTO_NhanVien currentUser;
+        public FrmQuanLyPhong(DTO_NhanVien user)
+        {
+            InitializeComponent();
+            currentUser = user;
+            PhanQuyen();
+        }
+        private void PhanQuyen()
+        {
+            if (currentUser.VaiTro == true)
+            {
+                // full quyền, không cần disable gì cả
+            }
+            else
+            {
+                guna2Button1.Visible = false; // Thêm
+                guna2Button2.Visible = false; // Cập nhật
+                guna2Button3.Visible = false; // Xóa
+                guna2Button5.Visible = false; // Làm mới
+            }
+        }
+
 
         private void guna2DgvPhong_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
