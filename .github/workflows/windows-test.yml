@@ -1,0 +1,19 @@
+name: Manual Windows Test Run
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: Bắt đầu chạy
+        run: echo "Yo! Workflow chạy rồi nha . . ."
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Đang chạy
+        run: |
+          echo "Repo này đang được test dispatch..."
+          ls -la
