@@ -29,4 +29,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build-output
-          path: ./bin/Release
+          path: ./GUI_QuanLyKhachSan/bin/Release/net8.0-windows/
