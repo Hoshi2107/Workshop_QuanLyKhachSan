@@ -16,4 +16,4 @@ jobs:
       - name: Đang chạy
         run: |
           echo "Repo này đang được test dispatch..."
-          ls -la
+          dir
