@@ -1,0 +1,19 @@
+name: Manual Test Run
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log start
+        run: echo "Yo! Workflow chạy rồi nha . . ."
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run some test command
+        run: |
+          echo "Repo này đang được test dispatch..."
+          ls -la
