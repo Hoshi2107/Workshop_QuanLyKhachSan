@@ -1,0 +1,74 @@
+name: .NET CI/CD to Azure Web App
+
+# Kích hoạt workflow khi có push (đẩy code) hoặc pull request (yêu cầu hợp nhất) 
+# vào nhánh chính (main)
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+# Định nghĩa các biến môi trường chung
+env:
+  AZURE_WEBAPP_NAME: ten-webapp-cua-ban     # <-- THAY THẾ bằng Tên Azure Web App của bạn
+  AZURE_WEBAPP_PACKAGE_PATH: '.'           # Đường dẫn đến file build/publish (thường là root)
+  DOTNET_VERSION: '8.0.x'                  # <-- ĐIỀU CHỈNH phiên bản .NET bạn sử dụng
+
+jobs:
+  # ===============================================
+  # Giai đoạn 1: CI (Tích hợp liên tục - Build & Test)
+  # ===============================================
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 1. Checkout Code
+      uses: actions/checkout@v4
+
+    - name: 2. Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
+
+    - name: 3. Restore Dependencies
+      run: dotnet restore
+
+    - name: 4. Build Project
+      run: dotnet build --no-restore
+
+    - name: 5. Run Tests (Nếu có)
+      run: dotnet test --no-build --verbosity normal
+
+    - name: 6. Publish App (Đóng gói ứng dụng)
+      # Thay thế YourProjectName.csproj bằng tên file .csproj của dự án khởi chạy (Startup Project)
+      run: dotnet publish YourProjectName.csproj -c Release -o ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/publish
+
+    - name: 7. Upload Artifact (Lưu trữ gói triển khai)
+      uses: actions/upload-artifact@v4
+      with:
+        name: dotnet-webapp
+        path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/publish
+        
+  # ===============================================
+  # Giai đoạn 2: CD (Triển khai liên tục - Deploy)
+  # ===============================================
+  deploy:
+    needs: build # Chỉ chạy sau khi giai đoạn 'build' thành công
+    runs-on: ubuntu-latest
+    environment: Production # Có thể chỉ định môi trường (tùy chọn)
+
+    steps:
+    - name: 1. Download Artifact (Tải gói đã build)
+      uses: actions/download-artifact@v4
+      with:
+        name: dotnet-webapp
+        path: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
+        
+    - name: 2. Deploy to Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: ${{ env.AZURE_WEBAPP_NAME }}
+        slot-name: 'Production' # Hoặc slot khác nếu bạn sử dụng staging slot
+        # Cần thiết lập Secret này trong Settings > Secrets and variables > Actions
+        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }} 
+        package: ${{ env.AZURE_WEBAPP_PACKAGE_PATH }}
